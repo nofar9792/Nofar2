@@ -50,6 +50,18 @@
     return [UserParse getUserById:userId];
 }
 
+-(bool)updateUser:(User*)user{
+    if([UserParse updateUser:user]){
+        if([user isKindOfClass:[DogWalker class]]){
+            return [DogWalkerParse updateDogWalker:(DogWalker*)user];
+        }else{
+            return [DogParse updateDog:user.userId dog:((DogOwner*)user).dog];
+        }
+    }
+    
+    return NO;
+}
+
 // Dog Methods
 
 -(Dog*)getDogByUserId:(long)userId{
@@ -80,11 +92,6 @@ priceForHour isComfortableOnMorning:(bool)isComfortableOnMorning isComfortableOn
     return userId;
 }
 
--(void)updateDogWalker:(DogWalker*)dogWalker{
-    [UserParse updateUser:dogWalker];
-    [DogWalkerParse updateDogWalker:dogWalker];
-}
-
 //region Dog Owner Methods
 
 -(long)addDogOwner:(NSString*)username password:(NSString*)password firstName:(NSString*)firstName lastName:(NSString*)lastName phoneNumber:(NSString*)phoneNumber address:(NSString*)address city:(NSString*)city dog:(Dog*)dog{
@@ -93,10 +100,6 @@ priceForHour isComfortableOnMorning:(bool)isComfortableOnMorning isComfortableOn
     return userId;
 }
 
--(void)updateDogOwner:(DogOwner*)dogOwner{
-    [UserParse updateUser:dogOwner];
-    [DogParse updateDog:dogOwner.userId dog:dogOwner.dog];
-}
 
 //region Trip Methods
 

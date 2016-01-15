@@ -13,44 +13,97 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    
+    [self fillTextBoxWithUserProperties];
+    
     if([self.user isKindOfClass:[DogWalker class]]){
         //Creating the child view controller
-        ProfileDogWalkerViewController* profileDogWalker = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"profileDogWalkerViewController"];
+        ProfileDogWalkerViewController* profileDogWalkerVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"profileDogWalkerViewController"];
         
-        //Connect between the parent VC to the Child VC
-        [self addChildViewController:profileDogWalker];
+        // Connect between the parent VC to the Child VC
+        [self addChildViewController:profileDogWalkerVC];
         
-        
+        // Set child's view size
         CGRect frame = self.userTypeDetailsView.frame;
         frame.origin.x = 0;
         frame.origin.y = 0;
-        self.userTypeDetailsView.frame = frame;
+        profileDogWalkerVC.view.frame = frame;
         
-        [self.userTypeDetailsView addSubview:profileDogWalker.view];
+        // Add informatin to the child view
+        profileDogWalkerVC.dogWalker = (DogWalker*)self.user;
+        
+        self.childVC = profileDogWalkerVC;
+        
+        [self.userTypeDetailsView addSubview:profileDogWalkerVC.view];
     }else{
-        //Creating the child view controller
-        ProfileDogOwnerViewController* profileDogOwner = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"profileDogOwnerViewController"];
+        // Creating the child view controller
+        ProfileDogOwnerViewController* profileDogOwnerVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"profileDogOwnerViewController"];
         
-        //Connect between the parent VC to the Child VC
-        [self addChildViewController:profileDogOwner];
+        // Connect between the parent VC to the Child VC
+        [self addChildViewController:profileDogOwnerVC];
         
-        
+        // Set child's view size
         CGRect frame = self.userTypeDetailsView.frame;
         frame.origin.x = 0;
         frame.origin.y = 0;
-        self.userTypeDetailsView.frame = frame;
+        profileDogOwnerVC.view.frame = frame;
         
-        [self.userTypeDetailsView addSubview:profileDogOwner.view];
+        // Add informatin to the child view
+        profileDogOwnerVC.dogOwner = (DogOwner*)self.user;
+        
+        [self.userTypeDetailsView addSubview:profileDogOwnerVC.view];
     }
 }
 
--(void)setUser:(User *)user{
-    _user = user;
-//    if (self. != nil) {
-//           self.label.text = self.topLabel;
-//    }
+- (IBAction)saveClick:(id)sender {
+    self.user.firstName = self.firstNameTextBox.text;
+    self.user.lastName = self.lastNameTextBox.text;
+    self.user.phoneNumber = self.phoneNumberTextBox.text;
+    self.user.city = self.cityTextBox.text;
+    self.user.address = self.addressTextBox.text;
+    
+    if([self.user isKindOfClass:[DogWalker class]]){
+        ProfileDogWalkerViewController* profileDogWalkerVC = (ProfileDogWalkerViewController*)self.childVC;
+        DogWalker* dogWalker = (DogWalker*) self.user;
+        
+        dogWalker.age = [profileDogWalkerVC.ageTextBox.text longLongValue];
+        dogWalker.priceForHour = [profileDogWalkerVC.priceForHourTextBox.text intValue];
+        
+    }else{
+        ProfileDogOwnerViewController* profileDogOwnerVC = (ProfileDogOwnerViewController*)self.childVC;
+        DogOwner* dogOwner = (DogOwner*) self.user;
+        
+        dogOwner.dog.name = profileDogOwnerVC.dogNameTextBox.text;
+        dogOwner.dog.age = [profileDogOwnerVC.dogAgeTextBox.text longLongValue];
+    }
+    
+    void(^afterSave)(bool) = ^(bool result){
+        if(result){
+            [self.view makeToast:@"שמירה בוצעה בהצלחה"];
+        }else{
+            [self.view makeToast:@"אירעה שגיאה בעת השמירה. נסה שנית"];
+
+        }
+    };
+    
+    dispatch_queue_t myQueue = dispatch_queue_create("myQueueName", NULL);
+    
+    dispatch_async(myQueue, ^{
+       bool result = [[Model instance]updateUser:self.user];
+        
+        
+        dispatch_queue_t mainQ = dispatch_get_main_queue();
+        dispatch_async(mainQ, ^{
+            afterSave(result);
+        });
+        
+    } );
 }
 
-- (IBAction)saveClick:(id)sender {
+-(void)fillTextBoxWithUserProperties{
+    self.firstNameTextBox.text = self.user.firstName;
+    self.lastNameTextBox.text = self.user.lastName;
+    self.phoneNumberTextBox.text = self.user.phoneNumber;
+    self.cityTextBox.text = self.user.city;
+    self.addressTextBox.text = self.user.address;
 }
 @end

@@ -7,8 +7,6 @@
 //
 
 #import "DogWalkerTabsViewController.h"
-#import "ProfileViewController.h"
-#import "DogWalker.h"
 
 @implementation DogWalkerTabsViewController
 
@@ -17,14 +15,9 @@
     if([segue.identifier isEqualToString:@"profileDogWalkerSegue"]){
         DogWalkerTabSegue* msegue = (DogWalkerTabSegue*)segue;
         msegue.destinationViewContainer = self.containerView;
-        ProfileViewController* profile = (ProfileViewController*)msegue.destinationViewContainer;
+        ProfileViewController* profileVC = msegue.destinationViewController;
        
-//        DogWalker* dogWalker = [[DogWalker alloc]init:1 userName:@"nofar" firstName:@"nofar" lastName:@"no" phoneNumber:@"0505" address:@"hi" city:@"tel"];
-        //[profile setDogWalker:dogWalker];
-        //profile.dogWalker = dogWalker;
-        //profile.tt = dogWalker.firstName;
-        //[dogWalker set]
-        //((ProfileDogWalkerViewController*)msegue.destinationViewContainer).dogWalker = [[DogWalker alloc]init:1 userName:@"nofar" firstName:@"nofar" lastName:@"no" phoneNumber:@"0505" address:@"hi" city:@"tel"];
+        profileVC.user = self.dogWalker;
         
     }else if([segue.identifier isEqualToString:@"messagesDogWalkerSegue"]){
         DogWalkerTabSegue* msegue = (DogWalkerTabSegue*)segue;
@@ -53,8 +46,8 @@
     CGRect frame = parent.containerView.frame;
     frame.origin.x = 0;
     frame.origin.y = 0;
-    
     child.view.frame = parent.containerView.frame;
+    
     [parent.containerView addSubview:child.view];
     [child didMoveToParentViewController:parent];
 }

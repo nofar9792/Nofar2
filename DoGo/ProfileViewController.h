@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "User.h"
+#import "Model.h"
 #import "DogWalker.h"
 #import "DogOwner.h"
 #import "ProfileDogOwnerViewController.h"
 #import "ProfileDogWalkerViewController.h"
+#import "UIView+Toast.h"
 
 @interface ProfileViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *firstNameTextBox;
@@ -22,5 +24,7 @@
 @property (weak, nonatomic) IBOutlet UIView *userTypeDetailsView;
 - (IBAction)saveClick:(id)sender;
 
-@property (nonatomic) IBOutlet User *user;
+@property (nonatomic) User *user;
+@property (nonatomic) UIViewController* childVC;
+
 @end

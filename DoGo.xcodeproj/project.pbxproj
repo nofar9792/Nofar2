@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8439FD8B1C4980C000EED0FF /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 8439FD8A1C4980C000EED0FF /* UIView+Toast.m */; };
 		84528F641C47161C009ECF2D /* ProfileDogWalkerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84528F631C47161C009ECF2D /* ProfileDogWalkerViewController.m */; };
 		846F36E51C30620D0045909A /* DogWalker.m in Sources */ = {isa = PBXBuildFile; fileRef = 846F36E41C30620D0045909A /* DogWalker.m */; };
 		846F36E81C3062C80045909A /* DogOwner.m in Sources */ = {isa = PBXBuildFile; fileRef = 846F36E71C3062C80045909A /* DogOwner.m */; };
@@ -83,6 +84,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8439FD891C4980C000EED0FF /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
+		8439FD8A1C4980C000EED0FF /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
 		84528F621C47161C009ECF2D /* ProfileDogWalkerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileDogWalkerViewController.h; sourceTree = "<group>"; };
 		84528F631C47161C009ECF2D /* ProfileDogWalkerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileDogWalkerViewController.m; sourceTree = "<group>"; };
 		846F36E31C30620D0045909A /* DogWalker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DogWalker.h; sourceTree = "<group>"; };
@@ -354,6 +357,8 @@
 				849430AF1C2F58A70050D7FB /* LaunchScreen.storyboard */,
 				849430B21C2F58A70050D7FB /* Info.plist */,
 				849430A11C2F58A70050D7FB /* Supporting Files */,
+				8439FD891C4980C000EED0FF /* UIView+Toast.h */,
+				8439FD8A1C4980C000EED0FF /* UIView+Toast.m */,
 			);
 			path = DoGo;
 			sourceTree = "<group>";
@@ -561,6 +566,7 @@
 				846F373C1C455F620045909A /* DogWalkerParse.m in Sources */,
 				84F2666C1C4836D900E17B4B /* TripCell.m in Sources */,
 				846F37201C4553460045909A /* Consts.m in Sources */,
+				8439FD8B1C4980C000EED0FF /* UIView+Toast.m in Sources */,
 				849430A31C2F58A70050D7FB /* main.m in Sources */,
 				846F37271C4555E20045909A /* RegisterViewController.m in Sources */,
 				846F36F81C33348C0045909A /* ModelParse.m in Sources */,

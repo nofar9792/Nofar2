@@ -16,6 +16,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *morningCheckBox;
 @property (weak, nonatomic) IBOutlet UIButton *afternoonCheckBox;
 @property (weak, nonatomic) IBOutlet UIButton *eveningCheckBox;
+- (IBAction)morningCheckBoxClick:(id)sender;
+- (IBAction)afternoonCheckBoxClick:(id)sender;
+- (IBAction)eveningCheckBoxClick:(id)sender;
+
 @property (nonatomic) DogWalker* dogWalker;
 
 @end

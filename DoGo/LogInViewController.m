@@ -33,9 +33,9 @@
     NSString* username = self.usernameTextBox.text;
     NSString* password = self.passwordTextBox.text;
     
-    void(^myBlock2)(User*) = ^(User* user){
-        if(user){
-            if([user isKindOfClass:[DogWalker class]]){
+    void(^afterLogin)(void) = ^(void){
+        if(self.user){
+            if([self.user isKindOfClass:[DogWalker class]]){
                 [self performSegueWithIdentifier:@"toDogWalkerScreen" sender:self];
             }
             else{
@@ -49,15 +49,23 @@
     dispatch_queue_t myQueue = dispatch_queue_create("myQueueName", NULL);
     
     dispatch_async(myQueue, ^{
-        User* user = [[Model instance] login:username password:password];
+        self.user = [[Model instance] login:username password:password];
 
             
         dispatch_queue_t mainQ = dispatch_get_main_queue();
         dispatch_async(mainQ, ^{
-            myBlock2(user);
+            afterLogin();
         });
         
     } );
     
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"toDogWalkerScreen"]){
+        DogWalkerTabsViewController* tabsVC = segue.destinationViewController;
+        tabsVC.dogWalker = (DogWalker*)self.user;
+    }
+}
+
 @end

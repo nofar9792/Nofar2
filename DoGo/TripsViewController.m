@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    data = [[Model instance] getTripByDogWalkerId:1];
+    data = [[Model instance] getTripsByDogWalkerId:1];
 }
 
 - (void)didReceiveMemoryWarning {

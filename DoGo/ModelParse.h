@@ -17,9 +17,10 @@
 @interface ModelParse : NSObject
 
 // User Methods
--(User*)getUserById:(long)userId;
 -(User*)login:(NSString*)username password:(NSString*)password;
 -(void)logOut;
+-(User*)getUserById:(long)userId;
+-(bool)updateUser:(User*)user;
 
 // Dog Methods
 -(Dog*)getDogByUserId:(long)userId;
@@ -29,11 +30,9 @@
 -(NSArray*)getAllDogWalkers;
 -(long)addDogWalker:(NSString*)username password:(NSString*)password firstName:(NSString*)firstName lastName:(NSString*)lastName phoneNumber:(NSString*)phoneNumber address:(NSString*)address city:(NSString*)city age:(long)age priceForHour:(int)
 priceForHour isComfortableOnMorning:(bool)isComfortableOnMorning isComfortableOnAfternoon:(bool)isComfortableOnAfternoon isComfortableOnEvening:(bool)isComfortableOnEvening;
--(void)updateDogWalker:(DogWalker*)dogWalker;
 
 // Dog Owner Methods
 -(long)addDogOwner:(NSString*)username password:(NSString*)password firstName:(NSString*)firstName lastName:(NSString*)lastName phoneNumber:(NSString*)phoneNumber address:(NSString*)address city:(NSString*)city dog:(Dog*)dog;
--(void)updateDogOwner:(DogOwner*)dogOwner;
 
 // Trip Methods
 -(NSArray*)getTripsByDogOwnerId:(long)dogOwnerId;

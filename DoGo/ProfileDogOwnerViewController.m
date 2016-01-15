@@ -12,33 +12,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //    self.firstNameTextBox.text = self.dogWalker.firstName;
-    //    self.lastNameTextBox.text = self.dogWalker.lastName;
-    //    self.phoneNumberTextBox.text = self.dogWalker.phoneNumber;
-    //    self.cityTextBox.text = self.dogWalker.city;
-    //    self.addressTextBox.text = self.dogWalker.address;
-    
-    
-    //    self.ageTextBox.text = [NSString stringWithFormat:@"%li", self.dogWalker.age];
-    //    self.priceForHourTextBox.text = [NSString stringWithFormat:@"%i",self.dogWalker.priceForHour];
-    //
-    //    if(self.dogWalker.isComfortableOnMorning){
-    //         [self.morningCheckBox setImage:[UIImage imageNamed:@"vi.png"] forState:UIControlStateNormal];
-    //    }
-    //    if(self.dogWalker.isComfortableOnAfternoon){
-    //        [self.afternoonCheckBox setImage:[UIImage imageNamed:@"vi.png"] forState:UIControlStateNormal];
-    //    }
-    //    if(self.dogWalker.isComfortableOnEvening){
-    //        [self.eveningCheckBox setImage:[UIImage imageNamed:@"vi.png"] forState:UIControlStateNormal];
 }
 
 
 
--(void)setDogOwner:(DogOwner *)dogOener{
-    _dogOwner = dogOener;
-    //    if (self. != nil) {
-    //           self.label.text = self.topLabel;
-    //    }
+-(void)setDogOwner:(DogOwner *)dogOwner{
+    _dogOwner = dogOwner;
+    
+    if(self.dogOwner){
+        self.dogNameTextBox.text =  self.dogOwner.dog.name;
+
+        // size!!
+//        
+//        if(self.dogWalker.isComfortableOnMorning){
+//            [self.morningCheckBox setImage:[UIImage imageNamed:@"vi.png"] forState:UIControlStateNormal];
+//        }
+        
+        // pic
+         //[self.eveningCheckBox setImage:[UIImage imageNamed:self.dogOwner.dog.picRef] forState:UIControlStateNormal];
+        
+    }
 }
 
 @end
