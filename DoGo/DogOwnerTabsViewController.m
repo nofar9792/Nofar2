@@ -24,9 +24,6 @@
     }else if([segue.identifier isEqualToString:@"searchSegue"]){
         DogOwnerTabSegue* msegue = (DogOwnerTabSegue*)segue;
         msegue.destinationViewContainer = self.containerView;
-    }else if([segue.identifier isEqualToString:@"mapSegue"]){
-        DogOwnerTabSegue* msegue = (DogOwnerTabSegue*)segue;
-        msegue.destinationViewContainer = self.containerView;
     }
 }
 @end

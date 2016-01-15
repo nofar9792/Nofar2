@@ -52,7 +52,6 @@
 		84809A5C1C481311006D9B3B /* ProfileDogOwnerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84809A5A1C480F67006D9B3B /* ProfileDogOwnerViewController.m */; };
 		849430A31C2F58A70050D7FB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 849430A21C2F58A70050D7FB /* main.m */; };
 		849430A61C2F58A70050D7FB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 849430A51C2F58A70050D7FB /* AppDelegate.m */; };
-		849430A91C2F58A70050D7FB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849430A81C2F58A70050D7FB /* ViewController.m */; };
 		849430AC1C2F58A70050D7FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849430AA1C2F58A70050D7FB /* Main.storyboard */; };
 		849430AE1C2F58A70050D7FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849430AD1C2F58A70050D7FB /* Assets.xcassets */; };
 		849430B11C2F58A70050D7FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849430AF1C2F58A70050D7FB /* LaunchScreen.storyboard */; };
@@ -152,8 +151,6 @@
 		849430A21C2F58A70050D7FB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		849430A41C2F58A70050D7FB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		849430A51C2F58A70050D7FB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		849430A71C2F58A70050D7FB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		849430A81C2F58A70050D7FB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		849430AB1C2F58A70050D7FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		849430AD1C2F58A70050D7FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		849430B01C2F58A70050D7FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -265,8 +262,6 @@
 		846F37241C4555360045909A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				849430A71C2F58A70050D7FB /* ViewController.h */,
-				849430A81C2F58A70050D7FB /* ViewController.m */,
 				846F37251C4555E20045909A /* RegisterViewController.h */,
 				846F37261C4555E20045909A /* RegisterViewController.m */,
 				846F37571C46AC4A0045909A /* LogInViewController.h */,
@@ -549,7 +544,6 @@
 				849430DA1C2F58ED0050D7FB /* User.m in Sources */,
 				84F266691C48297D00E17B4B /* TripsViewController.m in Sources */,
 				846F373F1C455F750045909A /* RequestParse.m in Sources */,
-				849430A91C2F58A70050D7FB /* ViewController.m in Sources */,
 				846F37191C41E2530045909A /* ModelSql.m in Sources */,
 				846F37601C46EDCE0045909A /* DogOwnerTabsViewController.m in Sources */,
 				846F375D1C46ED8D0045909A /* DogWalkerTabsViewController.m in Sources */,

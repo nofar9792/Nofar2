@@ -19,7 +19,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y4B-Fe-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-785.06666666666661" y="-399.49333333333334"/>
+            <point key="canvasLocation" x="-790" y="-356"/>
         </scene>
         <!--First Page-->
         <scene sceneID="tne-QT-ifu">
@@ -200,13 +200,6 @@
                                     <segue destination="EJb-pa-rzN" kind="custom" identifier="tripsReportDogWalkerSegue" customClass="DogOwnerTabSegue" id="qG9-BM-0ZE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pST-6N-KcT">
-                                <rect key="frame" x="201" y="513" width="53" height="54"/>
-                                <state key="normal" title="map" image="map_icon.png"/>
-                                <connections>
-                                    <segue destination="th4-ko-wXm" kind="custom" identifier="mapSegue" customClass="DogOwnerTabSegue" id="PSi-yq-nTA"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dfm-ct-Jss">
                                 <rect key="frame" x="6" y="513" width="59" height="62"/>
                                 <state key="normal" title="messages" image="message_icon.png"/>
@@ -230,7 +223,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YCZ-io-IfN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="752" y="-862"/>
+            <point key="canvasLocation" x="676" y="-890"/>
         </scene>
         <!--MessagesDogWalker-->
         <scene sceneID="7Kt-YV-zUO">
@@ -433,7 +426,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2xi-KC-1Jj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="118" y="-990"/>
+            <point key="canvasLocation" x="102" y="-946"/>
         </scene>
         <!--Dog Walker-->
         <scene sceneID="Flf-HR-0bY">
@@ -488,7 +481,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qlx-fn-jQT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="739" y="-108"/>
+            <point key="canvasLocation" x="676" y="-168"/>
         </scene>
         <!--Profile Dog Walker-->
         <scene sceneID="6Xz-s0-1Pn">
@@ -584,7 +577,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lij-hc-uO5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1706" y="-400.5"/>
+            <point key="canvasLocation" x="1706" y="-379.5"/>
         </scene>
         <!--ProfileDogOwner-->
         <scene sceneID="0Sv-JH-4kp">
@@ -701,27 +694,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Egg-wu-rMo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2298" y="-1268"/>
-        </scene>
-        <!--Map-->
-        <scene sceneID="xzd-xJ-BGu">
-            <objects>
-                <viewController title="Map" id="th4-ko-wXm" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="toS-gn-Zk2"/>
-                        <viewControllerLayoutGuide type="bottom" id="cQ6-f8-e3R"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="R3z-0j-TZW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="514"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.99502840910000001" green="0.91022780079999999" blue="0.75492210479999999" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="514"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="U71-pm-ae2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1892" y="-1300"/>
+            <point key="canvasLocation" x="1776" y="-1270"/>
         </scene>
         <!--Trips-->
         <scene sceneID="Z4a-Sy-T6G">
@@ -877,7 +850,6 @@
         <image name="dog_icon.png" width="256" height="256"/>
         <image name="empty.png" width="225" height="225"/>
         <image name="logo.png" width="713" height="349"/>
-        <image name="map_icon.png" width="128" height="128"/>
         <image name="message_icon.png" width="256" height="256"/>
         <image name="profile_icon.png" width="256" height="256"/>
         <image name="report_icon.png" width="256" height="256"/>
@@ -885,9 +857,9 @@
         <image name="sign_up_button.png" width="187" height="90"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5ED-uX-xnT"/>
-        <segue reference="qG9-BM-0ZE"/>
-        <segue reference="NtO-Ad-M4T"/>
+        <segue reference="WiM-ET-dm3"/>
         <segue reference="ipU-Ov-Hqc"/>
+        <segue reference="NtO-Ad-M4T"/>
+        <segue reference="qG9-BM-0ZE"/>
     </inferredMetricsTieBreakers>
 </document>
