@@ -65,6 +65,9 @@
     if ([segue.identifier isEqualToString:@"toDogWalkerScreen"]){
         DogWalkerTabsViewController* tabsVC = segue.destinationViewController;
         tabsVC.dogWalker = (DogWalker*)self.user;
+    }else{
+        DogOwnerTabsViewController* tabsVC = segue.destinationViewController;
+        tabsVC.dogOwner = (DogOwner*)self.user;
     }
 }
 

@@ -20,6 +20,9 @@
 //    self.phoneLabel.text = self.phoneValue;
     
     
+    // scroller
+    [scroller setScrollEnabled: YES];
+    [scroller setContentSize:CGSizeMake(320, 1000)];
     
     void(^myBlock)(PFObject * _Nullable, NSError * _Nullable) = ^(PFObject * _Nullable object, NSError * _Nullable error){
         self.usernameTexBox.text = object[@"firstName"];

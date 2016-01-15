@@ -10,8 +10,12 @@
 #import "Model.h"
 
 @interface RegisterViewController : UIViewController
+{
+    IBOutlet UIScrollView *scroller;
+}
 @property (weak, nonatomic) IBOutlet UITextField *usernameTexBox;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (nonatomic) NSString* usernameValue;
+
 
 @end

@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DogOwner.h"
 
 @interface DogOwnerTabsViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIView *containerView;
+@property (nonatomic) DogOwner* dogOwner;
 
 @end
 
