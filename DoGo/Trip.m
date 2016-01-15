@@ -10,12 +10,12 @@
 
 @implementation Trip
 
--(id)init: (long)id owner:(DogOwner*)owner dog:(Dog*)dog walker:(DogWalker*)walker startOfWalking:(NSDate*)startOfWalking endOfWalking:(NSDate*)endOfWalking dateOfWalking:(NSDate*)dateOfWalking isPaid:(bool)isPaid{
+-(id)init:(long)tripId dogOwnerId:(long)dogOwnerId dogWalkerId:(long)dogWalkerId startOfWalking:(NSDate*)startOfWalking endOfWalking:(NSDate*)endOfWalking isPaid:(bool)isPaid{
     self = [super init];
     if (self){
-        _id = id;
-        _owner = owner;
-        _walker = walker;
+        _tripId = tripId;
+        _dogOwnerId = dogOwnerId;
+        _dogWalkerId = dogWalkerId;
         _startOfWalking = startOfWalking;
         _endOfWalking = endOfWalking;
         _isPaid = isPaid;

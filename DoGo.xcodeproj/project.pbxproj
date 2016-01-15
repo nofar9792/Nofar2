@@ -28,12 +28,8 @@
 		846F370E1C3341270045909A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 846F370D1C3341270045909A /* libz.tbd */; };
 		846F37101C33412F0045909A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 846F370F1C33412F0045909A /* libsqlite3.tbd */; };
 		846F37191C41E2530045909A /* ModelSql.m in Sources */ = {isa = PBXBuildFile; fileRef = 846F37181C41E2530045909A /* ModelSql.m */; };
-		846F37201C4553460045909A /* DogConsts.m in Sources */ = {isa = PBXBuildFile; fileRef = 846F371F1C4553460045909A /* DogConsts.m */; };
+		846F37201C4553460045909A /* Consts.m in Sources */ = {isa = PBXBuildFile; fileRef = 846F371F1C4553460045909A /* Consts.m */; };
 		846F37271C4555E20045909A /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846F37261C4555E20045909A /* RegisterViewController.m */; };
-		846F372A1C455C1C0045909A /* WalkerConsts.m in Sources */ = {isa = PBXBuildFile; fileRef = 846F37291C455C1C0045909A /* WalkerConsts.m */; };
-		846F372D1C455C5D0045909A /* UserConsts.m in Sources */ = {isa = PBXBuildFile; fileRef = 846F372C1C455C5D0045909A /* UserConsts.m */; };
-		846F37301C455C730045909A /* TripConsts.m in Sources */ = {isa = PBXBuildFile; fileRef = 846F372F1C455C730045909A /* TripConsts.m */; };
-		846F37331C455C990045909A /* RequestConsts.m in Sources */ = {isa = PBXBuildFile; fileRef = 846F37321C455C990045909A /* RequestConsts.m */; };
 		846F37361C455F300045909A /* UserParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 846F37351C455F300045909A /* UserParse.m */; };
 		846F37391C455F430045909A /* DogParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 846F37381C455F430045909A /* DogParse.m */; };
 		846F373C1C455F620045909A /* DogWalkerParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 846F373B1C455F620045909A /* DogWalkerParse.m */; };
@@ -52,6 +48,7 @@
 		846F37591C46AC4B0045909A /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846F37581C46AC4A0045909A /* LogInViewController.m */; };
 		846F375D1C46ED8D0045909A /* DogWalkerTabsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846F375C1C46ED8D0045909A /* DogWalkerTabsViewController.m */; };
 		846F37601C46EDCE0045909A /* DogOwnerTabsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846F375F1C46EDCE0045909A /* DogOwnerTabsViewController.m */; };
+		84809A5C1C481311006D9B3B /* ProfileDogOwnerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84809A5A1C480F67006D9B3B /* ProfileDogOwnerViewController.m */; };
 		849430A31C2F58A70050D7FB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 849430A21C2F58A70050D7FB /* main.m */; };
 		849430A61C2F58A70050D7FB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 849430A51C2F58A70050D7FB /* AppDelegate.m */; };
 		849430A91C2F58A70050D7FB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849430A81C2F58A70050D7FB /* ViewController.m */; };
@@ -63,6 +60,9 @@
 		849430D71C2F58E00050D7FB /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = 849430D61C2F58E00050D7FB /* Dog.m */; };
 		849430DA1C2F58ED0050D7FB /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 849430D91C2F58ED0050D7FB /* User.m */; };
 		849430DD1C2F58FA0050D7FB /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = 849430DC1C2F58FA0050D7FB /* Trip.m */; };
+		84F266661C48197F00E17B4B /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F266651C48197F00E17B4B /* ProfileViewController.m */; };
+		84F266691C48297D00E17B4B /* TripsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F266681C48297D00E17B4B /* TripsViewController.m */; };
+		84F2666C1C4836D900E17B4B /* TripCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F2666B1C4836D900E17B4B /* TripCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,18 +113,10 @@
 		846F37141C41DF440045909A /* RequestStatus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestStatus.h; sourceTree = "<group>"; };
 		846F37171C41E2530045909A /* ModelSql.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelSql.h; sourceTree = "<group>"; };
 		846F37181C41E2530045909A /* ModelSql.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelSql.m; sourceTree = "<group>"; };
-		846F371E1C4553460045909A /* DogConsts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DogConsts.h; sourceTree = "<group>"; };
-		846F371F1C4553460045909A /* DogConsts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DogConsts.m; sourceTree = "<group>"; };
+		846F371E1C4553460045909A /* Consts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Consts.h; sourceTree = "<group>"; };
+		846F371F1C4553460045909A /* Consts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Consts.m; sourceTree = "<group>"; };
 		846F37251C4555E20045909A /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		846F37261C4555E20045909A /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
-		846F37281C455C1C0045909A /* WalkerConsts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalkerConsts.h; sourceTree = "<group>"; };
-		846F37291C455C1C0045909A /* WalkerConsts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalkerConsts.m; sourceTree = "<group>"; };
-		846F372B1C455C5D0045909A /* UserConsts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserConsts.h; sourceTree = "<group>"; };
-		846F372C1C455C5D0045909A /* UserConsts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserConsts.m; sourceTree = "<group>"; };
-		846F372E1C455C730045909A /* TripConsts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripConsts.h; sourceTree = "<group>"; };
-		846F372F1C455C730045909A /* TripConsts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripConsts.m; sourceTree = "<group>"; };
-		846F37311C455C990045909A /* RequestConsts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestConsts.h; sourceTree = "<group>"; };
-		846F37321C455C990045909A /* RequestConsts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestConsts.m; sourceTree = "<group>"; };
 		846F37341C455F300045909A /* UserParse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserParse.h; sourceTree = "<group>"; };
 		846F37351C455F300045909A /* UserParse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserParse.m; sourceTree = "<group>"; };
 		846F37371C455F430045909A /* DogParse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DogParse.h; sourceTree = "<group>"; };
@@ -151,6 +143,8 @@
 		846F375C1C46ED8D0045909A /* DogWalkerTabsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DogWalkerTabsViewController.m; sourceTree = "<group>"; };
 		846F375E1C46EDCE0045909A /* DogOwnerTabsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DogOwnerTabsViewController.h; sourceTree = "<group>"; };
 		846F375F1C46EDCE0045909A /* DogOwnerTabsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DogOwnerTabsViewController.m; sourceTree = "<group>"; };
+		84809A591C480F67006D9B3B /* ProfileDogOwnerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileDogOwnerViewController.h; sourceTree = "<group>"; };
+		84809A5A1C480F67006D9B3B /* ProfileDogOwnerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileDogOwnerViewController.m; sourceTree = "<group>"; };
 		8494309E1C2F58A70050D7FB /* DoGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		849430A21C2F58A70050D7FB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		849430A41C2F58A70050D7FB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -173,6 +167,12 @@
 		849430D91C2F58ED0050D7FB /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		849430DB1C2F58FA0050D7FB /* Trip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trip.h; sourceTree = "<group>"; };
 		849430DC1C2F58FA0050D7FB /* Trip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trip.m; sourceTree = "<group>"; };
+		84F266641C48197F00E17B4B /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		84F266651C48197F00E17B4B /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		84F266671C48297D00E17B4B /* TripsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripsViewController.h; sourceTree = "<group>"; };
+		84F266681C48297D00E17B4B /* TripsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripsViewController.m; sourceTree = "<group>"; };
+		84F2666A1C4836D900E17B4B /* TripCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripCell.h; sourceTree = "<group>"; };
+		84F2666B1C4836D900E17B4B /* TripCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,23 +259,6 @@
 			name = Sql;
 			sourceTree = "<group>";
 		};
-		846F371A1C454FF60045909A /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				846F371E1C4553460045909A /* DogConsts.h */,
-				846F371F1C4553460045909A /* DogConsts.m */,
-				846F37281C455C1C0045909A /* WalkerConsts.h */,
-				846F37291C455C1C0045909A /* WalkerConsts.m */,
-				846F372B1C455C5D0045909A /* UserConsts.h */,
-				846F372C1C455C5D0045909A /* UserConsts.m */,
-				846F372E1C455C730045909A /* TripConsts.h */,
-				846F372F1C455C730045909A /* TripConsts.m */,
-				846F37311C455C990045909A /* RequestConsts.h */,
-				846F37321C455C990045909A /* RequestConsts.m */,
-			);
-			name = Common;
-			sourceTree = "<group>";
-		};
 		846F37241C4555360045909A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,6 +274,14 @@
 				846F375F1C46EDCE0045909A /* DogOwnerTabsViewController.m */,
 				84528F621C47161C009ECF2D /* ProfileDogWalkerViewController.h */,
 				84528F631C47161C009ECF2D /* ProfileDogWalkerViewController.m */,
+				84809A591C480F67006D9B3B /* ProfileDogOwnerViewController.h */,
+				84809A5A1C480F67006D9B3B /* ProfileDogOwnerViewController.m */,
+				84F266641C48197F00E17B4B /* ProfileViewController.h */,
+				84F266651C48197F00E17B4B /* ProfileViewController.m */,
+				84F266671C48297D00E17B4B /* TripsViewController.h */,
+				84F266681C48297D00E17B4B /* TripsViewController.m */,
+				84F2666A1C4836D900E17B4B /* TripCell.h */,
+				84F2666B1C4836D900E17B4B /* TripCell.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -397,9 +388,10 @@
 			isa = PBXGroup;
 			children = (
 				846F375A1C46CFF00045909A /* Classes */,
-				846F371A1C454FF60045909A /* Common */,
 				846F37161C41E2320045909A /* Sql */,
 				846F37151C41E2220045909A /* Parse */,
+				846F371E1C4553460045909A /* Consts.h */,
+				846F371F1C4553460045909A /* Consts.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -546,10 +538,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84809A5C1C481311006D9B3B /* ProfileDogOwnerViewController.m in Sources */,
 				846F37361C455F300045909A /* UserParse.m in Sources */,
 				846F37421C455F890045909A /* TripParse.m in Sources */,
-				846F372D1C455C5D0045909A /* UserConsts.m in Sources */,
 				849430DA1C2F58ED0050D7FB /* User.m in Sources */,
+				84F266691C48297D00E17B4B /* TripsViewController.m in Sources */,
 				846F373F1C455F750045909A /* RequestParse.m in Sources */,
 				849430A91C2F58A70050D7FB /* ViewController.m in Sources */,
 				846F37191C41E2530045909A /* ModelSql.m in Sources */,
@@ -560,17 +553,16 @@
 				84528F641C47161C009ECF2D /* ProfileDogWalkerViewController.m in Sources */,
 				846F37391C455F430045909A /* DogParse.m in Sources */,
 				846F36E81C3062C80045909A /* DogOwner.m in Sources */,
-				846F37301C455C730045909A /* TripConsts.m in Sources */,
 				849430DD1C2F58FA0050D7FB /* Trip.m in Sources */,
 				849430A61C2F58A70050D7FB /* AppDelegate.m in Sources */,
-				846F372A1C455C1C0045909A /* WalkerConsts.m in Sources */,
 				849430D71C2F58E00050D7FB /* Dog.m in Sources */,
+				84F266661C48197F00E17B4B /* ProfileViewController.m in Sources */,
 				846F36E51C30620D0045909A /* DogWalker.m in Sources */,
 				846F373C1C455F620045909A /* DogWalkerParse.m in Sources */,
-				846F37201C4553460045909A /* DogConsts.m in Sources */,
+				84F2666C1C4836D900E17B4B /* TripCell.m in Sources */,
+				846F37201C4553460045909A /* Consts.m in Sources */,
 				849430A31C2F58A70050D7FB /* main.m in Sources */,
 				846F37271C4555E20045909A /* RegisterViewController.m in Sources */,
-				846F37331C455C990045909A /* RequestConsts.m in Sources */,
 				846F36F81C33348C0045909A /* ModelParse.m in Sources */,
 				846F36F51C3334300045909A /* Model.m in Sources */,
 			);

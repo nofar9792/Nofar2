@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DogOwner.h"
 
 @interface Dog : NSObject
 

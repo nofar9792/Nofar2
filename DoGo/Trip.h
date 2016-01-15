@@ -13,16 +13,15 @@
 
 @interface Trip : NSObject
 
-@property long id;
+@property long tripId;
 @property long dogOwnerId;
 @property long dogWalkerId;
-@property DogOwner* owner;
-
-@property DogWalker* walker;
+@property DogOwner* dogOwner;
+@property DogWalker* dogWalker;
 @property NSDate* startOfWalking;
 @property NSDate* endOfWalking;
 @property bool isPaid;
 
 
--(id)init: (long)id owner:(DogOwner*)owner dog:(Dog*)dog walker:(DogWalker*)walker startOfWalking:(NSDate*)startOfWalking endOfWalking:(NSDate*)endOfWalking dateOfWalking:(NSDate*)dateOfWalking isPaid:(bool)isPaid;
+-(id)init:(long)tripId dogOwnerId:(long)dogOwnerId dogWalkerId:(long)dogWalkerId startOfWalking:(NSDate*)startOfWalking endOfWalking:(NSDate*)endOfWalking isPaid:(bool)isPaid;
 @end

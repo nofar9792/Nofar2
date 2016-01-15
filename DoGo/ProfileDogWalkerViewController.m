@@ -12,12 +12,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.firstNameTextBox.text = self.dogWalker.firstName;
-    self.lastNameTextBox.text = self.dogWalker.lastName;
-    self.phoneNumberTextBox.text = self.dogWalker.phoneNumber;
-    self.cityTextBox.text = self.dogWalker.city;
-    self.addressTextBox.text = self.dogWalker.address;
-//    self.ageTextBox.text = [NSString stringWithFormat:@"%li", self.dogWalker.age];
+//    self.firstNameTextBox.text = self.dogWalker.firstName;
+//    self.lastNameTextBox.text = self.dogWalker.lastName;
+//    self.phoneNumberTextBox.text = self.dogWalker.phoneNumber;
+//    self.cityTextBox.text = self.dogWalker.city;
+//    self.addressTextBox.text = self.dogWalker.address;
+
+    
+    //    self.ageTextBox.text = [NSString stringWithFormat:@"%li", self.dogWalker.age];
 //    self.priceForHourTextBox.text = [NSString stringWithFormat:@"%i",self.dogWalker.priceForHour];
 //    
 //    if(self.dogWalker.isComfortableOnMorning){

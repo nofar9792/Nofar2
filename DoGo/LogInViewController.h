@@ -10,7 +10,7 @@
 #import "Model.h"
 #import "DogWalker.h"
 #import "DogOwner.h"
-
+#import "Consts.h"
 
 @interface LogInViewController : UIViewController
 

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "DogWalker.h"
-#import "WalkerConsts.h"
+#import "Consts.h"
 #import <Parse/Parse.h>
 
 @interface DogWalkerParse : NSObject

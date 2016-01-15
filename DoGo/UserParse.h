@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "User.h"
-#import "UserConsts.h"
+#import "Consts.h"
 #import <Parse/Parse.h>
 
 @interface UserParse : NSObject

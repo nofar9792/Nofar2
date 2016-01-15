@@ -7,6 +7,7 @@
 //
 
 #import "DogWalker.h"
+#import "Consts.h"
 #import "Comment.h"
 
 @implementation DogWalker

@@ -8,7 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
+#import "Trip.h"
+#import "Consts.h"
 
 @interface TripParse : NSObject
+
++(long)startTrip:(long)dogOwnerId dogWalkerId:(long)dogWalkerId ;
++(void)endTrip:(long)tripId;
++(void)changeTripToPaid:(long)tripId;
++(NSArray*)getTripsDetailsByDogOwnerId:(long)dogOwnerId;
++(NSArray*)getTripsDetailsByDogWalkerId:(long)dogWalkerId;
 
 @end

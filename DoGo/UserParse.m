@@ -106,7 +106,7 @@ firstName lastName:(NSString*)lastName phoneNumber:(NSString*)phoneNumber addres
     PFQuery *query = [[PFUser query]orderByDescending:USER_ID];
     PFUser *user = [query getFirstObject];
     
-    if(user != nil){
+    if(user){
         return ([user[USER_ID] longLongValue] + 1);
     }
     

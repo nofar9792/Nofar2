@@ -11,24 +11,7 @@
 #import "ModelSql.h"
 #import "DogWalker.h"
 #import "DogOwner.h"
-
-//@protocol ModelProtocol <NSObject>
-//
-//-(void)addStudent:(Student*)st;
-//-(void)deleteStudent:(Student*)st;
-//-(Student*)getStudent:(NSString*)stId;
-//-(NSArray*)getStudents;
-//-(void)saveImage:(UIImage*)image withName:(NSString*)imageName;
-//-(UIImage*)getImage:(NSString*)imageName;
-
-//@end
-
-
-//@protocol GetStudentsListener <NSObject>
-//
-//-(void)done:(NSArray*)data;
-//
-//@end
+#import "Consts.h"
 
 
 @interface Model : NSObject
@@ -37,14 +20,28 @@
 
 +(Model*)instance;
 
+// User Methods
 -(User*)getUserById:(long)userId;
-
 -(User*)login:(NSString*)username password:(NSString*)password;
+-(void)logOut;
 
--(void)addDogWalker:(NSString*)username password:(NSString*)password firstName:(NSString*)firstName lastName:(NSString*)lastName phoneNumber:(NSString*)phoneNumber address:(NSString*)address city:(NSString*)city;
-//
-//-(void)getStudentsAsynch:(void(^)(NSArray*))blockListener;
-//-(void)getStudentImage:(Student*)st block:(void(^)(UIImage*))block;
-//-(void)saveStudentImage:(Student*)st image:(UIImage*)image block:(void(^)(NSError*))block;
+// Dog Walker Methods
+-(NSArray*)getAllDogWalkers;
+-(long)addDogWalker:(NSString*)username password:(NSString*)password firstName:(NSString*)firstName lastName:(NSString*)lastName phoneNumber:(NSString*)phoneNumber address:(NSString*)address city:(NSString*)city age:(long)age priceForHour:(int)
+priceForHour isComfortableOnMorning:(bool)isComfortableOnMorning isComfortableOnAfternoon:(bool)isComfortableOnAfternoon isComfortableOnEvening:(bool)isComfortableOnEvening;
+-(void)updateDogWalker:(DogWalker*)dogWalker;
+
+// Dog Owner Methods
+-(long)addDogOwner:(NSString*)username password:(NSString*)password firstName:(NSString*)firstName lastName:(NSString*)lastName phoneNumber:(NSString*)phoneNumber address:(NSString*)address city:(NSString*)city dog:(Dog*)dog;
+-(void)updateDogOwner:(DogOwner*)dogOwner;
+
+// Trip Methods
+-(NSArray*)getTripsByDogOwnerId:(long)dogOwnerId;
+-(NSArray*)getTripsByDogWalkerId:(long)dogWalkerId;
+-(long)startTrip:(long)dogOwnerId dogWalkerId:(long)dogWalkerId;
+-(void)endTrip:(long)tripId;
+-(void)payTrip:(long)tripId;
+
+
 @end
 

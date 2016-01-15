@@ -25,7 +25,6 @@
     PFQuery* query = [PFQuery queryWithClassName:REQUESTS_TABLE];
     [[query whereKey:DOG_WALKER_ID equalTo:[NSNumber numberWithLong:dogWalkerId]] whereKey:REQUEST_STATUS equalTo:[self convertToString:Accepted]];
     
-    [self convertToString:Accepted];
     NSMutableArray* ids = [[NSMutableArray alloc] init];
     
     NSArray* result = [query findObjects];
@@ -40,7 +39,6 @@
     PFQuery* query = [PFQuery queryWithClassName:REQUESTS_TABLE];
     [[query whereKey:DOG_OWNER_ID equalTo:[NSNumber numberWithLong:dogOwnerId]] whereKey:REQUEST_STATUS equalTo:[self convertToString:Accepted]];
     
-    [self convertToString:Accepted];
     NSMutableArray* ids = [[NSMutableArray alloc] init];
     
     NSArray* result = [query findObjects];
@@ -51,22 +49,9 @@
     return ids;
 }
 
-//+(NSArray*)getWalkersIdsConnectedToOwner:(long)dogOwnerId {
-//    PFQuery* query = [PFQuery queryWithClassName:REQUESTS_TABLE];
-//    [[query whereKey:DOG_OWNER_ID equalTo:[NSNumber numberWithLong:dogOwnerId]] whereKey:REQUEST_STATUS equalTo:[self convertToString:Accepted]];
-//    
-//    [self convertToString:Accepted];
-//    NSMutableArray* ids = [[NSMutableArray alloc] init];
-//    
-//    NSArray* result = [query findObjects];
-//    for (PFObject* parseObject in result) {
-//        [ids addObject:[NSNumber numberWithLong:[parseObject[DOG_OWNER_ID] longLongValue]]];
-//    }
-//    
-//    return ids;
-//}
+// todo: need to implement 4 functiins
 
-
+// todo: need to implement
 +(bool)updateRequest:(long)dogOwnerId dogWalkerId:(long)dogWalkerId requestStatus:(enum RequestStatus)requestStatus{
     //    PFQuery* query = [PFQuery queryWithClassName:DOGS_TABLE];
     //    [query whereKey:USER_ID equalTo:[NSNumber numberWithLong:userId]];

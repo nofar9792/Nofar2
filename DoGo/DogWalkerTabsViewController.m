@@ -7,7 +7,7 @@
 //
 
 #import "DogWalkerTabsViewController.h"
-#import "ProfileDogWalkerViewController.h"
+#import "ProfileViewController.h"
 #import "DogWalker.h"
 
 @implementation DogWalkerTabsViewController
@@ -17,9 +17,9 @@
     if([segue.identifier isEqualToString:@"profileDogWalkerSegue"]){
         DogWalkerTabSegue* msegue = (DogWalkerTabSegue*)segue;
         msegue.destinationViewContainer = self.containerView;
-        ProfileDogWalkerViewController* profile = (ProfileDogWalkerViewController*)msegue.destinationViewContainer;
+        ProfileViewController* profile = (ProfileViewController*)msegue.destinationViewContainer;
        
-        DogWalker* dogWalker = [[DogWalker alloc]init:1 userName:@"nofar" firstName:@"nofar" lastName:@"no" phoneNumber:@"0505" address:@"hi" city:@"tel"];
+//        DogWalker* dogWalker = [[DogWalker alloc]init:1 userName:@"nofar" firstName:@"nofar" lastName:@"no" phoneNumber:@"0505" address:@"hi" city:@"tel"];
         //[profile setDogWalker:dogWalker];
         //profile.dogWalker = dogWalker;
         //profile.tt = dogWalker.firstName;

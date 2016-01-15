@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "User.h"
 #import "Dog.h"
+#import "User.h"
+#import "Consts.h"
 
 @interface DogOwner : User
 
-//@property Dog* dog;
+@property Dog* dog;
 
 -(id)init:(long)id userName:(NSString*)userName firstName:(NSString*)firstName lastName:(NSString*)lastName phoneNumber:(NSString*)phoneNumber address:(NSString*)address city:(NSString*)city;
 

@@ -9,15 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
 #import "Dog.h"
-#import "DogOwner.h"
-#import "DogConsts.h"
+#import "Consts.h"
 #import "DogSize.h"
 
 @interface DogParse : NSObject
 
 +(bool)addToDogsTable:(long)userId dog:(Dog*)dog;
 
-+(Dog*)getDogByUserId:(long)userId ;
++(Dog*)getDogByUserId:(long)userId;
 
 +(bool)updateDog:(long)userId dog:(Dog*)dog;
 

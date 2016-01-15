@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Model.h"
 
 @interface RegisterViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *usernameTexBox;

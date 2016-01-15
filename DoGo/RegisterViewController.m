@@ -7,9 +7,6 @@
 //
 
 #import "RegisterViewController.h"
-#import "DogConsts.h"
-#import "Model.h"
-#import <Parse/Parse.h>
 
 @implementation RegisterViewController
 
