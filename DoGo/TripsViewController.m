@@ -19,7 +19,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    data = [[Model instance] getTripsByDogWalkerId:1];
+    if([self.user isKindOfClass:[DogWalker class]]){
+         data = [[Model instance] getTripsByDogWalkerId:self.user.userId];
+    }else{
+        data = [[Model instance] getTripsByDogOwnerId:self.user.userId];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,9 +46,17 @@
     
     Trip* trip = [data objectAtIndex:indexPath.row];
     
-    cell.dogNameLabel.text = trip.dogOwner.dog.name;
-    cell.dogOwnerNameLabel.text = trip.dogOwner.firstName;
-    cell.dogWalkerNameLabel.text = trip.dogWalker.firstName;
+    if([self.user isKindOfClass:[DogWalker class]]){
+        
+        cell.dogNameLabel.text = trip.dogOwner.dog.name;
+        cell.dogOwnerNameLabel.text = trip.dogOwner.firstName;
+        cell.dogWalkerNameLabel.text = self.user.firstName;
+    }else{
+        cell.dogNameLabel.text = ((DogOwner*)self.user).dog.name;
+        cell.dogOwnerNameLabel.text = self.user.firstName;
+        cell.dogWalkerNameLabel.text = trip.dogWalker.firstName;
+    }
+   
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"dd/MM/yyyy"];
     

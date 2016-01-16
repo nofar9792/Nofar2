@@ -13,5 +13,6 @@
 
 @interface TripsViewController : UITableViewController
 
+@property (nonatomic) User *user;
 
 @end
