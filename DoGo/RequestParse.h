@@ -17,6 +17,8 @@
 +(bool)addToRequestsTable:(long)dogOwnerId dogWalkerId:(long)dogWalkerId requestStatus:(enum RequestStatus)requestStatus;
 +(NSArray*)getOwnersIdsConnectedToWalker:(long)dogWalkerId ;
 +(NSArray*)getWalkersIdsConnectedToOwner:(long)dogOwnerId ;
++(NSArray*)getRequestForDogWalker:(long)dogWalkerId;
++(NSArray*)getRequestOfDogOwner:(long)dogOwnerId;
 +(bool)updateRequest:(long)dogOwnerId dogWalkerId:(long)dogWalkerId requestStatus:(enum RequestStatus)requestStatus;
 
 

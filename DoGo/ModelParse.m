@@ -141,6 +141,52 @@ priceForHour isComfortableOnMorning:(bool)isComfortableOnMorning isComfortableOn
 
 // Request Methods
 
+-(bool)addRequest:(long)dogOwnerId dogWalkerId:(long)dogWalkerId requestStatus:(enum RequestStatus)requestStatus{
+    return [RequestParse addToRequestsTable:dogOwnerId dogWalkerId:dogWalkerId requestStatus:requestStatus];
+}
+
+-(bool)acceptRequest:(long)dogOwnerId dogWalkerId:(long)dogWalkerId{
+    return [RequestParse updateRequest:dogOwnerId dogWalkerId:dogWalkerId requestStatus:Accepted];
+}
+
+-(bool)declineRequest:(long)dogOwnerId dogWalkerId:(long)dogWalkerId{
+    return [RequestParse updateRequest:dogOwnerId dogWalkerId:dogWalkerId requestStatus:Declined];
+}
+
+
+-(NSArray*)getOwnersConnectToWalker:(long)dogWalkerId {
+    NSArray* ids = [RequestParse getOwnersIdsConnectedToWalker:dogWalkerId];
+    NSMutableArray* dogOwners = [[NSMutableArray alloc]init];
+    for (int i = 0; i < ids.count; i++) {
+        [dogOwners addObject:[self getUserById:ids[i]]];
+    }
+    
+    return dogOwners;
+}
+
+
+// waiting requests for dog walker
+-(NSArray*)getRequestForDogWalker:(long)dogWalkerId {
+    NSArray* ids = [RequestParse getRequestForDogWalker:dogWalkerId];
+    NSMutableArray* dogOwners = [[NSMutableArray alloc]init];
+    for (int i = 0; i < ids.count; i++) {
+        [dogOwners addObject:[self getUserById:ids[i]]];
+    }
+    
+    return dogOwners;
+}
+
+// waiting requests of dog owner
+-(NSArray*)getRequestOfDogOwner:(long)dogOwnerId {
+    NSArray* ids = [RequestParse getRequestOfDogOwner:dogOwnerId];
+    NSMutableArray* dogWalkers = [[NSMutableArray alloc]init];
+    for (int i = 0; i < ids.count; i++) {
+        [dogWalkers addObject:[self getUserById:ids[i]]];
+    }
+    
+    return dogWalkers;
+}
+
 // Image Methods
 
 -(void)saveImage:(UIImage*)image imageName:(NSString*)imageName{

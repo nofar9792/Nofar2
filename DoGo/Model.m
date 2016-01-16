@@ -94,6 +94,29 @@ priceForHour isComfortableOnMorning:(bool)isComfortableOnMorning isComfortableOn
 }
 
 // Request Methods
+-(bool)addRequest:(long)dogOwnerId dogWalkerId:(long)dogWalkerId requestStatus:(enum RequestStatus)requestStatus{
+    return [self.modelParse addRequest:dogOwnerId dogWalkerId:dogWalkerId requestStatus:requestStatus];
+}
+
+-(bool)acceptRequest:(long)dogOwnerId dogWalkerId:(long)dogWalkerId{
+    return [self.modelParse acceptRequest:dogOwnerId dogWalkerId:dogWalkerId];
+}
+
+-(bool)declineRequest:(long)dogOwnerId dogWalkerId:(long)dogWalkerId{
+    return [self.modelParse declineRequest:dogOwnerId dogWalkerId:dogWalkerId];
+}
+
+-(NSArray*)getOwnersConnectToWalker:(long)dogWalkerId{
+    return [self.modelParse getOwnersConnectToWalker:dogWalkerId];
+}
+
+-(NSArray*)getRequestForDogWalker:(long)dogWalkerId{
+    return [self.modelParse getRequestForDogWalker:dogWalkerId];
+}
+
+-(NSArray*)getRequestOfDogOwner:(long)dogOwnerId{
+    return [self.modelParse getRequestOfDogOwner:dogOwnerId];
+}
 
 // Image Methods
 

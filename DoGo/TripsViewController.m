@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.errorLabel.text = @"";
     [self loadData];
 }
 
@@ -91,6 +91,9 @@
         }
         
         dispatch_async(dispatch_get_main_queue(), ^{
+            if(data.count == 0){
+                self.errorLabel.text = @"אין תוצאות להצגה";
+            }
             [self.tableView reloadData];
             [self.spinner stopAnimating];
         });
