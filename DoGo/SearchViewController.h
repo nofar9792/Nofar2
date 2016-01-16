@@ -23,5 +23,6 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 - (IBAction)searchClick:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *errorLabel;
 
 @end
