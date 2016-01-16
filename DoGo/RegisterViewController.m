@@ -56,42 +56,6 @@
         
         [self.userTypeSubView addSubview:profileDogOwnerVC.view];
     }
-    
-    
-    
-//    [[Model instance] addDogWalker:@"ios" password:@"1212" firstName:@"ad" lastName:@"matai" phoneNumber:@"aa" address:@"kaplan 2" city:@"tel aviv"];
-    
-    self.usernameTexBox.text = self.usernameValue;
-//    self.lastNameLabel.text = self.lastNameValue;
-//    self.idLabel.text = self.idValue;
-//    self.phoneLabel.text = self.phoneValue;
-    
-    
-    void(^myBlock)(PFObject * _Nullable, NSError * _Nullable) = ^(PFObject * _Nullable object, NSError * _Nullable error){
-        //self.usernameTexBox.text = object[@"firstName"];
-        //self.usernameLabel.text = object[@"firstName"];
-    };
-    
-    void(^myBlock2)(User*) = ^(User* user){
-        //self.usernameTexBox.text = user.firstName;
-        //self.usernameLabel.text = user.lastName;
-    };
-    
-    dispatch_queue_t myQueue = dispatch_queue_create("myQueueName", NULL);
-    
-    dispatch_async(myQueue, ^{
-        //long operation
-        //NSArray* data = [modelImpl getStudents];
-        User* user = [[Model instance] getUserById:1];
-        
-        //end of long operation - update display in the main Q
-        dispatch_queue_t mainQ = dispatch_get_main_queue();
-        dispatch_async(mainQ, ^{
-            myBlock2(user);
-        });
-    } );
-    
-    //[[Model instance] getUserById:1 block:myBlock];
 }
 
 - (IBAction)signUpClick:(id)sender
@@ -138,9 +102,7 @@
         }
     };
     
-    dispatch_queue_t myQueue = dispatch_queue_create("myQueueName", NULL);
-    
-    dispatch_async(myQueue, ^{
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
         long result ;
         if (self.isOwner)
         {
@@ -151,14 +113,10 @@
             result = [[Model instance] addDogWalker:self.user.userName password:self.passwordTextBox.text  firstName:self.user.firstName lastName:self.user.lastName phoneNumber:self.user.phoneNumber address:self.user.address city:self.user.city age:((DogWalker*)self.user).age priceForHour:((DogWalker*)self.user).priceForHour isComfortableOnMorning:((DogWalker*)self.user).isComfortableOnMorning isComfortableOnAfternoon:((DogWalker*)self.user).isComfortableOnAfternoon isComfortableOnEvening:((DogWalker*)self.user).isComfortableOnEvening];
         }
         
-        
-        
-        dispatch_queue_t mainQ = dispatch_get_main_queue();
-        dispatch_async(mainQ, ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
             afterSignUp(result);
         });
-        
-    } );
+    });
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

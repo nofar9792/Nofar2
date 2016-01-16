@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Model.h"
+#import "Trip.h"
 
 @interface TripCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *dogNameLabel;
@@ -16,7 +18,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *beginTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *endTimeLabel;
 @property (weak, nonatomic) IBOutlet UIButton *isPaidCheckBox;
-- (IBAction)changeIsPaid:(id)sender;
+- (IBAction)changeToPaid:(id)sender;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
+@property (nonatomic) Trip* trip;
 
 @end
