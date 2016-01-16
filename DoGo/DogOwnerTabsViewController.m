@@ -10,6 +10,11 @@
 
 @implementation DogOwnerTabsViewController
 
+-(void)viewDidLoad{
+    [self performSegueWithIdentifier:@"searchSegue" sender:self];
+}
+
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"profileDogOwnerSegue"]){
         DogOwnerTabSegue* msegue = (DogOwnerTabSegue*)segue;
