@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F7607781C4AF67000E7171F /* DogWalkerDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F7607771C4AF67000E7171F /* DogWalkerDetailsViewController.m */; };
 		0FC6248B1C4A968B00441D22 /* DogWalkerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC6248A1C4A968B00441D22 /* DogWalkerCell.m */; };
 		8422BA531C4AEFD7001A381C /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8422BA521C4AEFD7001A381C /* SearchViewController.m */; };
 		8422BA561C4AEFFD001A381C /* ImageParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 8422BA551C4AEFFD001A381C /* ImageParse.m */; };
@@ -86,6 +87,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F7607761C4AF67000E7171F /* DogWalkerDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DogWalkerDetailsViewController.h; sourceTree = "<group>"; };
+		0F7607771C4AF67000E7171F /* DogWalkerDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DogWalkerDetailsViewController.m; sourceTree = "<group>"; };
 		0FC624891C4A968B00441D22 /* DogWalkerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DogWalkerCell.h; sourceTree = "<group>"; };
 		0FC6248A1C4A968B00441D22 /* DogWalkerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DogWalkerCell.m; sourceTree = "<group>"; };
 		8422BA511C4AEFBE001A381C /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
@@ -294,6 +297,8 @@
 				84F2666B1C4836D900E17B4B /* TripCell.m */,
 				0FC624891C4A968B00441D22 /* DogWalkerCell.h */,
 				0FC6248A1C4A968B00441D22 /* DogWalkerCell.m */,
+				0F7607761C4AF67000E7171F /* DogWalkerDetailsViewController.h */,
+				0F7607771C4AF67000E7171F /* DogWalkerDetailsViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -562,6 +567,7 @@
 				846F37191C41E2530045909A /* ModelSql.m in Sources */,
 				846F37601C46EDCE0045909A /* DogOwnerTabsViewController.m in Sources */,
 				846F375D1C46ED8D0045909A /* DogWalkerTabsViewController.m in Sources */,
+				0F7607781C4AF67000E7171F /* DogWalkerDetailsViewController.m in Sources */,
 				846F36EB1C3068D60045909A /* Comment.m in Sources */,
 				846F37591C46AC4B0045909A /* LogInViewController.m in Sources */,
 				84528F641C47161C009ECF2D /* ProfileDogWalkerViewController.m in Sources */,
