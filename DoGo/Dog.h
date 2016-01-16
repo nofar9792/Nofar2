@@ -11,12 +11,9 @@
 @interface Dog : NSObject
 
 @property NSString* name;
-//@property enum DogSize size;
 @property long age;
 @property NSString* picRef;
 
-
-//-(id)init:(NSString*)name size:(enum DogSize)size age:(long)age picRef:(NSString*)picRef;
 
 -(id)init:(NSString*)name age:(long)age picRef:(NSString*)picRef;
 

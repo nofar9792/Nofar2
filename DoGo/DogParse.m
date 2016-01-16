@@ -15,7 +15,6 @@
     parseObject[USER_ID] = [NSNumber numberWithLong:userId];
     parseObject[NAME] = dog.name;
     parseObject[AGE] = [NSNumber numberWithLongLong:dog.age];
-    //parseObject[SIZE] = [self convertToString:dog.size];
     parseObject[PIC_REF] = dog.picRef;
     
     return [parseObject save];
@@ -28,8 +27,6 @@
     Dog* dog = nil;
     PFObject* parseObject = [query getFirstObject];
     if (parseObject) {
-        // enum problem
-      //  dog = [[Dog alloc]init:parseObject[NAME] size:Small age:[parseObject[AGE] longLongValue]  picRef:parseObject[PIC_REF]];
         
         dog = [[Dog alloc]init:parseObject[NAME] age:[parseObject[AGE] longLongValue]  picRef:parseObject[PIC_REF]];
     }
@@ -43,6 +40,7 @@
     
     PFObject* parseObject = [query getFirstObject];
     if (parseObject) {
+        parseObject[NAME] = dog.name;
         parseObject[AGE] = [NSNumber numberWithLong:dog.age];
         parseObject[PIC_REF] = dog.picRef;
        
@@ -52,28 +50,6 @@
     
     return NO;
 }
-//
-//+(NSString*)convertToString:(enum DogSize)dogSize{
-//    NSString* result = nil;
-//    
-//    switch (dogSize) {
-//        case Small:
-//            result = @"Small";
-//            break;
-//        case Medium:
-//            result = @"Medium";
-//            break;
-//        case Large:
-//            result = @"Large";
-//            break;
-//    }
-//    return result;
-//}
-//
-//+(enum DogSize)dogSizeFromString:(NSString*)str{
-//    NSDictionary<NSString*,NSNumber*>* dogSizes = @{ @"Small":@(Small), @"Medium":@(Medium), @"Large":@(Large) };
-//    
-//    return dogSizes[str];
-//}
+
 
 @end

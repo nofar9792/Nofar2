@@ -34,7 +34,6 @@ extern NSString *const IS_COMFORTABLE_ON_EVENING;
 extern NSString *const DOGS_TABLE;
 //extern NSString *const USER_ID;
 extern NSString *const NAME;
-extern NSString *const SIZE;
 //extern NSString *const AGE;
 extern NSString *const PIC_REF;
 

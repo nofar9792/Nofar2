@@ -73,7 +73,10 @@
         DogOwner* dogOwner = (DogOwner*) self.user;
         
         dogOwner.dog.name = profileDogOwnerVC.dogNameTextBox.text;
+        
+        // get dog size
         dogOwner.dog.age = [profileDogOwnerVC.dogAgeTextBox.text longLongValue];
+        // get dog image
     }
     
     void(^afterSave)(bool) = ^(bool result){
