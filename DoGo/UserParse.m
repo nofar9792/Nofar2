@@ -67,7 +67,7 @@ firstName lastName:(NSString*)lastName phoneNumber:(NSString*)phoneNumber addres
 }
 
 +(User*)getUserById:(long)userId{
-    PFQuery* query = [[PFUser query] whereKey:USER_ID equalTo:[NSNumber numberWithLong:1]];
+    PFQuery* query = [[PFUser query] whereKey:USER_ID equalTo:[NSNumber numberWithLong:userId]];
     
     PFUser *parseUser = [query getFirstObject];
     

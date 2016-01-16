@@ -47,7 +47,12 @@
 }
 
 -(User*)getUserById:(long)userId{
-    return [UserParse getUserById:userId];
+    User* user = [UserParse getUserById:userId];
+    
+    if(user){
+        [self addDetailsByInstance:user];
+    }
+    return user;
 }
 
 -(bool)updateUser:(User*)user{

@@ -26,6 +26,10 @@
     else if([segue.identifier isEqualToString:@"tripsReportDogWalkerSegue"]){
         DogWalkerTabSegue* msegue = (DogWalkerTabSegue*)segue;
         msegue.destinationViewContainer = self.containerView;
+        
+        TripsViewController* tripVC = msegue.destinationViewController;
+        
+        tripVC.user = self.dogWalker;
     }else if([segue.identifier isEqualToString:@"dogListSegue"]){
         DogWalkerTabSegue* msegue = (DogWalkerTabSegue*)segue;
         msegue.destinationViewContainer = self.containerView;
@@ -46,7 +50,7 @@
     CGRect frame = parent.containerView.frame;
     frame.origin.x = 0;
     frame.origin.y = 0;
-    child.view.frame = parent.containerView.frame;
+    child.view.frame = frame;
     
     [parent.containerView addSubview:child.view];
     [child didMoveToParentViewController:parent];

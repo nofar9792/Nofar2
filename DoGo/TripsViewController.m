@@ -19,12 +19,35 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    if([self.user isKindOfClass:[DogWalker class]]){
-         data = [[Model instance] getTripsByDogWalkerId:self.user.userId];
-    }else{
-        data = [[Model instance] getTripsByDogOwnerId:self.user.userId];
-    }
+//    void(^afterLogin)(void) = ^(void){
+//        if(self.user){
+//            if([self.user isKindOfClass:[DogWalker class]]){
+//                [self performSegueWithIdentifier:@"toDogWalkerScreen" sender:self];
+//            }
+//            else{
+//                [self performSegueWithIdentifier:@"toDogOwnerScreen" sender:self];
+//            }
+//        }else{
+//            self.errorTextBox.text = @"שם משתמש או סיסמא אינם נכונים";
+//        }
+//    };
     
+    dispatch_queue_t myQueue = dispatch_queue_create("myQueueName", NULL);
+    
+    dispatch_async(myQueue, ^{
+        if([self.user isKindOfClass:[DogWalker class]]){
+            
+            data = [[Model instance] getTripsByDogWalkerId:self.user.userId];
+        }else{
+            data = [[Model instance] getTripsByDogOwnerId:self.user.userId];
+        }
+        
+        dispatch_queue_t mainQ = dispatch_get_main_queue();
+        dispatch_async(mainQ, ^{
+            //afterLogin();
+        });
+        
+    } );
 }
 
 - (void)didReceiveMemoryWarning {

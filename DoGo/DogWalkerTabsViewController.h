@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ProfileViewController.h"
 #import "DogWalker.h"
+#import "TripsViewController.h"
 
 @interface DogWalkerTabsViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIView *containerView;

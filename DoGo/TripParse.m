@@ -55,8 +55,8 @@
     NSArray* result = [query findObjects];
     
     for (PFObject* parseObject in result) {
-        long tripId = (long)[NSNumber numberWithLong:[parseObject[TRIP_ID] longLongValue]];
-        long dogWalkerId = (long)[NSNumber numberWithLong:[parseObject[DOG_WALKER_ID] longLongValue]];
+        long tripId = [parseObject[TRIP_ID] longLongValue];
+        long dogWalkerId = [parseObject[DOG_WALKER_ID] longLongValue];
 
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         //[dateFormatter setDateFormat:@"dd-MM-yyyy"];
@@ -81,14 +81,14 @@
     NSArray* result = [query findObjects];
     
     for (PFObject* parseObject in result) {
-        long tripId = (long)[NSNumber numberWithLong:[parseObject[TRIP_ID] longLongValue]];
-        long dogOwnerId = (long)[NSNumber numberWithLong:[parseObject[DOG_OWNER_ID] longLongValue]];
+        long tripId = [parseObject[TRIP_ID] longLongValue];
+        long dogOwnerId = [parseObject[DOG_OWNER_ID] longLongValue];
+//        
+//        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+//        [dateFormatter setDateFormat:@"dd-MM-yyyy"];
         
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        //[dateFormatter setDateFormat:@"dd-MM-yyyy"];
-        
-        NSDate* startOfWalking = [dateFormatter dateFromString:parseObject[START_OF_WALKING]];
-        NSDate* endOfWalking = [dateFormatter dateFromString:parseObject[END_OF_WALKING]];
+        NSDate* startOfWalking = parseObject[START_OF_WALKING];
+        NSDate* endOfWalking = parseObject[END_OF_WALKING];
         bool isPaid = [parseObject[IS_PAID] intValue] == 1;
         
         Trip* trip = [[Trip alloc]init:tripId dogOwnerId:dogOwnerId dogWalkerId:dogWalkerId startOfWalking:startOfWalking endOfWalking:endOfWalking isPaid:isPaid];
@@ -96,7 +96,6 @@
     }
     
     return trips;
-    
 }
 
 
