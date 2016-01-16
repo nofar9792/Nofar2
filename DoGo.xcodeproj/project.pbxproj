@@ -287,8 +287,6 @@
 				84F2666B1C4836D900E17B4B /* TripCell.m */,
 				0FC624891C4A968B00441D22 /* DogWalkerCell.h */,
 				0FC6248A1C4A968B00441D22 /* DogWalkerCell.m */,
-				0FC6248C1C4AA10000441D22 /* SearchViewController.h */,
-				0FC6248D1C4AA10000441D22 /* SearchViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";

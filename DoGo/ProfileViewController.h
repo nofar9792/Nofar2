@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *cityTextBox;
 @property (weak, nonatomic) IBOutlet UITextField *addressTextBox;
 @property (weak, nonatomic) IBOutlet UIView *userTypeDetailsView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 - (IBAction)saveClick:(id)sender;
 
 @property (nonatomic) User *user;

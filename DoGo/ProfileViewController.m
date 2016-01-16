@@ -67,6 +67,10 @@
         
         dogWalker.age = [profileDogWalkerVC.ageTextBox.text longLongValue];
         dogWalker.priceForHour = [profileDogWalkerVC.priceForHourTextBox.text intValue];
+        dogWalker.isComfortableOnMorning = profileDogWalkerVC.isComfortableOnMorning;
+        dogWalker.isComfortableOnAfternoon = profileDogWalkerVC.isComfortableOnAfternoon;
+        dogWalker.isComfortableOnEvening = profileDogWalkerVC.isComfortableOnEvening;
+        
         
     }else{
         ProfileDogOwnerViewController* profileDogOwnerVC = (ProfileDogOwnerViewController*)self.childVC;
@@ -79,27 +83,26 @@
         // get dog image
     }
     
+    
     void(^afterSave)(bool) = ^(bool result){
         if(result){
             [self.view makeToast:@"שמירה בוצעה בהצלחה"];
         }else{
             [self.view makeToast:@"אירעה שגיאה בעת השמירה. נסה שנית"];
-
+            
         }
     };
     
-    dispatch_queue_t myQueue = dispatch_queue_create("myQueueName", NULL);
+    [self.spinner startAnimating];
     
-    dispatch_async(myQueue, ^{
-       bool result = [[Model instance]updateUser:self.user];
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        bool result = [[Model instance]updateUser:self.user];
         
-        
-        dispatch_queue_t mainQ = dispatch_get_main_queue();
-        dispatch_async(mainQ, ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
             afterSave(result);
+            [self.spinner stopAnimating];
         });
-        
-    } );
+    });
 }
 
 -(void)fillTextBoxWithUserProperties{

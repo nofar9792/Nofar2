@@ -12,7 +12,7 @@
 #import "DogOwner.h"
 #import "DogWalkerTabsViewController.h"
 #import "DogOwnerTabsViewController.h"
-// dsofpsdkp
+
 @interface LogInViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextBox;
@@ -20,8 +20,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *errorTextBox;
 @property (nonatomic) User* user;
 - (IBAction)logInClick:(id)sender;
-
-// carmel check if merge
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 @end
- 
