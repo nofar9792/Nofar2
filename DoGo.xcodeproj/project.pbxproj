@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0FC6248B1C4A968B00441D22 /* DogWalkerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC6248A1C4A968B00441D22 /* DogWalkerCell.m */; };
 		8439FD8B1C4980C000EED0FF /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 8439FD8A1C4980C000EED0FF /* UIView+Toast.m */; };
 		84528F641C47161C009ECF2D /* ProfileDogWalkerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84528F631C47161C009ECF2D /* ProfileDogWalkerViewController.m */; };
 		846F36E51C30620D0045909A /* DogWalker.m in Sources */ = {isa = PBXBuildFile; fileRef = 846F36E41C30620D0045909A /* DogWalker.m */; };
@@ -83,6 +84,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0FC624891C4A968B00441D22 /* DogWalkerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DogWalkerCell.h; sourceTree = "<group>"; };
+		0FC6248A1C4A968B00441D22 /* DogWalkerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DogWalkerCell.m; sourceTree = "<group>"; };
 		8439FD891C4980C000EED0FF /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
 		8439FD8A1C4980C000EED0FF /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
 		84528F621C47161C009ECF2D /* ProfileDogWalkerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileDogWalkerViewController.h; sourceTree = "<group>"; };
@@ -280,6 +283,8 @@
 				84F266681C48297D00E17B4B /* TripsViewController.m */,
 				84F2666A1C4836D900E17B4B /* TripCell.h */,
 				84F2666B1C4836D900E17B4B /* TripCell.m */,
+				0FC624891C4A968B00441D22 /* DogWalkerCell.h */,
+				0FC6248A1C4A968B00441D22 /* DogWalkerCell.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -564,6 +569,7 @@
 				849430A31C2F58A70050D7FB /* main.m in Sources */,
 				846F37271C4555E20045909A /* RegisterViewController.m in Sources */,
 				846F36F81C33348C0045909A /* ModelParse.m in Sources */,
+				0FC6248B1C4A968B00441D22 /* DogWalkerCell.m in Sources */,
 				846F36F51C3334300045909A /* Model.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
