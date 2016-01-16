@@ -52,7 +52,7 @@
         
         [self.userTypeDetailsView addSubview:profileDogOwnerVC.view];
     }
-}
+}   
 
 - (IBAction)saveClick:(id)sender {
     self.user.firstName = self.firstNameTextBox.text;
