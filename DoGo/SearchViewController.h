@@ -8,14 +8,18 @@
 
 #import <UIKit/UIKit.h>
 # import "DogWalkerCell.h"
+# import "Model.h"
 
 @interface SearchViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITextField *minimalAgeTextBox;
 @property (weak, nonatomic) IBOutlet UITextField *maxPriceTextBox;
 @property (weak, nonatomic) IBOutlet UITextField *cityTextBox;
-@property (weak, nonatomic) IBOutlet UITableView *walkersListTableView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (nonatomic) NSArray *walkersListArray;
+@property (nonatomic) long walkerMinimalAge;
+@property (nonatomic) NSInteger walkerMaxPrice;
+@property (nonatomic) NSString *walkerCity;
 
 - (IBAction)searchClick:(id)sender;
 
