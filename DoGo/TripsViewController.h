@@ -13,6 +13,7 @@
 
 @interface TripsViewController : UITableViewController
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
+@property (weak, nonatomic) IBOutlet UILabel *errorLabel;
 
 @property (nonatomic) User *user;
 

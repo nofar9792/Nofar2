@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.errorLabel.text = @"";
     
 }
 
@@ -59,11 +60,12 @@
 */
 - (IBAction)searchClick:(id)sender
 {
-    
+    self.errorLabel.text = @"";
     self.walkerMinimalAge = [self.minimalAgeTextBox.text intValue];
     self.walkerMaxPrice = [self.maxPriceTextBox.text longLongValue];
     self.walkerCity = self.cityTextBox.text;
     
+    [self.spinner startAnimating];
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         NSArray* allDogWalkers;
         NSMutableArray *relevantDogWalkers = [[NSMutableArray alloc] init];
@@ -81,8 +83,11 @@
         self.walkersListArray = relevantDogWalkers;
         
         dispatch_async(dispatch_get_main_queue(), ^{
+            if(self.walkersListArray.count == 0){
+                self.errorLabel.text = @"אין תוצאות להצגה";
+            }
             [self.tableView reloadData];
-            // [self.spinner stopAnimating];
+            [self.spinner stopAnimating];
         });
     });
 }

@@ -42,6 +42,12 @@ priceForHour isComfortableOnMorning:(bool)isComfortableOnMorning isComfortableOn
 -(void)payTrip:(long)tripId;
 
 // Request Methods
+-(bool)addRequest:(long)dogOwnerId dogWalkerId:(long)dogWalkerId requestStatus:(enum RequestStatus)requestStatus;
+-(bool)acceptRequest:(long)dogOwnerId dogWalkerId:(long)dogWalkerId;
+-(bool)declineRequest:(long)dogOwnerId dogWalkerId:(long)dogWalkerId;
+-(NSArray*)getOwnersConnectToWalker:(long)dogWalkerId;
+-(NSArray*)getRequestForDogWalker:(long)dogWalkerId;
+-(NSArray*)getRequestOfDogOwner:(long)dogOwnerId;
 
 // Image Methods
 

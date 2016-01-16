@@ -49,21 +49,44 @@
     return ids;
 }
 
-// todo: need to implement 4 functiins
++(NSArray*)getRequestForDogWalker:(long)dogWalkerId {
+    PFQuery* query = [PFQuery queryWithClassName:REQUESTS_TABLE];
+    [[query whereKey:DOG_WALKER_ID equalTo:[NSNumber numberWithLong:dogWalkerId]] whereKey:REQUEST_STATUS equalTo:[self convertToString:Waiting]];
+    
+    NSMutableArray* ids = [[NSMutableArray alloc] init];
+    
+    NSArray* result = [query findObjects];
+    for (PFObject* parseObject in result) {
+        [ids addObject:[NSNumber numberWithLong:[parseObject[DOG_OWNER_ID] longLongValue]]];
+    }
+    
+    return ids;
+}
 
-// todo: need to implement
++(NSArray*)getRequestOfDogOwner:(long)dogOwnerId {
+    PFQuery* query = [PFQuery queryWithClassName:REQUESTS_TABLE];
+    [[query whereKey:DOG_OWNER_ID equalTo:[NSNumber numberWithLong:dogOwnerId]] whereKey:REQUEST_STATUS equalTo:[self convertToString:Waiting]];
+    
+    NSMutableArray* ids = [[NSMutableArray alloc] init];
+    
+    NSArray* result = [query findObjects];
+    for (PFObject* parseObject in result) {
+        [ids addObject:[NSNumber numberWithLong:[parseObject[DOG_OWNER_ID] longLongValue]]];
+    }
+    
+    return ids;
+}
+
 +(bool)updateRequest:(long)dogOwnerId dogWalkerId:(long)dogWalkerId requestStatus:(enum RequestStatus)requestStatus{
-    //    PFQuery* query = [PFQuery queryWithClassName:DOGS_TABLE];
-    //    [query whereKey:USER_ID equalTo:[NSNumber numberWithLong:userId]];
-    //
-    //    PFObject* parseObject = [query getFirstObject];
-    //    if (parseObject) {
-    //        parseObject[AGE] = [NSNumber numberWithLong:dog.age];
-    //        parseObject[PIC_REF] = dog.picRef;
-    //
-    //        return [parseObject save];
-    //
-    //    }
+    PFQuery* query = [PFQuery queryWithClassName:REQUESTS_TABLE];
+    [[query whereKey:DOG_OWNER_ID equalTo:[NSNumber numberWithLong:dogWalkerId]] whereKey:DOG_WALKER_ID equalTo:[NSNumber numberWithLong:dogWalkerId]];
+    
+    PFObject* parseObject = [query getFirstObject];
+        if (parseObject) {
+            parseObject[REQUEST_STATUS] = [self convertToString:requestStatus];
+            return [parseObject save];
+    
+        }
     
     return NO;
 }

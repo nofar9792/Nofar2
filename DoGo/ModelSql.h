@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <sqlite3.h>
 
-@interface ModelSql : NSObject
+@interface ModelSql : NSObject{
+    sqlite3* database;
+}
 
 @end
