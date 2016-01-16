@@ -19,18 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    void(^afterLogin)(void) = ^(void){
-//        if(self.user){
-//            if([self.user isKindOfClass:[DogWalker class]]){
-//                [self performSegueWithIdentifier:@"toDogWalkerScreen" sender:self];
-//            }
-//            else{
-//                [self performSegueWithIdentifier:@"toDogOwnerScreen" sender:self];
-//            }
-//        }else{
-//            self.errorTextBox.text = @"שם משתמש או סיסמא אינם נכונים";
-//        }
-//    };
+    void(^afterLogin)(void) = ^(void){
+        [self.tableView reloadData];
+    };
     
     dispatch_queue_t myQueue = dispatch_queue_create("myQueueName", NULL);
     
@@ -44,7 +35,7 @@
         
         dispatch_queue_t mainQ = dispatch_get_main_queue();
         dispatch_async(mainQ, ^{
-            //afterLogin();
+            afterLogin();
         });
         
     } );
