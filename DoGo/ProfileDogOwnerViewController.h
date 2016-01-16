@@ -8,14 +8,22 @@
 
 #import <UIKit/UIKit.h>
 #import "DogOwner.h"
+#import "Model.h"
+#import <AssetsLibrary/AssetsLibrary.h>
+#import "UIView+Toast.h"
+@import Photos;
+
 
 @interface ProfileDogOwnerViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UITextField *dogNameTextBox;
-@property (weak, nonatomic) IBOutlet UIButton *dogSizeLargeCheckBox;
-@property (weak, nonatomic) IBOutlet UIButton *dogSizeMediumCheckBox;
-@property (weak, nonatomic) IBOutlet UIButton *dogSizeSmallCheckBox;
 @property (weak, nonatomic) IBOutlet UITextField *dogAgeTextBox;
 @property (weak, nonatomic) IBOutlet UIImageView *dogImageView;
+- (IBAction)getImageButtonClick:(id)sender;
 
 @property (nonatomic) DogOwner *dogOwner;
+@property (nonatomic) UIImage *dogPic;
+@property (nonatomic) UIImagePickerController *pickerLibrary;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
+
 @end

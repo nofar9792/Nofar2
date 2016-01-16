@@ -445,7 +445,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wWS-0w-tIr">
-                                <rect key="frame" x="134" y="474" width="53" height="36"/>
+                                <rect key="frame" x="134" y="472" width="53" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="שמור"/>
@@ -712,10 +712,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="afternoonCheckBox" image="empty.png"/>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="hns-hw-vgU">
-                                <rect key="frame" x="41" y="147" width="90" height="78"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="גודל הכלב:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hOu-Pg-4Ot">
                                 <rect key="frame" x="192" y="45" width="99" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -729,6 +725,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="hns-hw-vgU">
+                                <rect key="frame" x="38" y="147" width="90" height="78"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.99502840910000001" green="0.91022780079999999" blue="0.75492210479999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -857,7 +857,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" id="zvK-Oz-PzD">
-                                <rect key="frame" x="40" y="109" width="97" height="30"/>
+                                <rect key="frame" x="40" y="53" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -870,66 +870,36 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="גיל הכלב:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gQX-94-zwi">
-                                <rect key="frame" x="205" y="112" width="95" height="21"/>
+                                <rect key="frame" x="205" y="56" width="95" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="תמונה של הכלב:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fBI-ea-eKo">
-                                <rect key="frame" x="163" y="138" width="137" height="38"/>
+                                <rect key="frame" x="163" y="80" width="137" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="בינוני" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="knn-Mg-UbC">
-                                <rect key="frame" x="132" y="80" width="42" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ThE-wF-jzo">
+                                <rect key="frame" x="179" y="130" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="גדול" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bzg-72-dWQ">
-                                <rect key="frame" x="209" y="80" width="59" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0GH-he-kEU">
-                                <rect key="frame" x="89" y="82" width="18" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="eveningCheckBox" image="empty.png"/>
+                                <state key="normal" title="עיון"/>
+                                <connections>
+                                    <action selector="getImageButtonClick:" destination="hmK-2W-sFf" eventType="touchUpInside" id="Vcw-hE-hVt"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="קטן" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Nze-yX-yxx">
-                                <rect key="frame" x="39" y="80" width="42" height="21"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" id="OCQ-EF-oS9">
+                                <rect key="frame" x="70" y="147" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ujm-5b-w30">
-                                <rect key="frame" x="183" y="82" width="18" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="morningCheckBox" image="empty.png"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="sl3-4Q-K9l">
-                                <rect key="frame" x="274" y="82" width="18" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="afternoonCheckBox" image="empty.png"/>
-                            </button>
+                                <color key="color" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="JmD-Z3-IhS">
-                                <rect key="frame" x="50" y="147" width="90" height="78"/>
+                                <rect key="frame" x="40" y="108" width="100" height="99"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="גודל הכלב:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bAM-Q5-bBv">
-                                <rect key="frame" x="201" y="45" width="99" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.99502840910000001" green="0.91022780079999999" blue="0.75492210479999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -939,9 +909,7 @@
                         <outlet property="dogAgeTextBox" destination="zvK-Oz-PzD" id="yeO-vT-Rxw"/>
                         <outlet property="dogImageView" destination="JmD-Z3-IhS" id="WR4-NJ-cMz"/>
                         <outlet property="dogNameTextBox" destination="uoZ-5Y-fvM" id="KY2-ax-keG"/>
-                        <outlet property="dogSizeLargeCheckBox" destination="sl3-4Q-K9l" id="tpx-ni-j7C"/>
-                        <outlet property="dogSizeMediumCheckBox" destination="ujm-5b-w30" id="jKj-hd-LNA"/>
-                        <outlet property="dogSizeSmallCheckBox" destination="0GH-he-kEU" id="4ig-RF-Mti"/>
+                        <outlet property="spinner" destination="OCQ-EF-oS9" id="7NX-FB-4Nn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xt4-Aw-26y" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1293,9 +1261,9 @@
         <image name="sign_up_button.png" width="187" height="90"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="XWB-Ss-DQr"/>
-        <segue reference="5ED-uX-xnT"/>
-        <segue reference="NtO-Ad-M4T"/>
+        <segue reference="WiM-ET-dm3"/>
+        <segue reference="ipU-Ov-Hqc"/>
         <segue reference="qG9-BM-0ZE"/>
+        <segue reference="NtO-Ad-M4T"/>
     </inferredMetricsTieBreakers>
 </document>

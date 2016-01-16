@@ -37,5 +37,8 @@ NSString * const END_OF_WALKING = @"endOfWalking";
 NSString * const IS_PAID = @"isPaid";
 NSString * const REQUESTS_TABLE = @"REQUESTS";
 NSString * const REQUEST_STATUS = @"requestStatus";
+NSString * const IMAGES_TABLES = @"IMAGES";
+NSString * const IMAGE_NAME = @"imageName";
+NSString * const IMAGE_FILE = @"file";
 
 @end

@@ -49,7 +49,7 @@ priceForHour isComfortableOnMorning:(bool)isComfortableOnMorning isComfortableOn
         dogWalker.priceForHour = [parseObject[PRICE_FOR_HOUR] intValue];
         dogWalker.isComfortableOnMorning = [parseObject[IS_COMFORTABLE_ON_MORNING] boolValue];
         dogWalker.isComfortableOnAfternoon = [parseObject[IS_COMFORTABLE_ON_AFTERNOON] boolValue];
-         dogWalker.isComfortableOnEvening = [parseObject[IS_COMFORTABLE_ON_EVENING] boolValue];
+        dogWalker.isComfortableOnEvening = [parseObject[IS_COMFORTABLE_ON_EVENING] boolValue];
     }
 }
 

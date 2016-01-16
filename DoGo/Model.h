@@ -41,6 +41,13 @@ priceForHour isComfortableOnMorning:(bool)isComfortableOnMorning isComfortableOn
 -(void)endTrip:(long)tripId;
 -(void)payTrip:(long)tripId;
 
+// Request Methods
+
+// Image Methods
+
+-(void)saveImage:(UIImage*)image imageName:(NSString*)imageName;
+
+-(UIImage*)getImage:(NSString*)imageName;
 
 @end
 
