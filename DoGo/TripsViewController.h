@@ -12,6 +12,7 @@
 #import "TripCell.h"
 
 @interface TripsViewController : UITableViewController
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 @property (nonatomic) User *user;
 

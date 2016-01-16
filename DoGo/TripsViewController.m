@@ -19,26 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    void(^afterLogin)(void) = ^(void){
-        [self.tableView reloadData];
-    };
-    
-    dispatch_queue_t myQueue = dispatch_queue_create("myQueueName", NULL);
-    
-    dispatch_async(myQueue, ^{
-        if([self.user isKindOfClass:[DogWalker class]]){
-            
-            data = [[Model instance] getTripsByDogWalkerId:self.user.userId];
-        }else{
-            data = [[Model instance] getTripsByDogOwnerId:self.user.userId];
-        }
-        
-        dispatch_queue_t mainQ = dispatch_get_main_queue();
-        dispatch_async(mainQ, ^{
-            afterLogin();
-        });
-        
-    } );
+    [self loadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,6 +40,30 @@
     TripCell *cell = [tableView dequeueReusableCellWithIdentifier:@"tripCell" forIndexPath:indexPath];
     
     Trip* trip = [data objectAtIndex:indexPath.row];
+   
+    [self initCell:cell trip:trip];
+    
+    return cell;
+}
+
+-(void)initCell: (TripCell*)cell trip:(Trip*)trip{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
+    [timeFormatter setDateFormat:@"HH:mm"];
+    [dateFormatter setDateFormat:@"dd/MM/yyyy"];
+    
+    cell.trip = trip;
+    cell.dateLabel.text = [dateFormatter stringFromDate:trip.startOfWalking];
+    cell.beginTimeLabel.text = [timeFormatter stringFromDate:trip.startOfWalking];
+    cell.endTimeLabel.text = [timeFormatter stringFromDate:trip.endOfWalking];
+    
+    cell.isPaidCheckBox.enabled = YES;
+    if(trip.isPaid){
+        [cell.isPaidCheckBox setImage:[UIImage imageNamed:@"vi.png"] forState:UIControlStateNormal];
+        cell.isPaidCheckBox.enabled = NO;
+    }else{
+        [cell.isPaidCheckBox setImage:[UIImage imageNamed:@"empty.png"] forState:UIControlStateNormal];
+    }
     
     if([self.user isKindOfClass:[DogWalker class]]){
         
@@ -69,37 +74,26 @@
         cell.dogNameLabel.text = ((DogOwner*)self.user).dog.name;
         cell.dogOwnerNameLabel.text = self.user.firstName;
         cell.dogWalkerNameLabel.text = trip.dogWalker.firstName;
+        cell.isPaidCheckBox.enabled = NO;
     }
-   
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"dd/MM/yyyy"];
     
-    //Optionally for time zone conversions
-    //[formatter setTimeZone:[NSTimeZone  timeZoneWithName:@"GMT"]];
-    
-    NSString *dateOfTripString = [dateFormatter stringFromDate:trip.startOfWalking];
-    cell.dateLabel.text = dateOfTripString;
-    
-    NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
-    [timeFormatter setDateFormat:@"HH:mm"];
-    
-    //Optionally for time zone conversions
-    //[formatter setTimeZone:[NSTimeZone  timeZoneWithName:@"..."]];
-    
-    NSString *timeOfStartTripString = [timeFormatter stringFromDate:trip.startOfWalking];
-    NSString *timeOfEndTripString = [timeFormatter stringFromDate:trip.endOfWalking];
-    
-    cell.beginTimeLabel.text = timeOfStartTripString;
-    cell.endTimeLabel.text = timeOfEndTripString;
-    
-    if(trip.isPaid){
-        [cell.isPaidCheckBox setImage:[UIImage imageNamed:@"vi.png"] forState:UIControlStateNormal];
-    }else{
-        [cell.isPaidCheckBox setImage:[UIImage imageNamed:@"empty.png"] forState:UIControlStateNormal];
-    }
-
-    
-    return cell;
 }
-
+            
+-(void)loadData{
+    [self.spinner startAnimating];
+    
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        if([self.user isKindOfClass:[DogWalker class]]){
+            
+            data = [[Model instance] getTripsByDogWalkerId:self.user.userId];
+        }else{
+            data = [[Model instance] getTripsByDogOwnerId:self.user.userId];
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+            [self.spinner stopAnimating];
+        });
+    });
+}
 @end
