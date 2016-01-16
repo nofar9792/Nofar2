@@ -20,6 +20,7 @@
 @property (nonatomic) long walkerMinimalAge;
 @property (nonatomic) NSInteger walkerMaxPrice;
 @property (nonatomic) NSString *walkerCity;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 - (IBAction)searchClick:(id)sender;
 

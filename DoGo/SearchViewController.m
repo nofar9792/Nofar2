@@ -64,6 +64,7 @@
     self.walkerMaxPrice = [self.maxPriceTextBox.text longLongValue];
     self.walkerCity = self.cityTextBox.text;
     
+    [self.spinner startAnimating];
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         NSArray* allDogWalkers;
         NSMutableArray *relevantDogWalkers = [[NSMutableArray alloc] init];
@@ -82,7 +83,7 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
-            // [self.spinner stopAnimating];
+            [self.spinner stopAnimating];
         });
     });
 }

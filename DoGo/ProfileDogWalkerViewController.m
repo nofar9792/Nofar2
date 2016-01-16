@@ -46,7 +46,7 @@
 }
 
 - (IBAction)afternoonCheckBoxClick:(id)sender {
-    if(self.dogWalker.isComfortableOnAfternoon) {
+    if(self.isComfortableOnAfternoon) {
         self.isComfortableOnAfternoon = NO;
         [self.afternoonCheckBox setImage:[UIImage imageNamed:@"empty.png"] forState:UIControlStateNormal];
     }else{
