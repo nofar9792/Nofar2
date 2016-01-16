@@ -10,5 +10,8 @@
 #import <UIKit/UIKit.h>
 
 @interface DogWalkerCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *dogWalkerFullNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dogWalkerAddressLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dogWalkerAgeLabel;
 
 @end

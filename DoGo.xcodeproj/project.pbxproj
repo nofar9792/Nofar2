@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0FC6248B1C4A968B00441D22 /* DogWalkerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC6248A1C4A968B00441D22 /* DogWalkerCell.m */; };
+		0FC6248E1C4AA10000441D22 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC6248D1C4AA10000441D22 /* SearchViewController.m */; };
 		8439FD8B1C4980C000EED0FF /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 8439FD8A1C4980C000EED0FF /* UIView+Toast.m */; };
 		84528F641C47161C009ECF2D /* ProfileDogWalkerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84528F631C47161C009ECF2D /* ProfileDogWalkerViewController.m */; };
 		846F36E51C30620D0045909A /* DogWalker.m in Sources */ = {isa = PBXBuildFile; fileRef = 846F36E41C30620D0045909A /* DogWalker.m */; };
@@ -86,6 +87,8 @@
 /* Begin PBXFileReference section */
 		0FC624891C4A968B00441D22 /* DogWalkerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DogWalkerCell.h; sourceTree = "<group>"; };
 		0FC6248A1C4A968B00441D22 /* DogWalkerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DogWalkerCell.m; sourceTree = "<group>"; };
+		0FC6248C1C4AA10000441D22 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		0FC6248D1C4AA10000441D22 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		8439FD891C4980C000EED0FF /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
 		8439FD8A1C4980C000EED0FF /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
 		84528F621C47161C009ECF2D /* ProfileDogWalkerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileDogWalkerViewController.h; sourceTree = "<group>"; };
@@ -545,6 +548,7 @@
 				846F37361C455F300045909A /* UserParse.m in Sources */,
 				846F37421C455F890045909A /* TripParse.m in Sources */,
 				849430DA1C2F58ED0050D7FB /* User.m in Sources */,
+				0FC6248E1C4AA10000441D22 /* SearchViewController.m in Sources */,
 				84F266691C48297D00E17B4B /* TripsViewController.m in Sources */,
 				846F373F1C455F750045909A /* RequestParse.m in Sources */,
 				846F37191C41E2530045909A /* ModelSql.m in Sources */,
