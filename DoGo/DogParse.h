@@ -10,7 +10,6 @@
 #import <Parse/Parse.h>
 #import "Dog.h"
 #import "Consts.h"
-#import "DogSize.h"
 
 @interface DogParse : NSObject
 

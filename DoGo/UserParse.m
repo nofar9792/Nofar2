@@ -39,7 +39,9 @@ firstName lastName:(NSString*)lastName phoneNumber:(NSString*)phoneNumber addres
          parseUser[IS_DOG_WALKER] = [NSNumber numberWithBool:NO];
     }
    
-    [parseUser signUp];
+    if(![parseUser signUp]){
+        return 0;
+    }
 
     // check if throw exception if signup failed
 //    -(BOOL)signup:(NSString*)user pwd:(NSString*)pwd{
