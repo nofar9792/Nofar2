@@ -20,44 +20,48 @@
     if(self.dogWalker){
             self.ageTextBox.text = [NSString stringWithFormat:@"%li", self.dogWalker.age];
         self.priceForHourTextBox.text = [NSString stringWithFormat:@"%i",self.dogWalker.priceForHour];
-    
-        if(self.dogWalker.isComfortableOnMorning){
+        self.isComfortableOnMorning = self.dogWalker.isComfortableOnMorning;
+        self.isComfortableOnAfternoon = self.dogWalker.isComfortableOnAfternoon;
+        self.isComfortableOnEvening = self.dogWalker.isComfortableOnEvening;
+        
+        if(self.isComfortableOnMorning){
         [self.morningCheckBox setImage:[UIImage imageNamed:@"vi.png"] forState:UIControlStateNormal];
         }
-        if(self.dogWalker.isComfortableOnAfternoon){
+        if(self.isComfortableOnAfternoon){
             [self.afternoonCheckBox setImage:[UIImage imageNamed:@"vi.png"] forState:UIControlStateNormal];
         }
-        if(self.dogWalker.isComfortableOnEvening){
+        if(self.isComfortableOnEvening){
             [self.eveningCheckBox setImage:[UIImage imageNamed:@"vi.png"] forState:UIControlStateNormal];
         }
     }
 }
 - (IBAction)morningCheckBoxClick:(id)sender {
-    if(self.dogWalker.isComfortableOnMorning) {
-        self.dogWalker.isComfortableOnMorning = NO;
+    if(self.isComfortableOnMorning) {
+        self.isComfortableOnMorning = NO;
+        //self.dogWalker.isComfortableOnMorning = NO;
         [self.morningCheckBox setImage:[UIImage imageNamed:@"empty.png"] forState:UIControlStateNormal];
     }else{
-        self.dogWalker.isComfortableOnMorning = YES;
+        self.isComfortableOnMorning = YES;
         [self.morningCheckBox setImage:[UIImage imageNamed:@"vi.png"] forState:UIControlStateNormal];
     }
 }
 
 - (IBAction)afternoonCheckBoxClick:(id)sender {
     if(self.dogWalker.isComfortableOnAfternoon) {
-        self.dogWalker.isComfortableOnAfternoon = NO;
+        self.isComfortableOnAfternoon = NO;
         [self.afternoonCheckBox setImage:[UIImage imageNamed:@"empty.png"] forState:UIControlStateNormal];
     }else{
-        self.dogWalker.isComfortableOnAfternoon = YES;
+        self.isComfortableOnAfternoon = YES;
         [self.afternoonCheckBox setImage:[UIImage imageNamed:@"vi.png"] forState:UIControlStateNormal];
     }
 }
 
 - (IBAction)eveningCheckBoxClick:(id)sender {
-    if(self.dogWalker.isComfortableOnEvening) {
-        self.dogWalker.isComfortableOnEvening = NO;
+    if(self.isComfortableOnEvening) {
+        self.isComfortableOnEvening = NO;
         [self.eveningCheckBox setImage:[UIImage imageNamed:@"empty.png"] forState:UIControlStateNormal];
     }else{
-        self.dogWalker.isComfortableOnEvening = YES;
+        self.isComfortableOnEvening = YES;
         [self.eveningCheckBox setImage:[UIImage imageNamed:@"vi.png"] forState:UIControlStateNormal];
     }
 }

@@ -470,6 +470,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" id="UEp-Xa-CGj">
+                                <rect key="frame" x="150" y="182" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.99502840910000001" green="0.91022780079999999" blue="0.75492210479999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -481,6 +486,7 @@
                         <outlet property="firstNameTextBox" destination="GxD-pE-lkW" id="mtH-1k-qN9"/>
                         <outlet property="lastNameTextBox" destination="rPo-e3-CNc" id="An6-n6-KtC"/>
                         <outlet property="phoneNumberTextBox" destination="o4N-jD-WBc" id="ZX6-Rk-BDt"/>
+                        <outlet property="spinner" destination="UEp-Xa-CGj" id="xNJ-ih-nxM"/>
                         <outlet property="userTypeDetailsView" destination="ihf-9l-ZTj" id="5T5-m6-a5O"/>
                     </connections>
                 </viewController>
@@ -557,6 +563,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" id="xSX-75-Zoy">
+                                <rect key="frame" x="150" y="392" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.99502840910000001" green="0.91022780079999999" blue="0.75492210479999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -564,6 +575,7 @@
                     <connections>
                         <outlet property="errorTextBox" destination="cmY-NQ-q1i" id="5WJ-ID-xWd"/>
                         <outlet property="passwordTextBox" destination="kga-TU-ged" id="dTr-sQ-5DJ"/>
+                        <outlet property="spinner" destination="xSX-75-Zoy" id="f0E-2Q-3cZ"/>
                         <outlet property="usernameTextBox" destination="Rrw-Po-rfB" id="XGI-Sg-J4n"/>
                         <segue destination="MGH-1p-EGJ" kind="modal" identifier="toDogOwnerScreen" id="5ED-uX-xnT"/>
                         <segue destination="2sV-c8-57H" kind="modal" identifier="toDogWalkerScreen" id="XWB-Ss-DQr"/>
@@ -1244,8 +1256,8 @@
         <image name="sign_up_button.png" width="187" height="90"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ipU-Ov-Hqc"/>
-        <segue reference="WiM-ET-dm3"/>
+        <segue reference="XWB-Ss-DQr"/>
+        <segue reference="5ED-uX-xnT"/>
         <segue reference="NtO-Ad-M4T"/>
         <segue reference="qG9-BM-0ZE"/>
     </inferredMetricsTieBreakers>

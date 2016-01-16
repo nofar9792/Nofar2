@@ -21,5 +21,8 @@
 - (IBAction)eveningCheckBoxClick:(id)sender;
 
 @property (nonatomic) DogWalker* dogWalker;
+@property (nonatomic) bool isComfortableOnMorning;
+@property (nonatomic) bool isComfortableOnAfternoon;
+@property (nonatomic) bool isComfortableOnEvening;
 
 @end

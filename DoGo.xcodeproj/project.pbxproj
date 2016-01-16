@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0FC6248B1C4A968B00441D22 /* DogWalkerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC6248A1C4A968B00441D22 /* DogWalkerCell.m */; };
 		8439FD8B1C4980C000EED0FF /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 8439FD8A1C4980C000EED0FF /* UIView+Toast.m */; };
-		844FE1AD1C4A87DC00049A9E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844FE1AC1C4A87DC00049A9E /* ViewController.m */; };
 		84528F641C47161C009ECF2D /* ProfileDogWalkerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84528F631C47161C009ECF2D /* ProfileDogWalkerViewController.m */; };
 		846F36E51C30620D0045909A /* DogWalker.m in Sources */ = {isa = PBXBuildFile; fileRef = 846F36E41C30620D0045909A /* DogWalker.m */; };
 		846F36E81C3062C80045909A /* DogOwner.m in Sources */ = {isa = PBXBuildFile; fileRef = 846F36E71C3062C80045909A /* DogOwner.m */; };
@@ -89,8 +88,6 @@
 		0FC6248A1C4A968B00441D22 /* DogWalkerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DogWalkerCell.m; sourceTree = "<group>"; };
 		8439FD891C4980C000EED0FF /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
 		8439FD8A1C4980C000EED0FF /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
-		844FE1AB1C4A87DB00049A9E /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		844FE1AC1C4A87DC00049A9E /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		84528F621C47161C009ECF2D /* ProfileDogWalkerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileDogWalkerViewController.h; sourceTree = "<group>"; };
 		84528F631C47161C009ECF2D /* ProfileDogWalkerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileDogWalkerViewController.m; sourceTree = "<group>"; };
 		846F36E31C30620D0045909A /* DogWalker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DogWalker.h; sourceTree = "<group>"; };
@@ -285,8 +282,8 @@
 				84F266681C48297D00E17B4B /* TripsViewController.m */,
 				84F2666A1C4836D900E17B4B /* TripCell.h */,
 				84F2666B1C4836D900E17B4B /* TripCell.m */,
-				844FE1AB1C4A87DB00049A9E /* ViewController.h */,
-				844FE1AC1C4A87DC00049A9E /* ViewController.m */,
+				0FC624891C4A968B00441D22 /* DogWalkerCell.h */,
+				0FC6248A1C4A968B00441D22 /* DogWalkerCell.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -558,7 +555,6 @@
 				84528F641C47161C009ECF2D /* ProfileDogWalkerViewController.m in Sources */,
 				846F37391C455F430045909A /* DogParse.m in Sources */,
 				846F36E81C3062C80045909A /* DogOwner.m in Sources */,
-				844FE1AD1C4A87DC00049A9E /* ViewController.m in Sources */,
 				849430DD1C2F58FA0050D7FB /* Trip.m in Sources */,
 				849430A61C2F58A70050D7FB /* AppDelegate.m in Sources */,
 				849430D71C2F58E00050D7FB /* Dog.m in Sources */,
