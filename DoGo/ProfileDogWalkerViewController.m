@@ -38,7 +38,6 @@
 - (IBAction)morningCheckBoxClick:(id)sender {
     if(self.isComfortableOnMorning) {
         self.isComfortableOnMorning = NO;
-        //self.dogWalker.isComfortableOnMorning = NO;
         [self.morningCheckBox setImage:[UIImage imageNamed:@"empty.png"] forState:UIControlStateNormal];
     }else{
         self.isComfortableOnMorning = YES;

@@ -78,8 +78,7 @@
 }
 
 
-//region Dog Walker Methods
-
+// Dog Walker Methods
 
 -(NSArray*)getAllDogWalkers{
     NSArray* dogWalkers = [UserParse getDogWalkerUsers];
@@ -97,7 +96,7 @@ priceForHour isComfortableOnMorning:(bool)isComfortableOnMorning isComfortableOn
     return userId;
 }
 
-//region Dog Owner Methods
+// Dog Owner Methods
 
 -(long)addDogOwner:(NSString*)username password:(NSString*)password firstName:(NSString*)firstName lastName:(NSString*)lastName phoneNumber:(NSString*)phoneNumber address:(NSString*)address city:(NSString*)city dog:(Dog*)dog{
     long userId = [UserParse addToUsersTable:username password:password firstName:firstName lastName:lastName phoneNumber:phoneNumber address:address city:city isDogWalker:YES];
@@ -106,7 +105,7 @@ priceForHour isComfortableOnMorning:(bool)isComfortableOnMorning isComfortableOn
 }
 
 
-//region Trip Methods
+// Trip Methods
 
 -(NSArray*)getTripsByDogOwnerId:(long)dogOwnerId{
     NSArray* trips = [TripParse getTripsDetailsByDogOwnerId:dogOwnerId];
@@ -140,5 +139,16 @@ priceForHour isComfortableOnMorning:(bool)isComfortableOnMorning isComfortableOn
     [TripParse changeTripToPaid:tripId];
 }
 
+// Request Methods
+
+// Image Methods
+
+-(void)saveImage:(UIImage*)image imageName:(NSString*)imageName{
+    [ImageParse saveImage:image imageName:imageName];
+}
+
+-(UIImage*)getImage:(NSString*)imageName{
+    return [ImageParse getImage:imageName];
+}
 
 @end

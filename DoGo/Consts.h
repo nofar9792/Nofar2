@@ -52,4 +52,10 @@ extern NSString *const REQUESTS_TABLE;
 //extern NSString *const DOG_WALKER_ID;
 extern NSString *const REQUEST_STATUS;
 
+// Images
+extern NSString *const IMAGES_TABLES;
+extern NSString *const IMAGE_NAME;
+extern NSString *const IMAGE_FILE;
+extern NSString *const IS_DELETED;
+
 @end

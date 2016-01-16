@@ -93,22 +93,17 @@ priceForHour isComfortableOnMorning:(bool)isComfortableOnMorning isComfortableOn
     [self.modelParse payTrip:tripId];
 }
 
-//
-//
-//-(NSArray*)getTripByDogWalkerId:(long)dogWalkerId{
-//    NSMutableArray* array = [[NSMutableArray alloc] init];
-//    DogOwner* dogOwner = [[DogOwner alloc]init:1 userName:@"a" firstName:@"a" lastName:@"as" phoneNumber:@"05" address:@"tel" city:@"aviv"];
-//    dogOwner.dog = [[Dog alloc]init:@"dogg" age:5 picRef:@"aa.png"];
-//    DogWalker* dogWalker = [[DogWalker alloc] init:2 userName:@"aa" firstName:@"asas" lastName:@"as" phoneNumber:@"33" address:@"asas" city:@"ddd"];
-//    
-//    NSDate* start = [NSDate date];
-//    NSDate* end = [[NSDate alloc]init];
-//    Trip* trip = [[Trip alloc] init:1 dogOwnerId:1 dogWalkerId:2 startOfWalking:start endOfWalking:end isPaid:YES];
-//    trip.dogWalker = dogWalker;
-//    trip.dogOwner = dogOwner;
-//    [array addObject:trip];
-//    
-//    return array;
-//}
+// Request Methods
+
+// Image Methods
+
+
+-(void)saveImage:(UIImage*)image imageName:(NSString*)imageName{
+    [self.modelParse saveImage:image imageName:imageName];
+}
+
+-(UIImage*)getImage:(NSString*)imageName{
+    return [self.modelParse getImage:imageName];
+}
 
 @end
