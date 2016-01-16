@@ -1092,6 +1092,22 @@
             </objects>
             <point key="canvasLocation" x="1776" y="-1270"/>
         </scene>
+        <!--DogWalkerDetails-->
+        <scene sceneID="M5w-UD-WhN">
+            <objects>
+                <viewController title="DogWalkerDetails" id="eYd-Iv-uNL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vAa-qr-icf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="514"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.99502840910000001" green="0.91022780079999999" blue="0.75492210479999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="514"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gtv-fk-8KP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2217" y="-1270"/>
+        </scene>
         <!--Trips-->
         <scene sceneID="Z4a-Sy-T6G">
             <objects>
