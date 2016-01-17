@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 # import "DogWalkerCell.h"
 # import "Model.h"
+# import "DogWalkerDetailsViewController.h"
 
 @interface SearchViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITextField *minimalAgeTextBox;
