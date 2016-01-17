@@ -18,7 +18,7 @@
 +(long)addToUsersTable:(NSString*)username password:(NSString*)password firstName:(NSString*)
 firstName lastName:(NSString*)lastName phoneNumber:(NSString*)phoneNumber address:(NSString*)address city:(NSString*)city isDogWalker:(bool)isDogWalker{
     if([self isUsernameAlreadyExist:username]){
-        @throw [NSException exceptionWithName:@"invalid username" reason:@"username is already exist" userInfo:nil];
+        @throw [NSException exceptionWithName:@"invalidUsername" reason:@"username is already exist" userInfo:nil];
     }
     
     long newUserId = [self getNextId];
