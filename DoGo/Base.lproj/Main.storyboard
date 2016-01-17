@@ -404,21 +404,119 @@
             </objects>
             <point key="canvasLocation" x="1318" y="-558"/>
         </scene>
-        <!--DogList-->
-        <scene sceneID="jmg-vL-XC8">
+        <!--DogsList-->
+        <scene sceneID="Zje-0F-pHl">
             <objects>
-                <viewController title="DogList" id="noE-ZW-cOM" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="lEx-s4-pK7">
+                <tableViewController title="DogsList" id="Zc6-hj-oXh" customClass="DogsListViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="167" sectionHeaderHeight="28" sectionFooterHeight="28" id="8SQ-e6-XPf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="514"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.99502840910000001" green="0.91022780079999999" blue="0.75492210479999999" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" red="0.99502840910000001" green="0.91022780079999999" blue="0.75492210479999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="dogCell" rowHeight="167" id="DYR-IY-IF1" customClass="DogInDogsListCell">
+                                <rect key="frame" x="0.0" y="28" width="320" height="167"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DYR-IY-IF1" id="6o4-rY-lkw">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="166"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שם בעל הכלב:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zlq-R8-nUf">
+                                            <rect key="frame" x="180" y="13" width="106" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="מספר טלפון:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vvm-8o-LU6">
+                                            <rect key="frame" x="196" y="86" width="90" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שם הכלב:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Rew-HJ-GaC">
+                                            <rect key="frame" x="213" y="37" width="73" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="כתובת:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Jc9-tB-l6b">
+                                            <rect key="frame" x="226" y="61" width="60" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="JhI-Ru-ycw">
+                                            <rect key="frame" x="194" y="115" width="62" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="התחל טיול"/>
+                                            <connections>
+                                                <action selector="startTripClick:" destination="DYR-IY-IF1" eventType="touchUpInside" id="GYb-vH-azo"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dus-mw-RDp">
+                                            <rect key="frame" x="81" y="115" width="65" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="סיים טיול"/>
+                                            <connections>
+                                                <action selector="endTripClick:" destination="DYR-IY-IF1" eventType="touchUpInside" id="bwN-gS-Bkf"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4Am-QH-DoY">
+                                            <rect key="frame" x="26" y="37" width="141" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="J2z-sk-uFa">
+                                            <rect key="frame" x="26" y="61" width="141" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rU6-6J-kon">
+                                            <rect key="frame" x="26" y="86" width="141" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Lg3-lN-XqA">
+                                            <rect key="frame" x="26" y="13" width="141" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.99502840910000001" green="0.91022780079999999" blue="0.75492210479999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="addressLabel" destination="J2z-sk-uFa" id="alx-aB-BJE"/>
+                                    <outlet property="dogNameLabel" destination="4Am-QH-DoY" id="gbq-hi-Ni8"/>
+                                    <outlet property="endTripButton" destination="dus-mw-RDp" id="3Pg-vb-4JQ"/>
+                                    <outlet property="ownerNameLabel" destination="Lg3-lN-XqA" id="zS2-Iv-1fJ"/>
+                                    <outlet property="phoneNumberLabel" destination="rU6-6J-kon" id="auc-3A-A4z"/>
+                                    <outlet property="startTripButton" destination="JhI-Ru-ycw" id="vgP-5b-0XR"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Zc6-hj-oXh" id="gNv-Bd-Dwr"/>
+                            <outlet property="delegate" destination="Zc6-hj-oXh" id="ndp-vA-Mgh"/>
+                        </connections>
+                    </tableView>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="514"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uxa-oV-82U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mJA-w8-Zmr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1776" y="186"/>
+            <point key="canvasLocation" x="1746" y="186"/>
         </scene>
         <!--Log In-->
         <scene sceneID="DUN-29-k1j">
@@ -532,7 +630,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="dog list" image="dog_icon.png"/>
                                 <connections>
-                                    <segue destination="noE-ZW-cOM" kind="custom" identifier="dogListSegue" customClass="DogWalkerTabSegue" id="S8l-td-Ji6"/>
+                                    <segue destination="Zc6-hj-oXh" kind="custom" identifier="dogListSegue" customClass="DogWalkerTabSegue" id="eeo-yo-fEK"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" id="dze-jn-5yp">
@@ -1270,7 +1368,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="WiM-ET-dm3"/>
         <segue reference="ipU-Ov-Hqc"/>
-        <segue reference="NtO-Ad-M4T"/>
-        <segue reference="qG9-BM-0ZE"/>
+        <segue reference="I1n-UV-Vfc"/>
+        <segue reference="gsa-ew-IMK"/>
     </inferredMetricsTieBreakers>
 </document>

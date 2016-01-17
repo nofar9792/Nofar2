@@ -36,6 +36,9 @@
     }else if([segue.identifier isEqualToString:@"dogListSegue"]){
         DogWalkerTabSegue* msegue = (DogWalkerTabSegue*)segue;
         msegue.destinationViewContainer = self.containerView;
+        
+        DogsListViewController* dogsListVC = msegue.destinationViewController;
+        dogsListVC.user = self.dogWalker;
     }
 }
 
