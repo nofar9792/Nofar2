@@ -26,6 +26,9 @@
     }else if([segue.identifier isEqualToString:@"messagesDogOwnerSegue"]){
         DogOwnerTabSegue* msegue = (DogOwnerTabSegue*)segue;
         msegue.destinationViewContainer = self.containerView;
+        
+        MessagesDogOwnerViewController* ownerMessagesVC = msegue.destinationViewController;
+        ownerMessagesVC.user = self.dogOwner;
     }
     else if([segue.identifier isEqualToString:@"tripsReportDogWalkerSegue"]){
         DogOwnerTabSegue* msegue = (DogOwnerTabSegue*)segue;

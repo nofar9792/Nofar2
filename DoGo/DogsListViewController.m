@@ -62,8 +62,6 @@
 
 -(void) loadData
 {
-    
-    
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         NSArray* allConnectedDogOwners =[[Model instance] getOwnersConnectToWalker:self.user.userId];
         NSMutableArray* relevantDogs = [[NSMutableArray alloc] init];

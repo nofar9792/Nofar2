@@ -11,6 +11,7 @@
 #import "ProfileViewController.h"
 #import "TripsViewController.h"
 #import "SearchViewController.h"
+#import "MessagesDogOwnerViewController.h"
 
 @interface DogOwnerTabsViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIView *containerView;

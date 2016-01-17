@@ -11,7 +11,7 @@
 #import "DogWalker.h"
 #import "TripsViewController.h"
 #import "DogsListViewController.h"
-
+#import "MessegasDogWalkerViewController.h"
 @interface DogWalkerTabsViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 @property (nonatomic) DogWalker* dogWalker;
