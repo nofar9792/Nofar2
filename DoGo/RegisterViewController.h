@@ -28,13 +28,12 @@
 @property (weak, nonatomic) IBOutlet UITextField *addressTextBox;
 @property (weak, nonatomic) IBOutlet UITextField *cityTextBox;
 @property (weak, nonatomic) IBOutlet UIView *userTypeSubView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
+- (IBAction)userTypeChange:(id)sender;
 - (IBAction)signUpClick:(id)sender;
 
 @property (nonatomic) BOOL isOwner;
 @property (nonatomic) User *user;
 @property (nonatomic) UIViewController* childVC;
-
-@property (nonatomic) NSString* usernameValue;
-
 
 @end
