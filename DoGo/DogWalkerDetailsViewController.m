@@ -20,7 +20,7 @@
     
     self.firstNameLabel.text = self.dogWalker.firstName;
     self.lastNameLabel.text = self.dogWalker.lastName;
-    self.phoneNumberLabel.text = @"אינך יכול לצפות במספר הטלפון כרגע";
+    self.phoneNumberLabel.text = @"חסום";
     self.cityLabel.text = self.dogWalker.city;
     self.addressLabel.text = self.dogWalker.address;
     self.ageLabel.text =[[NSString alloc] initWithFormat:@"%li", self.dogWalker.age];
@@ -38,26 +38,24 @@
     }
     
     // show phone number if connected
-//    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-//        NSArray* allDogOwners;
-//        allDogOwners = [[Model instance] getOwnersConnectToWalker:self.dogWalker.userId];
-//        
-//        //self.isConnectedToOwner = NO;
-//        
-//        for (DogOwner* owner in allDogOwners)
-//        {
-//            if (owner.userId == self.dogOwner.userId)
-//            {
-//                //self.isConnectedToOwner = YES;
-//                self.phoneNumberLabel.text = self.dogWalker.phoneNumber;
-//                break;
-//            }
-//        }
-//    
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            // [self.spinner stopAnimating];
-//        });
-//    });
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSArray* allDogOwners;
+        allDogOwners = [[Model instance] getOwnersConnectToWalker:self.dogWalker.userId];
+        
+        for (DogOwner* owner in allDogOwners)
+        {
+            if (owner.userId == self.dogOwner.userId)
+            {
+                self.askNumberButton.enabled = false;
+                self.phoneNumberLabel.text = self.dogWalker.phoneNumber;
+                break;
+            }
+        }
+    
+        dispatch_async(dispatch_get_main_queue(), ^{
+            // [self.spinner stopAnimating];
+        });
+    });
 
 }
 

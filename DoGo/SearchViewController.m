@@ -107,6 +107,7 @@
     {
         DogWalkerDetailsViewController* detailsVC = segue.destinationViewController;
         detailsVC.dogWalker = [self.walkersListArray objectAtIndex:currentIndexForDetails];
+        detailsVC.dogOwner = self.user;
     }
 }
 

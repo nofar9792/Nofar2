@@ -37,6 +37,10 @@
     }else if([segue.identifier isEqualToString:@"searchSegue"]){
         DogOwnerTabSegue* msegue = (DogOwnerTabSegue*)segue;
         msegue.destinationViewContainer = self.containerView;
+        
+        SearchViewController* searchVC = [(UINavigationController*)msegue.destinationViewController topViewController];
+                    
+        searchVC.user = self.dogOwner;
     }
 }
 @end

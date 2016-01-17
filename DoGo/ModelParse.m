@@ -158,7 +158,7 @@ priceForHour isComfortableOnMorning:(bool)isComfortableOnMorning isComfortableOn
     NSArray* ids = [RequestParse getOwnersIdsConnectedToWalker:dogWalkerId];
     NSMutableArray* dogOwners = [[NSMutableArray alloc]init];
     for (int i = 0; i < ids.count; i++) {
-        [dogOwners addObject:[self getUserById:ids[i]]];
+        [dogOwners addObject:[self getUserById:[ids[i] longLongValue]]];
     }
     
     return dogOwners;
@@ -170,7 +170,7 @@ priceForHour isComfortableOnMorning:(bool)isComfortableOnMorning isComfortableOn
     NSArray* ids = [RequestParse getRequestForDogWalker:dogWalkerId];
     NSMutableArray* dogOwners = [[NSMutableArray alloc]init];
     for (int i = 0; i < ids.count; i++) {
-        [dogOwners addObject:[self getUserById:ids[i]]];
+        [dogOwners addObject:[self getUserById:[ids[i] longLongValue]]];
     }
     
     return dogOwners;
@@ -181,7 +181,7 @@ priceForHour isComfortableOnMorning:(bool)isComfortableOnMorning isComfortableOn
     NSArray* ids = [RequestParse getRequestOfDogOwner:dogOwnerId];
     NSMutableArray* dogWalkers = [[NSMutableArray alloc]init];
     for (int i = 0; i < ids.count; i++) {
-        [dogWalkers addObject:[self getUserById:ids[i]]];
+        [dogWalkers addObject:[self getUserById:[ids[i] longLongValue]]];
     }
     
     return dogWalkers;

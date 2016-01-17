@@ -461,17 +461,17 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" id="xSX-75-Zoy">
+                                <rect key="frame" x="150" y="392" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="nofi" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="Rrw-Po-rfB">
                                 <rect key="frame" x="44" y="273" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" id="xSX-75-Zoy">
-                                <rect key="frame" x="150" y="392" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="color" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.99502840910000001" green="0.91022780079999999" blue="0.75492210479999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -1044,6 +1044,7 @@
                         <outlet property="addressLabel" destination="IXf-Wj-mtH" id="HG7-ur-Vz5"/>
                         <outlet property="afternoonCheckBox" destination="HMR-Iy-IL3" id="HJu-UA-AhO"/>
                         <outlet property="ageLabel" destination="5sB-yX-gaL" id="ZhS-v4-03e"/>
+                        <outlet property="askNumberButton" destination="QvF-r8-v4v" id="BbN-b9-QnO"/>
                         <outlet property="cityLabel" destination="R0w-7q-2za" id="2VG-89-8Ml"/>
                         <outlet property="eveningCheckBox" destination="ShP-V2-4zG" id="7A0-dj-eBv"/>
                         <outlet property="firstNameLabel" destination="FG0-1B-ZQW" id="ukI-R8-b8w"/>
@@ -1261,8 +1262,8 @@
         <image name="sign_up_button.png" width="187" height="90"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5ED-uX-xnT"/>
-        <segue reference="XWB-Ss-DQr"/>
+        <segue reference="WiM-ET-dm3"/>
+        <segue reference="ipU-Ov-Hqc"/>
         <segue reference="NtO-Ad-M4T"/>
         <segue reference="qG9-BM-0ZE"/>
     </inferredMetricsTieBreakers>

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 # import "DogWalkerCell.h"
+# import "DogOwner.h"
 # import "Model.h"
 # import "DogWalkerDetailsViewController.h"
 
@@ -17,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *cityTextBox;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+@property (nonatomic) DogOwner* user;
 @property (nonatomic) NSArray *walkersListArray;
 @property (nonatomic) long walkerMinimalAge;
 @property (nonatomic) NSInteger walkerMaxPrice;

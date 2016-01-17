@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *morningCheckBox;
 @property (weak, nonatomic) IBOutlet UIButton *afternoonCheckBox;
 @property (weak, nonatomic) IBOutlet UIButton *eveningCheckBox;
+@property (weak, nonatomic) IBOutlet UIButton *askNumberButton;
 
 - (IBAction)askNumberClick:(id)sender;
 

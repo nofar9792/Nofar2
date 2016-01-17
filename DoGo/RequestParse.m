@@ -97,13 +97,13 @@
 
     switch (requestStatus) {
         case Waiting:
-            result = @"Small";
+            result = @"W‎aiting";
             break;
         case Accepted:
-            result = @"Medium";
+            result = @"Accepted";
             break;
         case Declined:
-            result = @"Large";
+            result = @"Declined";
             break;
     }
     return result;
