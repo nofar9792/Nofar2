@@ -10,6 +10,7 @@
 #import "DogWalker.h"
 #import "DogOwner.h"
 #import "Model.h"
+#import "UIView+Toast.h"
 
 @interface DogWalkerDetailsViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *firstNameLabel;
@@ -23,16 +24,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *afternoonCheckBox;
 @property (weak, nonatomic) IBOutlet UIButton *eveningCheckBox;
 
-- (IBAction)morningClick:(id)sender;
-- (IBAction)afternoonClick:(id)sender;
-- (IBAction)eveningClick:(id)sender;
 - (IBAction)askNumberClick:(id)sender;
 
 @property (nonatomic) DogWalker* dogWalker;
 @property (nonatomic) DogOwner* dogOwner;
-@property (nonatomic) bool isComfortableOnMorning;
-@property (nonatomic) bool isComfortableOnAfternoon;
-@property (nonatomic) bool isComfortableOnEvening;
-@property (nonatomic) bool isConnectedToOwner;
+//@property (nonatomic) bool isConnectedToOwner;
 
 @end

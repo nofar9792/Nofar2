@@ -37,20 +37,23 @@
         [self.eveningCheckBox setImage:[UIImage imageNamed:@"vi.png"] forState:UIControlStateNormal];
     }
     
-    // TODO : show phone number if connected
+    // show phone number if connected
 //    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-//        NSArray* allDogWalkers;
-//        NSMutableArray *relevantDogWalkers = [[NSMutableArray alloc] init];
-//        allDogWalkers = [[Model instance] getAllDogWalkers];
+//        NSArray* allDogOwners;
+//        allDogOwners = [[Model instance] getOwnersConnectToWalker:self.dogWalker.userId];
 //        
-//        self.isConnectedToOwner = NO;
+//        //self.isConnectedToOwner = NO;
 //        
-//        for (DogWalker* walker in allDogWalkers)
+//        for (DogOwner* owner in allDogOwners)
 //        {
-//
+//            if (owner.userId == self.dogOwner.userId)
+//            {
+//                //self.isConnectedToOwner = YES;
+//                self.phoneNumberLabel.text = self.dogWalker.phoneNumber;
+//                break;
+//            }
 //        }
-//        
-//        
+//    
 //        dispatch_async(dispatch_get_main_queue(), ^{
 //            // [self.spinner stopAnimating];
 //        });
@@ -63,24 +66,22 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-- (IBAction)morningClick:(id)sender {
-}
-- (IBAction)afternoonClick:(id)sender {
-}
-
-- (IBAction)eveningClick:(id)sender {
-}
-
-- (IBAction)askNumberClick:(id)sender {
+- (IBAction)askNumberClick:(id)sender
+{
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        bool result = [[Model instance] addRequest:self.dogOwner.userId dogWalkerId:self.dogWalker.userId requestStatus:Waiting];
+        
+        if (result)
+        {
+            [self.view makeToast:@"הבקשה נשלחה בהצלחה"];
+        }
+        else
+        {
+            [self.view makeToast:@"אירעה שגיאה בעת שליחת הבקשה. נסה שנית"];
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            // [self.spinner stopAnimating];
+        });
+    });
 }
 @end

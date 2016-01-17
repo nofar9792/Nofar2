@@ -9,6 +9,9 @@
 #import "SearchViewController.h"
 
 @interface SearchViewController ()
+{
+    NSInteger currentIndexForDetails;
+}
 
 @end
 
@@ -91,4 +94,20 @@
         });
     });
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    currentIndexForDetails = indexPath.row;
+    [self performSegueWithIdentifier:@"toDogWalkerDetailsScreen" sender:self];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"toDogWalkerDetailsScreen"])
+    {
+        DogWalkerDetailsViewController* detailsVC = segue.destinationViewController;
+        detailsVC.dogWalker = [self.walkersListArray objectAtIndex:currentIndexForDetails];
+    }
+}
+
 @end
