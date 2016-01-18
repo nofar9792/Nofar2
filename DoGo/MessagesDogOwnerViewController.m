@@ -36,7 +36,16 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"messageOwnerCell"];
     }
     
-    cell.textLabel.text = [data objectAtIndex:indexPath.row];
+    DogOwner* owner = [data objectAtIndex:indexPath.row];
+
+    NSMutableString *fullName = [[NSMutableString alloc]initWithString:owner.firstName];
+    [fullName appendString:@" "];
+    [fullName appendString:owner.lastName];
+    [fullName appendString:@" עדיין לא אישר את בקשתך "];
+    
+    
+    cell.textLabel.text = fullName;
+    [cell.textLabel setTextAlignment:NSTextAlignmentRight];
     
     return cell;
 }

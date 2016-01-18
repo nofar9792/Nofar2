@@ -65,7 +65,7 @@
 
 +(bool)updateRequest:(long)dogOwnerId dogWalkerId:(long)dogWalkerId requestStatus:(enum RequestStatus)requestStatus{
     PFQuery* query = [PFQuery queryWithClassName:REQUESTS_TABLE];
-    [[query whereKey:DOG_OWNER_ID equalTo:[NSNumber numberWithLong:dogWalkerId]] whereKey:DOG_WALKER_ID equalTo:[NSNumber numberWithLong:dogWalkerId]];
+    [[query whereKey:DOG_OWNER_ID equalTo:[NSNumber numberWithLong:dogOwnerId]] whereKey:DOG_WALKER_ID equalTo:[NSNumber numberWithLong:dogWalkerId]];
     
     PFObject* parseObject = [query getFirstObject];
         if (parseObject) {
