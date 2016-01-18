@@ -35,21 +35,7 @@
     return ids;
 }
 
-+(NSArray*)getWalkersIdsConnectedToOwner:(long)dogOwnerId {
-    PFQuery* query = [PFQuery queryWithClassName:REQUESTS_TABLE];
-    [[query whereKey:DOG_OWNER_ID equalTo:[NSNumber numberWithLong:dogOwnerId]] whereKey:REQUEST_STATUS equalTo:[self convertToString:Accepted]];
-    
-    NSMutableArray* ids = [[NSMutableArray alloc] init];
-    
-    NSArray* result = [query findObjects];
-    for (PFObject* parseObject in result) {
-        [ids addObject:[NSNumber numberWithLong:[parseObject[DOG_OWNER_ID] longLongValue]]];
-    }
-    
-    return ids;
-}
-
-+(NSArray*)getRequestForDogWalker:(long)dogWalkerId {
++(NSArray*)getRequestIdsForDogWalker:(long)dogWalkerId {
     PFQuery* query = [PFQuery queryWithClassName:REQUESTS_TABLE];
     [[query whereKey:DOG_WALKER_ID equalTo:[NSNumber numberWithLong:dogWalkerId]] whereKey:REQUEST_STATUS equalTo:[self convertToString:Waiting]];
     
@@ -63,7 +49,7 @@
     return ids;
 }
 
-+(NSArray*)getRequestOfDogOwner:(long)dogOwnerId {
++(NSArray*)getRequestIdsOfDogOwner:(long)dogOwnerId {
     PFQuery* query = [PFQuery queryWithClassName:REQUESTS_TABLE];
     [[query whereKey:DOG_OWNER_ID equalTo:[NSNumber numberWithLong:dogOwnerId]] whereKey:REQUEST_STATUS equalTo:[self convertToString:Waiting]];
     
@@ -71,7 +57,7 @@
     
     NSArray* result = [query findObjects];
     for (PFObject* parseObject in result) {
-        [ids addObject:[NSNumber numberWithLong:[parseObject[DOG_OWNER_ID] longLongValue]]];
+        [ids addObject:[NSNumber numberWithLong:[parseObject[DOG_WALKER_ID] longLongValue]]];
     }
     
     return ids;
@@ -97,7 +83,7 @@
 
     switch (requestStatus) {
         case Waiting:
-            result = @"W‎aiting";
+            result = @"Waiting";
             break;
         case Accepted:
             result = @"Accepted";
@@ -108,11 +94,5 @@
     }
     return result;
 }
-//
-//+(enum DogSize)dogSizeFromString:(NSString*)str{
-//    NSDictionary<NSString*,NSNumber*>* dogSizes = @{ @"Small":@(Small), @"Medium":@(Medium), @"Large":@(Large) };
-//
-//    return dogSizes[str];
-//}
 
 @end
