@@ -9,19 +9,5 @@
 #import "User.h"
 
 @implementation User
-/*
--(id)init:(long)id userName:(NSString*)userName firstName:(NSString*)firstName lastName:(NSString*)lastName phoneNumber:(NSString*)phoneNumber address:(NSString*)address city:(NSString*)city{
-    self = [super init];
-    if (self){
-        _id = id;
-        _userName = userName;
-        _firstName = firstName;
-        _firstName = firstName;
-        _phoneNumber = phoneNumber;
-        _address = address;
-        _city = city;
-    }
-    return self;
-}
-*/
+
 @end

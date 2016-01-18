@@ -52,6 +52,11 @@ extern NSString *const REQUESTS_TABLE;
 //extern NSString *const DOG_WALKER_ID;
 extern NSString *const REQUEST_STATUS;
 
+// Last Update
+extern NSString *const LAST_UPDATE_TABLE;
+extern NSString *const TABLE_NAME;
+extern NSString *const LAST_UPDATE_DATE;
+
 // Images
 extern NSString *const IMAGES_TABLES;
 extern NSString *const IMAGE_NAME;

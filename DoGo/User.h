@@ -19,8 +19,4 @@
 @property NSString* address;
 @property NSString* city;
 
-
-/*
--(id)init:(long)id userName:(NSString*)userName firstName:(NSString*)firstName lastName:(NSString*)lastName phoneNumber:(NSString*)phoneNumber address:(NSString*)address city:(NSString*)city;
-*/
 @end

@@ -153,18 +153,6 @@ priceForHour isComfortableOnMorning:(bool)isComfortableOnMorning isComfortableOn
     return [RequestParse updateRequest:dogOwnerId dogWalkerId:dogWalkerId requestStatus:Declined];
 }
 
-
--(NSArray*)getOwnersConnectToWalker:(long)dogWalkerId {
-    NSArray* ids = [RequestParse getOwnersIdsConnectedToWalker:dogWalkerId];
-    NSMutableArray* dogOwners = [[NSMutableArray alloc]init];
-    for (int i = 0; i < ids.count; i++) {
-        [dogOwners addObject:[self getUserById:[ids[i] longLongValue]]];
-    }
-    
-    return dogOwners;
-}
-
-
 // waiting requests for dog walker
 -(NSArray*)getRequestForDogWalker:(long)dogWalkerId {
     NSArray* ids = [RequestParse getRequestIdsForDogWalker:dogWalkerId];
@@ -185,6 +173,38 @@ priceForHour isComfortableOnMorning:(bool)isComfortableOnMorning isComfortableOn
     }
     
     return dogWalkers;
+}
+
+// connections
+-(NSArray*)getOwnersConnectToWalker:(long)dogWalkerId {
+    NSArray* ids = [RequestParse getOwnersIdsConnectedToWalker:dogWalkerId];
+    NSMutableArray* dogOwners = [[NSMutableArray alloc]init];
+    for (int i = 0; i < ids.count; i++) {
+        [dogOwners addObject:[self getUserById:[ids[i] longLongValue]]];
+    }
+    
+    return dogOwners;
+}
+
+// get all status requests of dog walker
+-(NSArray*)getRequestByDogWalker:(long)dogWalkerId fromDate:(NSString*)fromDate{
+    NSMutableArray* requests = (NSMutableArray*)[RequestParse getRequestByDogWalker:dogWalkerId fromDate:fromDate];
+    
+    for (Request* request in requests) {
+        request.dogOwner = (DogOwner*)[self getUserById:request.dogOwnerId];
+    }
+    
+    return  requests;
+}
+
+// get all status requests of dog owner
+-(NSArray*)getRequestByDogOwner:(long)dogOwnerId fromDate:(NSString*)fromDate{
+    NSMutableArray* requests = (NSMutableArray*)[RequestParse getRequestByDogOwner:dogOwnerId fromDate:fromDate];
+    for (Request* request in requests) {
+        request.dogWalker = (DogWalker*)[self getUserById:request.dogWalkerId];
+    }
+    
+    return requests;
 }
 
 // Image Methods

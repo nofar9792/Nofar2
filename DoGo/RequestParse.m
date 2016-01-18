@@ -63,6 +63,44 @@
     return ids;
 }
 
++(NSArray*)getRequestByDogWalker:(long)dogWalkerId fromDate:(NSString*)fromDate{
+    PFQuery* query = [PFQuery queryWithClassName:REQUESTS_TABLE];
+    [query whereKey:DOG_WALKER_ID equalTo:[NSNumber numberWithLong:dogWalkerId]];
+    
+    if(fromDate){
+        NSDate* dated = [NSDate dateWithTimeIntervalSince1970:[fromDate doubleValue]];
+        [query whereKey:@"updatedAt" greaterThanOrEqualTo:dated];
+    }
+    
+    NSMutableArray* requets = [[NSMutableArray alloc] init];
+    
+    NSArray* result = [query findObjects];
+    for (PFObject* parseObject in result) {
+        [requets addObject:[[Request alloc] init:[parseObject[DOG_OWNER_ID] longLongValue] dogWalkerId:[parseObject[DOG_WALKER_ID] longLongValue] status: [self convertToEnum:parseObject[REQUEST_STATUS]]]];
+    }
+    
+    return requets;
+}
+
++(NSArray*)getRequestByDogOwner:(long)dogOwnerId fromDate:(NSString*)fromDate{
+    PFQuery* query = [PFQuery queryWithClassName:REQUESTS_TABLE];
+    [query whereKey:DOG_OWNER_ID equalTo:[NSNumber numberWithLong:dogOwnerId]];
+    
+    if(fromDate){
+        NSDate* dated = [NSDate dateWithTimeIntervalSince1970:[fromDate doubleValue]];
+        [query whereKey:@"updatedAt" greaterThanOrEqualTo:dated];
+    }
+    
+    NSMutableArray* requets = [[NSMutableArray alloc] init];
+    
+    NSArray* result = [query findObjects];
+    for (PFObject* parseObject in result) {
+        [requets addObject:[[Request alloc] init:[parseObject[DOG_OWNER_ID] longLongValue] dogWalkerId:[parseObject[DOG_WALKER_ID] longLongValue] status: [self convertToEnum:parseObject[REQUEST_STATUS]]]];
+    }
+    
+    return requets;
+}
+
 +(bool)updateRequest:(long)dogOwnerId dogWalkerId:(long)dogWalkerId requestStatus:(enum RequestStatus)requestStatus{
     PFQuery* query = [PFQuery queryWithClassName:REQUESTS_TABLE];
     [[query whereKey:DOG_OWNER_ID equalTo:[NSNumber numberWithLong:dogWalkerId]] whereKey:DOG_WALKER_ID equalTo:[NSNumber numberWithLong:dogWalkerId]];
@@ -93,6 +131,18 @@
             break;
     }
     return result;
+}
+
++(enum RequestStatus)convertToEnum:(NSString*)requestStatus{
+    
+    if([requestStatus isEqualToString:@"Waiting"]){
+        return Waiting;
+    }else if([requestStatus isEqualToString:@"Accepted"]){
+        return Accepted;
+    }else if([requestStatus isEqualToString:@"Declined"]){
+        return Declined;
+    }
+    return nil;
 }
 
 @end

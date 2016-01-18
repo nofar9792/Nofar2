@@ -15,10 +15,11 @@
 @interface RequestParse : NSObject
 
 +(bool)addToRequestsTable:(long)dogOwnerId dogWalkerId:(long)dogWalkerId requestStatus:(enum RequestStatus)requestStatus;
-+(NSArray*)getOwnersIdsConnectedToWalker:(long)dogWalkerId ;
-+(NSArray*)getWalkersIdsConnectedToOwner:(long)dogOwnerId ;
++(NSArray*)getOwnersIdsConnectedToWalker:(long)dogWalkerId;
 +(NSArray*)getRequestIdsForDogWalker:(long)dogWalkerId;
 +(NSArray*)getRequestIdsOfDogOwner:(long)dogOwnerId;
++(NSArray*)getRequestByDogWalker:(long)dogWalkerId fromDate:(NSString*)fromDate;
++(NSArray*)getRequestByDogOwner:(long)dogOwnerId fromDate:(NSString*)fromDate;
 +(bool)updateRequest:(long)dogOwnerId dogWalkerId:(long)dogWalkerId requestStatus:(enum RequestStatus)requestStatus;
 
 

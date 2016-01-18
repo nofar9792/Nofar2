@@ -14,6 +14,7 @@
 #import "RequestParse.h"
 #import "TripParse.h"
 #import "ImageParse.h"
+#import "Request.h"
 
 @interface ModelParse : NSObject
 
@@ -46,9 +47,11 @@ priceForHour isComfortableOnMorning:(bool)isComfortableOnMorning isComfortableOn
 -(bool)addRequest:(long)dogOwnerId dogWalkerId:(long)dogWalkerId requestStatus:(enum RequestStatus)requestStatus;
 -(bool)acceptRequest:(long)dogOwnerId dogWalkerId:(long)dogWalkerId;
 -(bool)declineRequest:(long)dogOwnerId dogWalkerId:(long)dogWalkerId;
--(NSArray*)getOwnersConnectToWalker:(long)dogWalkerId;
 -(NSArray*)getRequestForDogWalker:(long)dogWalkerId;
 -(NSArray*)getRequestOfDogOwner:(long)dogOwnerId;
+-(NSArray*)getOwnersConnectToWalker:(long)dogWalkerId;
+-(NSArray*)getRequestByDogWalker:(long)dogWalkerId fromDate:(NSString*)fromDate;
+-(NSArray*)getRequestByDogOwner:(long)dogOwnerId fromDate:(NSString*)fromDate;
 
 // Image Methods
 -(void)saveImage:(UIImage*)image imageName:(NSString*)imageName;

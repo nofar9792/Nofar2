@@ -38,7 +38,6 @@
 		846F370E1C3341270045909A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 846F370D1C3341270045909A /* libz.tbd */; };
 		846F37101C33412F0045909A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 846F370F1C33412F0045909A /* libsqlite3.tbd */; };
 		846F37191C41E2530045909A /* ModelSql.m in Sources */ = {isa = PBXBuildFile; fileRef = 846F37181C41E2530045909A /* ModelSql.m */; };
-		846F37201C4553460045909A /* Consts.m in Sources */ = {isa = PBXBuildFile; fileRef = 846F371F1C4553460045909A /* Consts.m */; };
 		846F37271C4555E20045909A /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846F37261C4555E20045909A /* RegisterViewController.m */; };
 		846F37361C455F300045909A /* UserParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 846F37351C455F300045909A /* UserParse.m */; };
 		846F37391C455F430045909A /* DogParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 846F37381C455F430045909A /* DogParse.m */; };
@@ -69,6 +68,13 @@
 		849430D71C2F58E00050D7FB /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = 849430D61C2F58E00050D7FB /* Dog.m */; };
 		849430DA1C2F58ED0050D7FB /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 849430D91C2F58ED0050D7FB /* User.m */; };
 		849430DD1C2F58FA0050D7FB /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = 849430DC1C2F58FA0050D7FB /* Trip.m */; };
+		84B1DC8E1C4D15EF00CFCF29 /* LastUpdateSql.m in Sources */ = {isa = PBXBuildFile; fileRef = 8459FC571C4AFB9A000F139C /* LastUpdateSql.m */; };
+		84B1DC911C4D1D1000CFCF29 /* UserSql.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1DC901C4D1D1000CFCF29 /* UserSql.m */; };
+		84B1DC941C4D1D1C00CFCF29 /* DogSql.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1DC931C4D1D1C00CFCF29 /* DogSql.m */; };
+		84B1DC971C4D1D3200CFCF29 /* DogWalkerSql.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1DC961C4D1D3200CFCF29 /* DogWalkerSql.m */; };
+		84B1DC9D1C4D254400CFCF29 /* Consts.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1DC9C1C4D254400CFCF29 /* Consts.m */; };
+		84B1DCA01C4D441A00CFCF29 /* RequestSql.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1DC9F1C4D441A00CFCF29 /* RequestSql.m */; };
+		84B1DCA51C4D585700CFCF29 /* Request.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1DCA41C4D585700CFCF29 /* Request.m */; };
 		84F266661C48197F00E17B4B /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F266651C48197F00E17B4B /* ProfileViewController.m */; };
 		84F266691C48297D00E17B4B /* TripsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F266681C48297D00E17B4B /* TripsViewController.m */; };
 		84F2666C1C4836D900E17B4B /* TripCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F2666B1C4836D900E17B4B /* TripCell.m */; };
@@ -144,7 +150,6 @@
 		846F37171C41E2530045909A /* ModelSql.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelSql.h; sourceTree = "<group>"; };
 		846F37181C41E2530045909A /* ModelSql.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelSql.m; sourceTree = "<group>"; };
 		846F371E1C4553460045909A /* Consts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Consts.h; sourceTree = "<group>"; };
-		846F371F1C4553460045909A /* Consts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Consts.m; sourceTree = "<group>"; };
 		846F37251C4555E20045909A /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		846F37261C4555E20045909A /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		846F37341C455F300045909A /* UserParse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserParse.h; sourceTree = "<group>"; };
@@ -195,6 +200,17 @@
 		849430D91C2F58ED0050D7FB /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		849430DB1C2F58FA0050D7FB /* Trip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trip.h; sourceTree = "<group>"; };
 		849430DC1C2F58FA0050D7FB /* Trip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trip.m; sourceTree = "<group>"; };
+		84B1DC8F1C4D1D1000CFCF29 /* UserSql.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSql.h; sourceTree = "<group>"; };
+		84B1DC901C4D1D1000CFCF29 /* UserSql.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSql.m; sourceTree = "<group>"; };
+		84B1DC921C4D1D1C00CFCF29 /* DogSql.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DogSql.h; sourceTree = "<group>"; };
+		84B1DC931C4D1D1C00CFCF29 /* DogSql.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DogSql.m; sourceTree = "<group>"; };
+		84B1DC951C4D1D3200CFCF29 /* DogWalkerSql.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DogWalkerSql.h; sourceTree = "<group>"; };
+		84B1DC961C4D1D3200CFCF29 /* DogWalkerSql.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DogWalkerSql.m; sourceTree = "<group>"; };
+		84B1DC9C1C4D254400CFCF29 /* Consts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Consts.m; sourceTree = "<group>"; };
+		84B1DC9E1C4D441900CFCF29 /* RequestSql.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestSql.h; sourceTree = "<group>"; };
+		84B1DC9F1C4D441A00CFCF29 /* RequestSql.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestSql.m; sourceTree = "<group>"; };
+		84B1DCA31C4D585700CFCF29 /* Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Request.h; sourceTree = "<group>"; };
+		84B1DCA41C4D585700CFCF29 /* Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Request.m; sourceTree = "<group>"; };
 		84F266641C48197F00E17B4B /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		84F266651C48197F00E17B4B /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		84F266671C48297D00E17B4B /* TripsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripsViewController.h; sourceTree = "<group>"; };
@@ -287,6 +303,14 @@
 				846F37181C41E2530045909A /* ModelSql.m */,
 				8459FC561C4AFB9A000F139C /* LastUpdateSql.h */,
 				8459FC571C4AFB9A000F139C /* LastUpdateSql.m */,
+				84B1DC8F1C4D1D1000CFCF29 /* UserSql.h */,
+				84B1DC901C4D1D1000CFCF29 /* UserSql.m */,
+				84B1DC921C4D1D1C00CFCF29 /* DogSql.h */,
+				84B1DC931C4D1D1C00CFCF29 /* DogSql.m */,
+				84B1DC951C4D1D3200CFCF29 /* DogWalkerSql.h */,
+				84B1DC961C4D1D3200CFCF29 /* DogWalkerSql.m */,
+				84B1DC9E1C4D441900CFCF29 /* RequestSql.h */,
+				84B1DC9F1C4D441A00CFCF29 /* RequestSql.m */,
 			);
 			name = Sql;
 			sourceTree = "<group>";
@@ -335,6 +359,8 @@
 		846F375A1C46CFF00045909A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				84B1DCA31C4D585700CFCF29 /* Request.h */,
+				84B1DCA41C4D585700CFCF29 /* Request.m */,
 				846F36F31C3334300045909A /* Model.h */,
 				846F36F41C3334300045909A /* Model.m */,
 				849430D51C2F58E00050D7FB /* Dog.h */,
@@ -393,7 +419,6 @@
 				846F37241C4555360045909A /* ViewControllers */,
 				849430D41C2F58C90050D7FB /* Model */,
 				849430A41C2F58A70050D7FB /* AppDelegate.h */,
-				846F371F1C4553460045909A /* Consts.m */,
 				849430A51C2F58A70050D7FB /* AppDelegate.m */,
 				849430AA1C2F58A70050D7FB /* Main.storyboard */,
 				849430AD1C2F58A70050D7FB /* Assets.xcassets */,
@@ -439,6 +464,7 @@
 				846F37161C41E2320045909A /* Sql */,
 				846F37151C41E2220045909A /* Parse */,
 				846F371E1C4553460045909A /* Consts.h */,
+				84B1DC9C1C4D254400CFCF29 /* Consts.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -585,17 +611,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B1DC8E1C4D15EF00CFCF29 /* LastUpdateSql.m in Sources */,
 				84809A5C1C481311006D9B3B /* ProfileDogOwnerViewController.m in Sources */,
 				846F37361C455F300045909A /* UserParse.m in Sources */,
 				846F37421C455F890045909A /* TripParse.m in Sources */,
 				8422BA561C4AEFFD001A381C /* ImageParse.m in Sources */,
 				849430DA1C2F58ED0050D7FB /* User.m in Sources */,
 				8422BA531C4AEFD7001A381C /* SearchViewController.m in Sources */,
+				84B1DCA01C4D441A00CFCF29 /* RequestSql.m in Sources */,
 				84F266691C48297D00E17B4B /* TripsViewController.m in Sources */,
 				846F373F1C455F750045909A /* RequestParse.m in Sources */,
 				0F76077B1C4BADFD00E7171F /* DogInDogsListCell.m in Sources */,
 				846F37191C41E2530045909A /* ModelSql.m in Sources */,
 				0F76078D1C4C32AB00E7171F /* MessagesDogOwnerViewController.m in Sources */,
+				84B1DC941C4D1D1C00CFCF29 /* DogSql.m in Sources */,
 				846F37601C46EDCE0045909A /* DogOwnerTabsViewController.m in Sources */,
 				846F375D1C46ED8D0045909A /* DogWalkerTabsViewController.m in Sources */,
 				0F7607781C4AF67000E7171F /* DogWalkerDetailsViewController.m in Sources */,
@@ -605,6 +634,7 @@
 				84528F641C47161C009ECF2D /* ProfileDogWalkerViewController.m in Sources */,
 				846F37391C455F430045909A /* DogParse.m in Sources */,
 				846F36E81C3062C80045909A /* DogOwner.m in Sources */,
+				84B1DC971C4D1D3200CFCF29 /* DogWalkerSql.m in Sources */,
 				849430DD1C2F58FA0050D7FB /* Trip.m in Sources */,
 				849430A61C2F58A70050D7FB /* AppDelegate.m in Sources */,
 				849430D71C2F58E00050D7FB /* Dog.m in Sources */,
@@ -613,14 +643,16 @@
 				846F373C1C455F620045909A /* DogWalkerParse.m in Sources */,
 				0F7607811C4BAFBB00E7171F /* DogsListViewController.m in Sources */,
 				84F2666C1C4836D900E17B4B /* TripCell.m in Sources */,
-				846F37201C4553460045909A /* Consts.m in Sources */,
 				0F7607871C4C08EB00E7171F /* MessegasDogWalkerViewController.m in Sources */,
 				8439FD8B1C4980C000EED0FF /* UIView+Toast.m in Sources */,
 				849430A31C2F58A70050D7FB /* main.m in Sources */,
+				84B1DC911C4D1D1000CFCF29 /* UserSql.m in Sources */,
 				846F37271C4555E20045909A /* RegisterViewController.m in Sources */,
 				846F36F81C33348C0045909A /* ModelParse.m in Sources */,
+				84B1DC9D1C4D254400CFCF29 /* Consts.m in Sources */,
 				0FC6248B1C4A968B00441D22 /* DogWalkerCell.m in Sources */,
 				846F36F51C3334300045909A /* Model.m in Sources */,
+				84B1DCA51C4D585700CFCF29 /* Request.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

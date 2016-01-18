@@ -10,4 +10,16 @@
 
 @implementation Request
 
+-(id)init:(long)dogOwnerId dogWalkerId:(long)dogWalkerId status:(enum RequestStatus) status{
+    {
+        self = [super init];
+        if (self){
+            self.dogOwnerId = dogOwnerId;
+            self.dogWalkerId = dogWalkerId;
+            self.status = status;
+        }
+        return self;
+    }
+}
+
 @end

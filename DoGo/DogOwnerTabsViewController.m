@@ -41,7 +41,7 @@
         DogOwnerTabSegue* msegue = (DogOwnerTabSegue*)segue;
         msegue.destinationViewContainer = self.containerView;
         
-        SearchViewController* searchVC = [(UINavigationController*)msegue.destinationViewController topViewController];
+        SearchViewController* searchVC = (SearchViewController*)[(UINavigationController*)msegue.destinationViewController topViewController];
                     
         searchVC.user = self.dogOwner;
     }

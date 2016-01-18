@@ -94,6 +94,7 @@ priceForHour isComfortableOnMorning:(bool)isComfortableOnMorning isComfortableOn
 }
 
 // Request Methods
+
 -(bool)addRequest:(long)dogOwnerId dogWalkerId:(long)dogWalkerId requestStatus:(enum RequestStatus)requestStatus{
     return [self.modelParse addRequest:dogOwnerId dogWalkerId:dogWalkerId requestStatus:requestStatus];
 }
@@ -107,15 +108,60 @@ priceForHour isComfortableOnMorning:(bool)isComfortableOnMorning isComfortableOn
 }
 
 -(NSArray*)getOwnersConnectToWalker:(long)dogWalkerId{
-    return [self.modelParse getOwnersConnectToWalker:dogWalkerId];
+    //return [self.modelParse getOwnersConnectToWalker:dogWalkerId];
+    
+    NSMutableArray* dogOwnersResult = (NSMutableArray*)[self.modelSql getOwnersConnectToWalker:dogWalkerId];
+    NSString* lastUpadteDate = [self.modelSql getRequestsLastUpdateDate];
+    
+    NSMutableArray* newRequestsFromParse = (NSMutableArray*)[self.modelParse getRequestByDogWalker:dogWalkerId fromDate:lastUpadteDate];
+
+     if (newRequestsFromParse.count > 0) {
+         for (Request* request in newRequestsFromParse) {
+             [self.modelSql addDogOwner:request.dogOwner];
+             [self.modelSql addRequest:request];
+         }
+         [self.modelSql setRequestsLastUpdateDate];
+         dogOwnersResult = (NSMutableArray*)[self.modelSql getOwnersConnectToWalker:dogWalkerId];
+     }
+    return dogOwnersResult;
 }
 
 -(NSArray*)getRequestForDogWalker:(long)dogWalkerId{
-    return [self.modelParse getRequestForDogWalker:dogWalkerId];
+    //return [self.modelParse getRequestForDogWalker:dogWalkerId];
+    
+    NSMutableArray* dogOwnersResult = (NSMutableArray*)[self.modelSql getRequestForDogWalker:dogWalkerId];
+    NSString* lastUpadteDate = [self.modelSql getRequestsLastUpdateDate];
+    
+    NSMutableArray* newRequestsFromParse = (NSMutableArray*)[self.modelParse getRequestByDogWalker:dogWalkerId fromDate:lastUpadteDate];
+    
+    if (newRequestsFromParse.count > 0) {
+        for (Request* request in newRequestsFromParse) {
+            [self.modelSql addDogOwner:request.dogOwner];
+            [self.modelSql addRequest:request];
+        }
+        [self.modelSql setRequestsLastUpdateDate];
+        dogOwnersResult = (NSMutableArray*)[self.modelSql getRequestForDogWalker:dogWalkerId];
+    }
+    return dogOwnersResult;
 }
 
 -(NSArray*)getRequestOfDogOwner:(long)dogOwnerId{
-    return [self.modelParse getRequestOfDogOwner:dogOwnerId];
+    //return [self.modelParse getRequestOfDogOwner:dogOwnerId];
+    
+    NSMutableArray* dogWalkersResult = (NSMutableArray*)[self.modelSql getRequestOfDogOwner:dogOwnerId];
+    NSString* lastUpadteDate = [self.modelSql getRequestsLastUpdateDate];
+    
+    NSMutableArray* newRequestsFromParse = (NSMutableArray*)[self.modelParse getRequestByDogOwner:dogOwnerId fromDate:lastUpadteDate];
+    
+    if (newRequestsFromParse.count > 0) {
+        for (Request* request in newRequestsFromParse) {
+            [self.modelSql addDogWalker:request.dogWalker];
+            [self.modelSql addRequest:request];
+        }
+        [self.modelSql setRequestsLastUpdateDate];
+        dogWalkersResult = (NSMutableArray*)[self.modelSql getRequestOfDogOwner:dogOwnerId];
+    }
+    return dogWalkersResult;
 }
 
 // Image Methods

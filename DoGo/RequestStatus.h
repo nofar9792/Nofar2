@@ -14,6 +14,4 @@ enum RequestStatus{
     Accepted,
     Declined
 };
-
-
 #endif /* Header_h */

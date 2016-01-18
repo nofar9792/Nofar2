@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
+#import "Consts.h"
 
 @interface LastUpdateSql : NSObject
 
-+(BOOL)createTable:(sqlite3*)database;
-+(NSString*)getLastUpdateDate:(sqlite3*)database forTable:(NSString*)table;
-+(void)setLastUpdateDate:(sqlite3*)database date:(NSString*)date forTable:(NSString*)table;
++(bool)createTable:(sqlite3*)db;
++(bool)dropTable:(sqlite3*)db;
++(NSString*)getLastUpdateDate:(sqlite3*)db forTable:(NSString*)table;
++(void)setLastUpdateDate:(sqlite3*)db forTable:(NSString*)table;
 
 @end
