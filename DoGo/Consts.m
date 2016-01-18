@@ -48,6 +48,8 @@ NSString * const DOGS_TABLE = @"DOGS";
 
 NSString * const NAME = @"name";
 
+NSString * const SIZE = @"size";
+
 NSString * const PIC_REF = @"picRef";
 
 NSString * const TRIPS_TABLE = @"TRIPS";

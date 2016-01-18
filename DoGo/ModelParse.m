@@ -99,7 +99,7 @@ priceForHour isComfortableOnMorning:(bool)isComfortableOnMorning isComfortableOn
 // Dog Owner Methods
 
 -(long)addDogOwner:(NSString*)username password:(NSString*)password firstName:(NSString*)firstName lastName:(NSString*)lastName phoneNumber:(NSString*)phoneNumber address:(NSString*)address city:(NSString*)city dog:(Dog*)dog{
-    long userId = [UserParse addToUsersTable:username password:password firstName:firstName lastName:lastName phoneNumber:phoneNumber address:address city:city isDogWalker:YES];
+    long userId = [UserParse addToUsersTable:username password:password firstName:firstName lastName:lastName phoneNumber:phoneNumber address:address city:city isDogWalker:NO];
     [DogParse addToDogsTable:userId dog:dog];
     return userId;
 }

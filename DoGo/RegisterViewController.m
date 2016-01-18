@@ -42,6 +42,7 @@
     {
         ProfileDogOwnerViewController* profileDogOwnerVC = (ProfileDogOwnerViewController*)self.childVC;
         DogOwner* dogOwner = [[DogOwner alloc]init];
+        dogOwner.dog = [[Dog alloc]init];
         
         dogOwner.dog.name = profileDogOwnerVC.dogNameTextBox.text;
         dogOwner.dog.age = [profileDogOwnerVC.dogAgeTextBox.text longLongValue];
@@ -68,11 +69,11 @@
       
         if (self.isOwner)
         {
-            [self performSegueWithIdentifier:@"toDogWalkerScreen" sender:self];
+            [self performSegueWithIdentifier:@"toDogOwnerScreen" sender:self];
         }
         else
         {
-            [self performSegueWithIdentifier:@"toDogOwmerSceen" sender:self];
+            [self performSegueWithIdentifier:@"toDogWalkerScreen" sender:self];
         }
     };
     
