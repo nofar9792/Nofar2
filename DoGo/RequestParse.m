@@ -134,7 +134,6 @@
 }
 
 +(enum RequestStatus)convertToEnum:(NSString*)requestStatus{
-    
     if([requestStatus isEqualToString:@"Waiting"]){
         return Waiting;
     }else if([requestStatus isEqualToString:@"Accepted"]){

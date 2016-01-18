@@ -16,7 +16,7 @@
     NSString* sql = [NSString stringWithFormat:@"CREATE TABLE IF NOT EXISTS %@ (%@ INTEGER PRIMARY KEY, %@ TEXT, %@ TEXT, %@ TEXT, %@ TEXT, %@ TEXT, %@ TEXT, %@ BOOLEAN)", USER_TABLE, USER_ID, USERNAME, FIRST_NAME, LAST_NAME, PHONE_NUMBER, ADDRESS, CITY, IS_DOG_WALKER];
     int res = sqlite3_exec(db, [sql UTF8String], NULL, NULL, &errormsg);
     if(res != SQLITE_OK){
-        NSLog(@"ERROR: failed creating %@ table", USER_TABLE);
+        NSLog(@"ERROR: failed creating %@ table %s", USER_TABLE, errormsg);
         return NO;
     }
     return YES;
@@ -25,10 +25,10 @@
 +(BOOL)dropTable:(sqlite3*)db{
     char* errormsg;
     
-    NSString* sql = [NSString stringWithFormat:@"drop table IF EXISTS %@ )", USER_TABLE];
+    NSString* sql = [NSString stringWithFormat:@"drop table IF EXISTS %@ ", USER_TABLE];
     int res = sqlite3_exec(db, [sql UTF8String], NULL, NULL, &errormsg);
     if(res != SQLITE_OK){
-        NSLog(@"ERROR: failed droping %@ table", USER_TABLE);
+        NSLog(@"ERROR: failed droping %@ table %s", USER_TABLE, errormsg);
         return NO;
     }
     return YES;
@@ -79,11 +79,11 @@
     if (sqlite3_prepare_v2(db,[query UTF8String],-1,&statment,nil) == SQLITE_OK){
         //sqlite3_bind_text(statment, 1, [[NSString stringWithFormat:@"%li",user.userId] UTF8String], -1, NULL);
              // guess
-        sqlite3_bind_int(statment, 1, (int)user.userId);
+        //sqlite3_bind_int(statment, 1, (int)user.userId);
         sqlite3_bind_text(statment, 2, [user.userName UTF8String], -1, NULL);
         sqlite3_bind_text(statment, 3, [user.firstName UTF8String], -1, NULL);
-        sqlite3_bind_text(statment, 4, [user.lastName  UTF8String], -1, NULL);
-        sqlite3_bind_text(statment, 5, [user.phoneNumber  UTF8String], -1, NULL);
+        sqlite3_bind_text(statment, 4, [user.lastName UTF8String], -1, NULL);
+        sqlite3_bind_text(statment, 5, [user.phoneNumber UTF8String], -1, NULL);
         sqlite3_bind_text(statment, 6, [user.address UTF8String], -1, NULL);
         sqlite3_bind_text(statment, 7, [user.city  UTF8String], -1, NULL);
         

@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DoGo/User.m"
-            timestampString = "473114259.62599"
+            timestampString = "474838591.700864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
             landmarkName = "@implementation User"
             landmarkType = "3">
          </BreakpointContent>
@@ -173,7 +173,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "47"
             endingLineNumber = "47"
-            landmarkName = "-perform"
+            landmarkName = "-prepareForSegue:sender:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -206,6 +206,22 @@
             startingLineNumber = "133"
             endingLineNumber = "133"
             landmarkName = "+convertFromParseUserToUser:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DoGo/UserSql.m"
+            timestampString = "474841020.272029"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "+addToUsersTable:user:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

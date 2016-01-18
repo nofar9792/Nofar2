@@ -17,7 +17,7 @@
     NSString* sql = [NSString stringWithFormat:@"CREATE TABLE IF NOT EXISTS %@ (%@ INTEGER PRIMARY KEY, %@ INTEGER, %@ INTEGER, %@ BOOLEAN, %@ BOOLEAN, %@ BOOLEAN)", DOG_WALKERS_TABLE, USER_ID, AGE, PRICE_FOR_HOUR, IS_COMFORTABLE_ON_MORNING, IS_COMFORTABLE_ON_AFTERNOON, IS_COMFORTABLE_ON_EVENING];
     int res = sqlite3_exec(db, [sql UTF8String], NULL, NULL, &errormsg);
     if(res != SQLITE_OK){
-        NSLog(@"ERROR: failed creating %@ table", DOG_WALKERS_TABLE);
+        NSLog(@"ERROR: failed creating %@ table %s", DOG_WALKERS_TABLE, errormsg);
         return NO;
     }
     return YES;
@@ -26,10 +26,10 @@
 +(bool)dropTable:(sqlite3*)db{
     char* errormsg;
     
-    NSString* sql = [NSString stringWithFormat:@"drop table IF EXISTS %@ )", DOG_WALKERS_TABLE];
+    NSString* sql = [NSString stringWithFormat:@"drop table IF EXISTS %@ ", DOG_WALKERS_TABLE];
     int res = sqlite3_exec(db, [sql UTF8String], NULL, NULL, &errormsg);
     if(res != SQLITE_OK){
-        NSLog(@"ERROR: failed droping %@ table", DOG_WALKERS_TABLE);
+        NSLog(@"ERROR: failed droping %@ table %s", DOG_WALKERS_TABLE, errormsg);
         return NO;
     }
     return YES;
