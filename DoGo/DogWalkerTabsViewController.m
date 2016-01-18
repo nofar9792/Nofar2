@@ -11,7 +11,7 @@
 @implementation DogWalkerTabsViewController
 
 -(void)viewDidLoad{
-      [self performSegueWithIdentifier:@"profileDogWalkerSegue" sender:self];
+      [self performSegueWithIdentifier:@"dogListSegue" sender:self];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

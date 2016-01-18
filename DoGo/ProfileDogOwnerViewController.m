@@ -22,15 +22,27 @@
         self.dogNameTextBox.text =  self.dogOwner.dog.name;
         self.dogAgeTextBox.text = [NSString stringWithFormat:@"%li", self.dogOwner.dog.age];
         
-        if (self.dogOwner.dog.picRef) {
-             [self.spinner startAnimating];
-            dispatch_async(dispatch_get_global_queue(0, 0), ^{
-                self.dogPic = [[Model instance] getImage:self.dogOwner.dog.picRef];
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [self.dogImageView setImage:self.dogPic];
-                    [self.spinner stopAnimating];
+        if (self.dogOwner.dog.picRef)
+        {
+            [self.spinner startAnimating];
+            
+            self.dogPic = [Utilities loadImageFromDevice:self.dogOwner.dog.picRef];
+            
+            if(self.dogPic == nil)
+            {
+                dispatch_async(dispatch_get_global_queue(0, 0), ^{
+                    self.dogPic = [[Model instance] getImage:self.dogOwner.dog.picRef];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self.dogImageView setImage:self.dogPic];
+                        [Utilities saveImageOnDevice:self.dogOwner.dog.picRef image:self.dogPic];
+                        [self.spinner stopAnimating];
+                    });
                 });
-            });
+            }
+            else
+            {
+                [self.dogImageView setImage:self.dogPic];
+            }
         }
     }
 }
