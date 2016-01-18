@@ -11,6 +11,7 @@
 #import "Model.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "UIView+Toast.h"
+#import "Utilities.h"
 @import Photos;
 
 
