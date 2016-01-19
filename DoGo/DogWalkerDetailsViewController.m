@@ -68,16 +68,16 @@
 {
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         bool result = [[Model instance] addRequest:self.dogOwner.userId dogWalkerId:self.dogWalker.userId requestStatus:Waiting];
-        
-        if (result)
-        {
-            [self.view makeToast:@"הבקשה נשלחה בהצלחה"];
-        }
-        else
-        {
-            [self.view makeToast:@"אירעה שגיאה בעת שליחת הבקשה. נסה שנית"];
-        }
+       
         dispatch_async(dispatch_get_main_queue(), ^{
+            if (result)
+            {
+                [self.view makeToast:@"הבקשה נשלחה בהצלחה"];
+            }
+            else
+            {
+                [self.view makeToast:@"אירעה שגיאה בעת שליחת הבקשה. נסה שנית"];
+            }
             // [self.spinner stopAnimating];
         });
     });
