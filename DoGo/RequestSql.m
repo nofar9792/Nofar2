@@ -106,7 +106,7 @@
         sqlite3_bind_int(statment, 3, (int)request.dogWalkerId);
         
         if(sqlite3_step(statment) == SQLITE_DONE){
-            YES;
+            return YES;
         }
     }
 
@@ -120,7 +120,7 @@
         sqlite3_bind_text(statment, 3, [[self convertToString:request.status] UTF8String], -1, NULL);
         
         if(sqlite3_step(statment) == SQLITE_DONE){
-            YES;
+            return YES;
         }
     }
     

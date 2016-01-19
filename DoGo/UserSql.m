@@ -97,7 +97,7 @@
         }
         
         if(sqlite3_step(statment) == SQLITE_DONE){
-            YES;
+            return YES;
         }
     }
 

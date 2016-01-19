@@ -45,8 +45,10 @@
         sqlite3_bind_text(statment, 2, [dog.name UTF8String], -1, NULL);
         sqlite3_bind_int(statment, 3, (int)dog.age);
         sqlite3_bind_text(statment, 4, [dog.picRef UTF8String], -1, NULL);
-
-       
+        
+        if(sqlite3_step(statment) == SQLITE_DONE){
+            return YES;
+        }
     }
 
     NSLog(@"ERROR: addToDogWalkersTable failed %s",sqlite3_errmsg(db));
