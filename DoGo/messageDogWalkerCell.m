@@ -22,6 +22,7 @@
 
 - (IBAction)acceptClick:(id)sender
 {
+    [self.spinner startAnimating];
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         [[Model instance]acceptRequest:self.owner.userId dogWalkerId:self.user.userId];
         
@@ -30,6 +31,7 @@
             [self.acceptButton setEnabled:false];
             [self.declineButton setTitle:@"" forState:UIControlStateNormal];
             [self.declineButton setEnabled:false];
+            [self.spinner stopAnimating];
 
         });
     });
@@ -37,6 +39,7 @@
 
 - (IBAction)declineClick:(id)sender
 {
+    [self.spinner startAnimating];
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         [[Model instance]declineRequest:self.owner.userId dogWalkerId:self.user.userId];
         
@@ -45,6 +48,7 @@
             [self.acceptButton setEnabled:false];
             [self.declineButton setTitle:@"" forState:UIControlStateNormal];
             [self.declineButton setEnabled:false];
+            [self.spinner stopAnimating];
         });
     });
 }

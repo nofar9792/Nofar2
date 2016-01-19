@@ -17,6 +17,7 @@
 - (IBAction)declineClick:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *acceptButton;
 @property (weak, nonatomic) IBOutlet UIButton *declineButton;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 @property (nonatomic) DogOwner* owner;
 @property(nonatomic) DogWalker* user;

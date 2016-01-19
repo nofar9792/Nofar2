@@ -38,6 +38,7 @@
     }
     
     // show phone number if connected
+    [self.spinner startAnimating];
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         NSArray* allDogOwners;
         allDogOwners = [[Model instance] getOwnersConnectToWalker:self.dogWalker.userId];
@@ -53,7 +54,7 @@
         }
     
         dispatch_async(dispatch_get_main_queue(), ^{
-            // [self.spinner stopAnimating];
+             [self.spinner stopAnimating];
         });
     });
 
@@ -66,6 +67,7 @@
 
 - (IBAction)askNumberClick:(id)sender
 {
+    [self.spinner startAnimating];
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         bool result = [[Model instance] addRequest:self.dogOwner.userId dogWalkerId:self.dogWalker.userId requestStatus:Waiting];
        
@@ -78,7 +80,7 @@
             {
                 [self.view makeToast:@"אירעה שגיאה בעת שליחת הבקשה. נסה שנית"];
             }
-            // [self.spinner stopAnimating];
+            [self.spinner stopAnimating];
         });
     });
 }

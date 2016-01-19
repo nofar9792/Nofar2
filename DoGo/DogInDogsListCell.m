@@ -25,19 +25,21 @@
 
 - (IBAction)startTripClick:(id)sender
 {
-    
+    [self.spinner startAnimating];
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         tripId = [[Model instance]startTrip:self.owner.userId dogWalkerId:self.walker.userId];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             self.endTripButton.enabled = true;
             self.startTripButton.enabled = false;
+            [self.spinner stopAnimating];
         });
     });
 }
 
 - (IBAction)endTripClick:(id)sender
 {
+    [self.spinner startAnimating];
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         [[Model instance]endTrip:tripId];
         
@@ -45,6 +47,7 @@
             
             self.endTripButton.enabled = false;
             self.startTripButton.enabled = true;
+            [self.spinner stopAnimating];
         });
     });
 }

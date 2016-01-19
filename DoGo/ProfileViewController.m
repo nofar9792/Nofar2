@@ -50,6 +50,9 @@
         // Add informatin to the child view
         profileDogOwnerVC.dogOwner = (DogOwner*)self.user;
         
+        // set the pick image button to hidden
+        profileDogOwnerVC.pickImageButton.hidden = YES;
+        
         self.childVC = profileDogOwnerVC;
         
         [self.userTypeDetailsView addSubview:profileDogOwnerVC.view];

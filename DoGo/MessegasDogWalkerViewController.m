@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.errorLabel.text = @"";
     [self loadData];
 }
 
@@ -60,13 +60,16 @@
 
 -(void)loadData
 {
+    [self.spinner startAnimating];
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         data =[[Model instance] getRequestForDogWalker:self.user.userId ];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             if(data.count == 0){
+                self.errorLabel.text = @"אין הודעות להצגה";
             }
             [self.tableView reloadData];
+            [self.spinner stopAnimating];
         });
     });
 }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Pdt-6p-PEi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Pdt-6p-PEi">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -286,9 +286,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.99502840910000001" green="0.91022780079999999" blue="0.75492210479999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="988-pu-iKl">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <activityIndicatorView key="tableFooterView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" id="zvY-vi-P05">
+                            <rect key="frame" x="0.0" y="180" width="320" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="color" red="1" green="0.21529377229999999" blue="0.082779216550000007" alpha="1" colorSpace="calibratedRGB"/>
+                        </activityIndicatorView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="messageWalkerCell" rowHeight="108" id="Kaa-xr-ItT" customClass="messageDogWalkerCell">
-                                <rect key="frame" x="0.0" y="28" width="320" height="108"/>
+                                <rect key="frame" x="0.0" y="72" width="320" height="108"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kaa-xr-ItT" id="5Bo-Uf-lnc">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="107"/>
@@ -324,6 +336,11 @@
                                                 <action selector="acceptClick:" destination="Kaa-xr-ItT" eventType="touchUpInside" id="ZdW-0z-G9A"/>
                                             </connections>
                                         </button>
+                                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" id="YZB-zW-VIJ">
+                                            <rect key="frame" x="148" y="50" width="20" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="color" red="1" green="0.21529377229999999" blue="0.082779216550000007" alpha="1" colorSpace="calibratedRGB"/>
+                                        </activityIndicatorView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.99502840910000001" green="0.91022780079999999" blue="0.75492210479999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -331,6 +348,7 @@
                                     <outlet property="acceptButton" destination="gos-TY-jfJ" id="Avg-6a-2lu"/>
                                     <outlet property="declineButton" destination="bX9-PW-HAa" id="cgt-Z1-yFQ"/>
                                     <outlet property="dogOwnerNameLabel" destination="EyR-VV-uek" id="8Nx-U4-jV9"/>
+                                    <outlet property="spinner" destination="YZB-zW-VIJ" id="I5A-wp-ZR9"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -342,6 +360,10 @@
                     <navigationItem key="navigationItem" id="PDl-2D-vN5"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="514"/>
+                    <connections>
+                        <outlet property="errorLabel" destination="988-pu-iKl" id="GsS-jm-c1t"/>
+                        <outlet property="spinner" destination="zvY-vi-P05" id="dl8-qq-U28"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bSZ-Ga-7ga" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -439,6 +461,11 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" id="D6W-Oj-QKI">
+                                <rect key="frame" x="150" y="182" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="1" green="0.21529377229999999" blue="0.082779216550000007" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.99502840910000001" green="0.91022780079999999" blue="0.75492210479999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -450,7 +477,7 @@
                         <outlet property="firstNameTextBox" destination="GxD-pE-lkW" id="mtH-1k-qN9"/>
                         <outlet property="lastNameTextBox" destination="rPo-e3-CNc" id="An6-n6-KtC"/>
                         <outlet property="phoneNumberTextBox" destination="o4N-jD-WBc" id="ZX6-Rk-BDt"/>
-                        <outlet property="spinner" destination="UEp-Xa-CGj" id="xNJ-ih-nxM"/>
+                        <outlet property="spinner" destination="D6W-Oj-QKI" id="gVj-VV-Zu4"/>
                         <outlet property="userTypeDetailsView" destination="ihf-9l-ZTj" id="5T5-m6-a5O"/>
                     </connections>
                 </viewController>
@@ -467,9 +494,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.99502840910000001" green="0.91022780079999999" blue="0.75492210479999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DP5-j2-W0G">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="39"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <activityIndicatorView key="tableFooterView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" id="nrc-wE-t6R">
+                            <rect key="frame" x="0.0" y="234" width="320" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="color" red="1" green="0.21529377229999999" blue="0.082779216550000007" alpha="1" colorSpace="calibratedRGB"/>
+                        </activityIndicatorView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="dogCell" rowHeight="167" id="DYR-IY-IF1" customClass="DogInDogsListCell">
-                                <rect key="frame" x="0.0" y="28" width="320" height="167"/>
+                                <rect key="frame" x="0.0" y="67" width="320" height="167"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DYR-IY-IF1" id="6o4-rY-lkw">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="166"/>
@@ -547,6 +586,11 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" id="qfQ-zL-54m">
+                                            <rect key="frame" x="147" y="62" width="20" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="color" red="1" green="0.21529377229999999" blue="0.082779216550000007" alpha="1" colorSpace="calibratedRGB"/>
+                                        </activityIndicatorView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.99502840910000001" green="0.91022780079999999" blue="0.75492210479999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -556,6 +600,7 @@
                                     <outlet property="endTripButton" destination="dus-mw-RDp" id="3Pg-vb-4JQ"/>
                                     <outlet property="ownerNameLabel" destination="Lg3-lN-XqA" id="zS2-Iv-1fJ"/>
                                     <outlet property="phoneNumberLabel" destination="rU6-6J-kon" id="auc-3A-A4z"/>
+                                    <outlet property="spinner" destination="qfQ-zL-54m" id="tRO-09-M0Z"/>
                                     <outlet property="startTripButton" destination="JhI-Ru-ycw" id="vgP-5b-0XR"/>
                                 </connections>
                             </tableViewCell>
@@ -567,10 +612,14 @@
                     </tableView>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="514"/>
+                    <connections>
+                        <outlet property="errorLabel" destination="DP5-j2-W0G" id="y6l-0W-nnf"/>
+                        <outlet property="spinner" destination="nrc-wE-t6R" id="0n7-ai-Ji3"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mJA-w8-Zmr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1746" y="186"/>
+            <point key="canvasLocation" x="1748" y="210"/>
         </scene>
         <!--Log In-->
         <scene sceneID="DUN-29-k1j">
@@ -679,11 +728,6 @@
                                     <segue destination="Zc6-hj-oXh" kind="custom" identifier="dogListSegue" customClass="DogWalkerTabSegue" id="eeo-yo-fEK"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" id="dze-jn-5yp">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="514"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.99502840910000001" green="0.91022780079999999" blue="0.75492210479999999" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ltr-gg-x0b">
                                 <rect key="frame" x="6" y="509" width="58" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -692,6 +736,11 @@
                                     <segue destination="Wcy-hJ-6kt" kind="custom" identifier="messagesDogWalkerSegue" customClass="DogWalkerTabSegue" id="6jl-5X-b9z"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" id="dze-jn-5yp">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="514"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.99502840910000001" green="0.91022780079999999" blue="0.75492210479999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -873,6 +922,7 @@
                         <outlet property="dogAgeTextBox" destination="zvK-Oz-PzD" id="yeO-vT-Rxw"/>
                         <outlet property="dogImageView" destination="JmD-Z3-IhS" id="WR4-NJ-cMz"/>
                         <outlet property="dogNameTextBox" destination="uoZ-5Y-fvM" id="KY2-ax-keG"/>
+                        <outlet property="pickImageButton" destination="ThE-wF-jzo" id="HoX-Fs-R00"/>
                         <outlet property="spinner" destination="OCQ-EF-oS9" id="7NX-FB-4Nn"/>
                     </connections>
                 </viewController>
@@ -927,6 +977,19 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="tJ5-rN-VXM">
+                                <rect key="frame" x="137" y="207" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="חפש"/>
+                                <connections>
+                                    <action selector="searchClick:" destination="Atm-og-rxd" eventType="touchUpInside" id="iju-3Y-bfK"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" id="34Q-9T-bd9">
+                                <rect key="frame" x="144" y="217" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="1" green="0.21529377229999999" blue="0.082779216550000007" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="hBx-BJ-0g7">
                                 <rect key="frame" x="0.0" y="245" width="320" height="269"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -934,9 +997,16 @@
                                 <color key="separatorColor" red="0.99502840910000001" green="0.91022780079999999" blue="0.75492210479999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.99502840910000001" green="0.91022780079999999" blue="0.75492210479999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexTrackingBackgroundColor" red="0.99502840910000001" green="0.91022780079999999" blue="0.75492210479999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ApC-6P-b3L">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="walkerCell" rowHeight="90" id="9TY-iA-cwy" customClass="DogWalkerCell">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="90"/>
+                                        <rect key="frame" x="0.0" y="72" width="320" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9TY-iA-cwy" id="YJM-Eh-HNY">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
@@ -1000,14 +1070,6 @@
                                     <outlet property="delegate" destination="Atm-og-rxd" id="9dV-EK-9kg"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="tJ5-rN-VXM">
-                                <rect key="frame" x="137" y="207" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="חפש"/>
-                                <connections>
-                                    <action selector="searchClick:" destination="Atm-og-rxd" eventType="touchUpInside" id="iju-3Y-bfK"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.99502840910000001" green="0.91022780079999999" blue="0.75492210479999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -1016,8 +1078,10 @@
                     <size key="freeformSize" width="320" height="514"/>
                     <connections>
                         <outlet property="cityTextBox" destination="4RX-hV-78n" id="Szf-cm-cdR"/>
+                        <outlet property="errorLabel" destination="ApC-6P-b3L" id="VaN-R0-Rao"/>
                         <outlet property="maxPriceTextBox" destination="gFD-hL-2te" id="vhy-XM-Oep"/>
                         <outlet property="minimalAgeTextBox" destination="XyW-w7-7nc" id="H40-JZ-9MP"/>
+                        <outlet property="spinner" destination="34Q-9T-bd9" id="NWn-TT-idN"/>
                         <outlet property="tableView" destination="hBx-BJ-0g7" id="F2r-uf-eav"/>
                         <segue destination="eYd-Iv-uNL" kind="push" identifier="toDogWalkerDetailsScreen" id="iQf-US-USg"/>
                     </connections>
@@ -1115,17 +1179,11 @@
                                 <rect key="frame" x="271" y="403" width="18" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="morningCheckBox" image="empty.png"/>
-                                <connections>
-                                    <action selector="morningClick:" destination="eYd-Iv-uNL" eventType="touchUpInside" id="zMH-W8-K5P"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="HMR-Iy-IL3">
                                 <rect key="frame" x="190" y="403" width="18" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="afternoonCheckBox" image="empty.png"/>
-                                <connections>
-                                    <action selector="afternoonClick:" destination="eYd-Iv-uNL" eventType="touchUpInside" id="Q2y-09-ITv"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jQ1-ks-b7G">
                                 <rect key="frame" x="26" y="111" width="120" height="21"/>
@@ -1169,14 +1227,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ShP-V2-4zG">
-                                <rect key="frame" x="85" y="403" width="18" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="eveningCheckBox" image="empty.png"/>
-                                <connections>
-                                    <action selector="eveningClick:" destination="eYd-Iv-uNL" eventType="touchUpInside" id="7XY-wu-eYT"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QvF-r8-v4v">
                                 <rect key="frame" x="124" y="443" width="72" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1192,6 +1242,16 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" id="Hhd-GL-683">
+                                <rect key="frame" x="150" y="247" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="1" green="0.21529377229999999" blue="0.082779216550000007" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ShP-V2-4zG">
+                                <rect key="frame" x="85" y="403" width="18" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="eveningCheckBox" image="empty.png"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.99502840910000001" green="0.91022780079999999" blue="0.75492210479999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -1207,9 +1267,10 @@
                         <outlet property="eveningCheckBox" destination="ShP-V2-4zG" id="7A0-dj-eBv"/>
                         <outlet property="firstNameLabel" destination="FG0-1B-ZQW" id="ukI-R8-b8w"/>
                         <outlet property="lastNameLabel" destination="jQ1-ks-b7G" id="FTy-MO-uzn"/>
-                        <outlet property="morningCheckBox" destination="oxd-K0-RBI" id="dWo-nR-pUc"/>
+                        <outlet property="morningCheckBox" destination="oxd-K0-RBI" id="jEC-1E-VU9"/>
                         <outlet property="phoneNumberLabel" destination="TTk-gS-U0R" id="bvn-3i-omG"/>
                         <outlet property="priceLabel" destination="uiQ-hd-DNh" id="SFt-k5-VWw"/>
+                        <outlet property="spinner" destination="Hhd-GL-683" id="QmX-XY-o1N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gtv-fk-8KP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1232,6 +1293,11 @@
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <activityIndicatorView key="tableFooterView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" id="xZe-k7-rtH">
+                            <rect key="frame" x="0.0" y="205" width="320" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="color" red="1" green="0.21529377229999999" blue="0.082779216550000007" alpha="1" colorSpace="calibratedRGB"/>
+                        </activityIndicatorView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tripCell" rowHeight="133" id="wfI-FM-47W" customClass="TripCell">
                                 <rect key="frame" x="0.0" y="72" width="320" height="133"/>
@@ -1368,6 +1434,7 @@
                     <size key="freeformSize" width="320" height="514"/>
                     <connections>
                         <outlet property="errorLabel" destination="JCU-y4-8fM" id="YOY-1M-lsU"/>
+                        <outlet property="spinner" destination="xZe-k7-rtH" id="b6g-IY-MaT"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WeG-ve-X3h" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1400,9 +1467,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.99502840910000001" green="0.91022780079999999" blue="0.75492210479999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="afN-4Z-kiG">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <activityIndicatorView key="tableFooterView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" id="hk2-7Q-7TZ">
+                            <rect key="frame" x="0.0" y="124" width="320" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="color" red="1" green="0.21529377229999999" blue="0.082779216550000007" alpha="1" colorSpace="calibratedRGB"/>
+                        </activityIndicatorView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="messageOwnerCell" rowHeight="52" id="upc-vb-k4i">
-                                <rect key="frame" x="0.0" y="28" width="320" height="52"/>
+                                <rect key="frame" x="0.0" y="72" width="320" height="52"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="upc-vb-k4i" id="MnL-kA-4SF">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="51"/>
@@ -1418,6 +1497,10 @@
                     </tableView>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="514"/>
+                    <connections>
+                        <outlet property="errorLabel" destination="afN-4Z-kiG" id="wOY-Im-QyL"/>
+                        <outlet property="spinner" destination="hk2-7Q-7TZ" id="qeP-Vu-xHS"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f0X-5L-soS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1438,7 +1521,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="WiM-ET-dm3"/>
         <segue reference="ipU-Ov-Hqc"/>
-        <segue reference="qG9-BM-0ZE"/>
-        <segue reference="NtO-Ad-M4T"/>
+        <segue reference="gsa-ew-IMK"/>
+        <segue reference="I1n-UV-Vfc"/>
     </inferredMetricsTieBreakers>
 </document>

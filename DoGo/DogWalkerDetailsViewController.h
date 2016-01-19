@@ -30,5 +30,6 @@
 @property (nonatomic) DogWalker* dogWalker;
 @property (nonatomic) DogOwner* dogOwner;
 //@property (nonatomic) bool isConnectedToOwner;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 @end

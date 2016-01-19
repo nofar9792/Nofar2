@@ -23,6 +23,7 @@
 
 @property (nonatomic)DogOwner* owner;
 @property (nonatomic)DogWalker* walker;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 
 @end

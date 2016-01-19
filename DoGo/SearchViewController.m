@@ -87,7 +87,7 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             if(self.walkersListArray.count == 0){
-                self.errorLabel.text = @"אין תוצאות להצגה";
+                self.errorLabel.text = @"אין מוליכים להצגה";
             }
             [self.tableView reloadData];
             [self.spinner stopAnimating];

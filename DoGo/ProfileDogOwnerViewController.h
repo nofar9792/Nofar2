@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *dogAgeTextBox;
 @property (weak, nonatomic) IBOutlet UIImageView *dogImageView;
 - (IBAction)getImageButtonClick:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *pickImageButton;
 
 @property (nonatomic) DogOwner *dogOwner;
 @property (nonatomic) UIImage *dogPic;

@@ -14,4 +14,6 @@
 
 @interface DogsListViewController : UITableViewController
 @property (nonatomic) DogWalker *user;
+@property (weak, nonatomic) IBOutlet UILabel *errorLabel;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 @end
