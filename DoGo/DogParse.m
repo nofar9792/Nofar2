@@ -15,6 +15,7 @@
     parseObject[USER_ID] = [NSNumber numberWithLong:userId];
     parseObject[NAME] = dog.name;
     parseObject[AGE] = [NSNumber numberWithLongLong:dog.age];
+    parseObject[@"size"] = @"LARGE";
     parseObject[PIC_REF] = dog.picRef;
     
     return [parseObject save];
