@@ -126,6 +126,7 @@ priceForHour isComfortableOnMorning:(bool)isComfortableOnMorning isComfortableOn
     return dogOwnersResult;
 }
 
+// messages for dog walker
 -(NSArray*)getRequestForDogWalker:(long)dogWalkerId{
     //return [self.modelParse getRequestForDogWalker:dogWalkerId];
     
@@ -145,6 +146,7 @@ priceForHour isComfortableOnMorning:(bool)isComfortableOnMorning isComfortableOn
     return dogOwnersResult;
 }
 
+// messages from dog owner
 -(NSArray*)getRequestOfDogOwner:(long)dogOwnerId{
     //return [self.modelParse getRequestOfDogOwner:dogOwnerId];
     

@@ -42,36 +42,28 @@
 
 
     if (sqlite3_prepare_v2(db,[query UTF8String],-1,&statment,nil) == SQLITE_OK){
-        //sqlite3_bind_text(statment, 1, [[NSString stringWithFormat:@"%li",dogWalker.userId] UTF8String], -1, NULL);
-        // guess
         sqlite3_bind_int(statment, 1, (int)dogWalker.userId);
         sqlite3_bind_int(statment, 2, (int)dogWalker.age);
         sqlite3_bind_int(statment, 3, dogWalker.priceForHour);
 
         if(dogWalker.isComfortableOnMorning){
-            // guess
             sqlite3_bind_int(statment, 4, (int)[NSNumber numberWithBool:YES]);
 
         }else{
-            // guess
             sqlite3_bind_int(statment, 4, (int)[NSNumber numberWithBool:NO]);
         }
         
         if(dogWalker.isComfortableOnAfternoon){
-            // guess
             sqlite3_bind_int(statment, 5, (int)[NSNumber numberWithBool:YES]);
             
         }else{
-            // guess
             sqlite3_bind_int(statment, 5, (int)[NSNumber numberWithBool:NO]);
         }
         
         if(dogWalker.isComfortableOnEvening){
-            // guess
             sqlite3_bind_int(statment, 6, (int)[NSNumber numberWithBool:YES]);
             
         }else{
-            // guess
             sqlite3_bind_int(statment, 6, (int)[NSNumber numberWithBool:NO]);
         }
 
@@ -94,11 +86,11 @@
         sqlite3_bind_text(statment, 1, [userIdStr UTF8String],-1,NULL);
 
         if(sqlite3_step(statment) == SQLITE_ROW){
-            dogWalker.age = [[NSString stringWithFormat:@"%s",sqlite3_column_text(statment,2)] intValue];
-            dogWalker.priceForHour = [[NSString stringWithFormat:@"%s",sqlite3_column_text(statment,3)] intValue];
-            dogWalker.isComfortableOnMorning = [[NSString stringWithFormat:@"%s",sqlite3_column_text(statment,4)] intValue] == 1;
-            dogWalker.isComfortableOnAfternoon = [[NSString stringWithFormat:@"%s",sqlite3_column_text(statment,5)] intValue] == 1;
-            dogWalker.isComfortableOnEvening = [[NSString stringWithFormat:@"%s",sqlite3_column_text(statment,6)] intValue] == 1;
+            dogWalker.age = [[NSString stringWithUTF8String:(char*)sqlite3_column_text(statment,2)] intValue];
+            dogWalker.priceForHour = [[NSString stringWithUTF8String:(char*)sqlite3_column_text(statment,3)] intValue];
+            dogWalker.isComfortableOnMorning = [[NSString stringWithUTF8String:(char*)sqlite3_column_text(statment,4)] intValue] == 1;
+            dogWalker.isComfortableOnAfternoon = [[NSString stringWithUTF8String:(char*)sqlite3_column_text(statment,5)] intValue] == 1;
+            dogWalker.isComfortableOnEvening = [[NSString stringWithUTF8String:(char*)sqlite3_column_text(statment,6)] intValue] == 1;
         }
     }
 

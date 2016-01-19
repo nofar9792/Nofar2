@@ -39,18 +39,16 @@
     NSString* query = [NSString stringWithFormat:@"SELECT * from %@ where %@ = ?;",USER_TABLE, USER_ID];
     
     if (sqlite3_prepare_v2(db,[query UTF8String], -1,&statment,nil) == SQLITE_OK){
-        NSString* userIdStr = [NSString stringWithFormat:@"%li", userId];
-                            
-        sqlite3_bind_text(statment, 1, [userIdStr UTF8String],-1,NULL);
+        sqlite3_bind_int(statment, 1, (int)userId);
         
         if(sqlite3_step(statment) == SQLITE_ROW){
-            NSString* userName = [NSString stringWithFormat:@"%s",sqlite3_column_text(statment,2)];
-            NSString* firstName = [NSString stringWithFormat:@"%s",sqlite3_column_text(statment,3)];
-            NSString* lastName = [NSString stringWithFormat:@"%s",sqlite3_column_text(statment,4)];
-            NSString* phoneNumber = [NSString stringWithFormat:@"%s",sqlite3_column_text(statment,5)];
-            NSString* address = [NSString stringWithFormat:@"%s",sqlite3_column_text(statment,6)];
-            NSString* city = [NSString stringWithFormat:@"%s",sqlite3_column_text(statment,7)];
-            bool isDogWalker = [[NSString stringWithFormat:@"%s",sqlite3_column_text(statment,8)] intValue] == 1;
+            NSString* userName = [NSString stringWithUTF8String:(char*)sqlite3_column_text(statment,1)];
+            NSString* firstName = [NSString stringWithUTF8String:(char*)sqlite3_column_text(statment,2)];
+            NSString* lastName = [NSString stringWithUTF8String:(char*)sqlite3_column_text(statment,3)];
+            NSString* phoneNumber = [NSString stringWithUTF8String:(char*)sqlite3_column_text(statment,4)];
+            NSString* address = [NSString stringWithUTF8String:(char*)sqlite3_column_text(statment,5)];
+            NSString* city = [NSString stringWithUTF8String:(char*)sqlite3_column_text(statment,6)];
+            bool isDogWalker = [[NSString stringWithUTF8String:(char*)sqlite3_column_text(statment,7)] intValue] == 1;
             
             User* user = nil;
             
@@ -75,11 +73,8 @@
     sqlite3_stmt *statment;
     NSString* query = [NSString stringWithFormat:@"INSERT OR REPLACE INTO %@ (%@,%@,%@,%@,%@,%@,%@,%@) values (?,?,?,?,?,?,?,?);", USER_TABLE, USER_ID ,USERNAME, FIRST_NAME, LAST_NAME, PHONE_NUMBER, ADDRESS, CITY, IS_DOG_WALKER];
 
-    
     if (sqlite3_prepare_v2(db,[query UTF8String],-1,&statment,nil) == SQLITE_OK){
-        //sqlite3_bind_text(statment, 1, [[NSString stringWithFormat:@"%li",user.userId] UTF8String], -1, NULL);
-             // guess
-        //sqlite3_bind_int(statment, 1, (int)user.userId);
+        sqlite3_bind_int(statment, 1, (int)user.userId);
         sqlite3_bind_text(statment, 2, [user.userName UTF8String], -1, NULL);
         sqlite3_bind_text(statment, 3, [user.firstName UTF8String], -1, NULL);
         sqlite3_bind_text(statment, 4, [user.lastName UTF8String], -1, NULL);
@@ -88,11 +83,9 @@
         sqlite3_bind_text(statment, 7, [user.city  UTF8String], -1, NULL);
         
         if([user isKindOfClass:[DogWalker class]]){
-           // guess
             sqlite3_bind_int(statment, 8, (int)[NSNumber numberWithBool:YES]);
 
         }else{
-            // guess
             sqlite3_bind_int(statment, 8, (int)[NSNumber numberWithBool:NO]);
         }
         

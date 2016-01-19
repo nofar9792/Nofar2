@@ -42,7 +42,7 @@
     if (sqlite3_prepare_v2(db,[query UTF8String], -1, &statment, nil) == SQLITE_OK){
         sqlite3_bind_text(statment, 1, [tableName UTF8String], -1, NULL);
         if(sqlite3_step(statment) == SQLITE_ROW){
-            NSString* lastUpdate = [NSString stringWithFormat:@"%s",sqlite3_column_text(statment,0)];
+            NSString* lastUpdate = [NSString stringWithUTF8String:(char*)sqlite3_column_text(statment,0)];
             return lastUpdate;
         }
     }else{

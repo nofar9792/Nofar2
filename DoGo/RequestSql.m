@@ -34,18 +34,18 @@
     return YES;
 }
 
+// messages for dog walker - returns dog owner ids
 +(NSArray*)getRequestIdsForDogWalker:(sqlite3*)db dogWalkerId:(long)dogWalkerId{
     NSString* query = [NSString stringWithFormat:@"SELECT * from %@ where %@ = ? and %@ = ?;",REQUESTS_TABLE, DOG_WALKER_ID, REQUEST_STATUS];
     
     NSMutableArray* data = [[NSMutableArray alloc] init];
     sqlite3_stmt *statment;
     if (sqlite3_prepare_v2(db,[query UTF8String], -1,&statment,nil) == SQLITE_OK){
-        NSString* dogWalkerIdStr = [NSString stringWithFormat:@"%li", dogWalkerId];
-        sqlite3_bind_text(statment, 1, [dogWalkerIdStr UTF8String], -1, NULL);
+        sqlite3_bind_int(statment, 1, (int)dogWalkerId);
         sqlite3_bind_text(statment, 2, [[self convertToString:Waiting] UTF8String], -1, NULL);
             
          while(sqlite3_step(statment) == SQLITE_ROW){
-            [data addObject:[NSNumber numberWithLong:[[NSString stringWithFormat:@"%s",sqlite3_column_text(statment,2)] longLongValue]]];
+            [data addObject:[NSNumber numberWithLong:[[NSString stringWithUTF8String:(char*)sqlite3_column_text(statment,0)] longLongValue]]];
         }
     }else{
         NSLog(@"ERROR: getStudents failed %s",sqlite3_errmsg(db));
@@ -54,18 +54,18 @@
     return data;
 }
 
+// messages from dog owner - returns dog walker ids
 +(NSArray*)getRequestIdsOfDogOwner:(sqlite3*)db dogOwnerId:(long)dogOwnerId{
     NSString* query = [NSString stringWithFormat:@"SELECT * from %@ where %@ = ? and %@ = ?;",REQUESTS_TABLE, DOG_OWNER_ID, REQUEST_STATUS];
     
     NSMutableArray* data = [[NSMutableArray alloc] init];
     sqlite3_stmt *statment;
     if (sqlite3_prepare_v2(db,[query UTF8String], -1,&statment,nil) == SQLITE_OK){
-        NSString* dogOwnerIdStr = [NSString stringWithFormat:@"%li", dogOwnerId];
-        sqlite3_bind_text(statment, 1, [dogOwnerIdStr UTF8String], -1, NULL);
+        sqlite3_bind_int(statment, 1, (int)dogOwnerId);
         sqlite3_bind_text(statment, 2, [[self convertToString:Waiting] UTF8String], -1, NULL);
         
         while(sqlite3_step(statment) == SQLITE_ROW){
-            [data addObject:[NSNumber numberWithLong:[[NSString stringWithFormat:@"%s",sqlite3_column_text(statment,1)] longLongValue]]];
+            [data addObject:[NSNumber numberWithLong:[[NSString stringWithUTF8String:(char*)sqlite3_column_text(statment,1)] longLongValue]]];
         }
     }else{
         NSLog(@"ERROR: getStudents failed %s",sqlite3_errmsg(db));
@@ -74,19 +74,18 @@
     return data;
 }
 
-
+// connection - return dog owner ids
 +(NSArray*)getOwnersIdsConnectToWalker:(sqlite3*)db dogWalkerId:(long)dogWalkerId{
     NSString* query = [NSString stringWithFormat:@"SELECT * from %@ where %@ = ? and %@ = ?;",REQUESTS_TABLE, DOG_WALKER_ID, REQUEST_STATUS];
     
     NSMutableArray* data = [[NSMutableArray alloc] init];
     sqlite3_stmt *statment;
     if (sqlite3_prepare_v2(db,[query UTF8String], -1,&statment,nil) == SQLITE_OK){
-        NSString* dogWalkerIdStr = [NSString stringWithFormat:@"%li", dogWalkerId];
-        sqlite3_bind_text(statment, 1, [dogWalkerIdStr UTF8String], -1, NULL);
+        sqlite3_bind_int(statment, 1, (int)dogWalkerId);
         sqlite3_bind_text(statment, 2, [[self convertToString:Accepted] UTF8String], -1, NULL);
         
         while(sqlite3_step(statment) == SQLITE_ROW){
-            [data addObject:[NSNumber numberWithLong:[[NSString stringWithFormat:@"%s",sqlite3_column_text(statment,1)] longLongValue]]];
+            [data addObject:[NSNumber numberWithLong:[[NSString stringWithUTF8String:(char*)sqlite3_column_text(statment,0)] longLongValue]]];
         }
     }else{
         NSLog(@"ERROR: getStudents failed %s",sqlite3_errmsg(db));
@@ -105,7 +104,8 @@
         sqlite3_bind_int(statment, 2, (int)request.dogOwnerId);
         sqlite3_bind_int(statment, 3, (int)request.dogWalkerId);
         
-        if(sqlite3_step(statment) == SQLITE_DONE){
+        
+        if(sqlite3_step(statment) == SQLITE_DONE && sqlite3_changes(db) > 0){
             return YES;
         }
     }
@@ -119,7 +119,7 @@
         sqlite3_bind_int(statment, 2, (int)request.dogWalkerId);
         sqlite3_bind_text(statment, 3, [[self convertToString:request.status] UTF8String], -1, NULL);
         
-        if(sqlite3_step(statment) == SQLITE_DONE){
+        if(sqlite3_step(statment) == SQLITE_DONE && sqlite3_changes(db) > 0){
             return YES;
         }
     }

@@ -39,8 +39,6 @@
     NSString* query = [NSString stringWithFormat:@"INSERT OR REPLACE INTO %@ (%@,%@,%@,%@) values (?,?,?,?);", DOGS_TABLE, USER_ID, NAME, AGE, PIC_REF];
 
     if (sqlite3_prepare_v2(db,[query UTF8String],-1,&statment,nil) == SQLITE_OK){
-        //sqlite3_bind_text(statment, 1, [[NSString stringWithFormat:@"%li",dogWalker.userId] UTF8String], -1, NULL);
-        // guess
         sqlite3_bind_int(statment, 1, (int)userId);
         sqlite3_bind_text(statment, 2, [dog.name UTF8String], -1, NULL);
         sqlite3_bind_int(statment, 3, (int)dog.age);
@@ -65,9 +63,9 @@
         sqlite3_bind_text(statment, 1, [userIdStr UTF8String],-1,NULL);
         
         if(sqlite3_step(statment) == SQLITE_ROW){
-            NSString* name = [NSString stringWithFormat:@"%s",sqlite3_column_text(statment,2)];
-            long age = [[NSString stringWithFormat:@"%s",sqlite3_column_text(statment,3)] longLongValue];
-            NSString* picRef = [NSString stringWithFormat:@"%s",sqlite3_column_text(statment,4)];
+            NSString* name = [NSString stringWithUTF8String:(char*)sqlite3_column_text(statment,1)];
+            long age = [[NSString stringWithUTF8String:(char*)sqlite3_column_text(statment,2)] longLongValue];
+            NSString* picRef = [NSString stringWithUTF8String:(char*)sqlite3_column_text(statment,3)];
             
             return [[Dog alloc]init:name age:age picRef:picRef];
         }
