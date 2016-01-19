@@ -54,7 +54,7 @@ static Model* instance = nil;
     return [self.modelParse updateUser:user];
 }
 
-// Dog Waslker Methods
+// Dog Walker Methods
 
 -(NSArray*)getAllDogWalkers{
     return [self.modelParse getAllDogWalkers];
