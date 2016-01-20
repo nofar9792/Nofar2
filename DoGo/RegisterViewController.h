@@ -19,7 +19,7 @@
     IBOutlet UIScrollView *scroller;
 }
 
-//@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UITextField *firstNameTextBox;
 @property (weak, nonatomic) IBOutlet UITextField *lastNameTextBox;
 @property (weak, nonatomic) IBOutlet UITextField *usernameTexBox;

@@ -75,17 +75,21 @@
         {
             [self performSegueWithIdentifier:@"toDogWalkerScreen" sender:self];
         }
-        
     };
     
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         [self.spinner startAnimating];
-        long userId ;
+        long userId;
         
         @try {
             if (self.isOwner)
             {
                 userId =[[Model instance] addDogOwner:self.user.userName password:self.passwordTextBox.text firstName:self.user.firstName lastName:self.user.lastName phoneNumber:self.user.phoneNumber address:self.user.address city:self.user.city dog:((DogOwner*)self.user).dog];
+                
+                if (((DogOwner*) self.user).dog.picRef)
+                {
+                    [[Model instance] saveImage:((ProfileDogOwnerViewController*)self.childVC).dogPic imageName:((DogOwner*) self.user).dog.picRef];
+                }
             }
             else
             {
@@ -95,14 +99,15 @@
         }
         @catch (NSException * e) {
             if([e.name isEqualToString:@"invalidUsername"]){
-                 [self.view makeToast:@"שם המשתמש תפוס. נסה שם אחר"];
+                 [self.scrollView makeToast:@"שם המשתמש תפוס. נסה שם אחר"];
             }else{
-                [self.view makeToast:@"אירעה שגיאה בעת ההרשמה. נסה שנית"];
+                [self.scrollView makeToast:@"אירעה שגיאה בעת ההרשמה. נסה שנית"];
             }
         }
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            afterSignUp(userId);
+             afterSignUp(userId);
+            
         });
     });
 }

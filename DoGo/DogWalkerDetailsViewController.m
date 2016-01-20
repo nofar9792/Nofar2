@@ -75,6 +75,8 @@
             if (result)
             {
                 [self.view makeToast:@"הבקשה נשלחה בהצלחה"];
+                
+                [self.navigationController popViewControllerAnimated:YES];
             }
             else
             {

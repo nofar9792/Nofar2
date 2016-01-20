@@ -104,9 +104,6 @@
     
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         bool result = [[Model instance]updateUser:self.user];
-        if([self.user isKindOfClass:[DogOwner class]] && ((DogOwner*) self.user).dog.picRef){
-            [[Model instance] saveImage:((ProfileDogOwnerViewController*)self.childVC).dogPic imageName:((DogOwner*) self.user).dog.picRef];
-        }
         
         dispatch_async(dispatch_get_main_queue(), ^{
             afterSave(result);

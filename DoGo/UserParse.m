@@ -20,39 +20,38 @@ firstName lastName:(NSString*)lastName phoneNumber:(NSString*)phoneNumber addres
     if([self isUsernameAlreadyExist:username]){
         @throw [NSException exceptionWithName:@"invalidUsername" reason:@"username is already exist" userInfo:nil];
     }
+    else
+    {
     
-    long newUserId = [self getNextId];
-    PFUser* parseUser = [PFUser user];
-    parseUser[USER_ID] = [NSNumber numberWithLong:newUserId];
-    parseUser.username = username;
-    parseUser.password = password;
-    parseUser[FIRST_NAME] = firstName;
-    parseUser[LAST_NAME] = lastName;
-    parseUser[PHONE_NUMBER] = phoneNumber;
-    parseUser[ADDRESS] = address;
-    parseUser[CITY] = city;
+        long newUserId = [self getNextId];
+        PFUser* parseUser = [PFUser user];
+        parseUser[USER_ID] = [NSNumber numberWithLong:newUserId];
+        parseUser.username = username;
+        parseUser.password = password;
+        parseUser[FIRST_NAME] = firstName;
+        parseUser[LAST_NAME] = lastName;
+        parseUser[PHONE_NUMBER] = phoneNumber;
+        parseUser[ADDRESS] = address;
+        parseUser[CITY] = city;
     
     
-    if(isDogWalker){
-        parseUser[IS_DOG_WALKER] = [NSNumber numberWithBool:YES];
-    }else{
-         parseUser[IS_DOG_WALKER] = [NSNumber numberWithBool:NO];
-    }
+        if(isDogWalker){
+            parseUser[IS_DOG_WALKER] = [NSNumber numberWithBool:YES];
+        }else{
+            parseUser[IS_DOG_WALKER] = [NSNumber numberWithBool:NO];
+        }
+    
+        NSError* error;
    
-    if(![parseUser signUp]){
-        return 0;
-    }
-
-    // check if throw exception if signup failed
-//    -(BOOL)signup:(NSString*)user pwd:(NSString*)pwd{
-//        NSError* error;
-//        PFUser* puser = [PFUser user];
-//        puser.username = user;
-//        puser.password = pwd;
-//        return [puser signUp:&error];
-//    }
+        if(![parseUser signUp : &error]){
+        
+            @throw [NSException exceptionWithName:@"invalidUsername" reason:[error localizedDescription] userInfo:nil];
+        }
     
-    return newUserId;
+        return newUserId;
+    }
+    
+    return -1;
 }
 
 +(User*)login:(NSString*)username password:(NSString*)password{
@@ -118,7 +117,10 @@ firstName lastName:(NSString*)lastName phoneNumber:(NSString*)phoneNumber addres
 +(bool)isUsernameAlreadyExist:(NSString*)username{
     PFQuery *query = [[PFUser query] whereKey:USERNAME equalTo:username];
     
+    
     PFUser *parseUser = [query getFirstObject];
+   
+    
     if(parseUser) {
         return YES;
     }

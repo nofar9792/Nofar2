@@ -50,7 +50,7 @@
 
 - (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo
 {
-    self.dogOwner.dog.picRef = self.dogOwner.dog.name;
+    self.dogOwner.dog.picRef = [NSString stringWithFormat:@"%lu", (unsigned long)self.dogOwner.dog.name.hash];
     self.dogPic = image;
     [self.dogImageView setImage:image];
     [self.pickerLibrary dismissViewControllerAnimated:YES completion:nil];
@@ -89,12 +89,9 @@
 }
 
 -(void)openGallery{
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        
         self.pickerLibrary = [[UIImagePickerController alloc] init];
         self.pickerLibrary.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
         self.pickerLibrary.delegate = self;
         [self presentModalViewController:self.pickerLibrary animated:YES];
-    });
 }
 @end

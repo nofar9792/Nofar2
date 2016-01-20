@@ -108,8 +108,6 @@ priceForHour isComfortableOnMorning:(bool)isComfortableOnMorning isComfortableOn
 }
 
 -(NSArray*)getOwnersConnectToWalker:(long)dogWalkerId{
-    //return [self.modelParse getOwnersConnectToWalker:dogWalkerId];
-    
     NSMutableArray* dogOwnersResult = (NSMutableArray*)[self.modelSql getOwnersConnectToWalker:dogWalkerId];
     NSString* lastUpadteDate = [self.modelSql getRequestsLastUpdateDate];
     
@@ -128,8 +126,6 @@ priceForHour isComfortableOnMorning:(bool)isComfortableOnMorning isComfortableOn
 
 // messages for dog walker
 -(NSArray*)getRequestForDogWalker:(long)dogWalkerId{
-    //return [self.modelParse getRequestForDogWalker:dogWalkerId];
-    
     NSMutableArray* dogOwnersResult = (NSMutableArray*)[self.modelSql getRequestForDogWalker:dogWalkerId];
     NSString* lastUpadteDate = [self.modelSql getRequestsLastUpdateDate];
     
@@ -148,8 +144,6 @@ priceForHour isComfortableOnMorning:(bool)isComfortableOnMorning isComfortableOn
 
 // messages from dog owner
 -(NSArray*)getRequestOfDogOwner:(long)dogOwnerId{
-    //return [self.modelParse getRequestOfDogOwner:dogOwnerId];
-    
     NSMutableArray* dogWalkersResult = (NSMutableArray*)[self.modelSql getRequestOfDogOwner:dogOwnerId];
     NSString* lastUpadteDate = [self.modelSql getRequestsLastUpdateDate];
     

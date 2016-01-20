@@ -209,6 +209,7 @@
                         <outlet property="lastNameTextBox" destination="Azc-t3-Jon" id="voA-7E-yPH"/>
                         <outlet property="passwordTextBox" destination="ngG-YB-Vxa" id="92e-sj-ghL"/>
                         <outlet property="phoneNumberTextBox" destination="nTO-Fo-OaN" id="bN6-4O-QgH"/>
+                        <outlet property="scrollView" destination="NDF-B4-OMw" id="lst-2F-2oc"/>
                         <outlet property="scroller" destination="NDF-B4-OMw" id="b22-d1-T3j"/>
                         <outlet property="spinner" destination="Cvr-CW-sPW" id="HPX-fB-NV7"/>
                         <outlet property="userTypeSubView" destination="FmL-q9-vdu" id="iFa-q5-zPS"/>
@@ -1000,6 +1001,7 @@
                                 <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ApC-6P-b3L">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.99502840910000001" green="0.91022780079999999" blue="0.75492210479999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <nil key="highlightedColor"/>
