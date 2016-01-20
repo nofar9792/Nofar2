@@ -65,16 +65,19 @@
     void(^afterSignUp)(long) = ^(long userId){
         [self.spinner stopAnimating];
         
-        self.user.userId = userId;
-      
-        if (self.isOwner)
-        {
-            [self performSegueWithIdentifier:@"toDogOwnerScreen" sender:self];
-        }
-        else
-        {
-            [self performSegueWithIdentifier:@"toDogWalkerScreen" sender:self];
-        }
+       
+            self.user.userId = userId;
+            
+            if (self.isOwner)
+            {
+                [self performSegueWithIdentifier:@"toDogOwnerScreen" sender:self];
+            }
+            else
+            {
+                [self performSegueWithIdentifier:@"toDogWalkerScreen" sender:self];
+            }
+        
+       
     };
     
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
@@ -90,25 +93,39 @@
                 {
                     [[Model instance] saveImage:((ProfileDogOwnerViewController*)self.childVC).dogPic imageName:((DogOwner*) self.user).dog.picRef];
                 }
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    afterSignUp( userId);
+                    
+                });
             }
             else
             {
                 userId = [[Model instance] addDogWalker:self.user.userName password:self.passwordTextBox.text  firstName:self.user.firstName lastName:self.user.lastName phoneNumber:self.user.phoneNumber address:self.user.address city:self.user.city age:((DogWalker*)self.user).age priceForHour:((DogWalker*)self.user).priceForHour isComfortableOnMorning:((DogWalker*)self.user).isComfortableOnMorning isComfortableOnAfternoon:((DogWalker*)self.user).isComfortableOnAfternoon isComfortableOnEvening:((DogWalker*)self.user).isComfortableOnEvening];
+                
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    afterSignUp(userId);
+                    
+                });
             }
             
         }
         @catch (NSException * e) {
-            if([e.name isEqualToString:@"invalidUsername"]){
-                 [self.scrollView makeToast:@"שם המשתמש תפוס. נסה שם אחר"];
-            }else{
-                [self.scrollView makeToast:@"אירעה שגיאה בעת ההרשמה. נסה שנית"];
-            }
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.spinner stopAnimating];
+                if([e.name isEqualToString:@"invalidUsername"]){
+                    [self.scrollView makeToast:@"שם המשתמש תפוס. נסה שם אחר"];
+                }else{
+                    [self.scrollView makeToast:@"אירעה שגיאה בעת ההרשמה. נסה שנית"];
+                }
+                
+            });
+           
         }
         
-        dispatch_async(dispatch_get_main_queue(), ^{
-             afterSignUp(userId);
-            
-        });
+        
     });
 }
 
